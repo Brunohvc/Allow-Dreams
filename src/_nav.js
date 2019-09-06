@@ -11,7 +11,7 @@ export default {
     },
     {
       title: true,
-      name: 'Usuário',
+      name: 'Perfil',
     },
     {
       name: 'Páginas',
@@ -32,17 +32,26 @@ export default {
     },
     {
       title: true,
-      name: 'Temas',
-      wrapper: {            // optional wrapper object
-        element: '',        // required valid HTML5 element tag
-        attributes: {}        // optional valid JS object with JS API naming ex: { className: "my-class", style: { fontFamily: "Verdana" }, id: "my-id"}
-      },
-      class: ''             
+      name: 'Fotos',
     },
     {
-      name: 'Cores',
-      url: '/theme/colors',
-      icon: 'icon-drop',
+      name: 'Jumbotrons',
+      url: '/base/jumbotrons',
+      icon: 'icon-puzzle',
+    },
+    {
+      name: 'Carousels',
+      url: '/base/carousels',
+      icon: 'icon-puzzle',
+    },
+    {
+      title: true,
+      name: 'Plano',
+    },
+    {
+      name: 'Pagamento',
+      url: '/base/forms',
+      icon: 'icon-puzzle',
     },
     {
       title: true,
@@ -58,18 +67,8 @@ export default {
       icon: 'icon-puzzle',
       children: [
         {
-          name: 'Breadcrumbs',
-          url: '/base/breadcrumbs',
-          icon: 'icon-puzzle',
-        },
-        {
           name: 'Cards',
           url: '/base/cards',
-          icon: 'icon-puzzle',
-        },
-        {
-          name: 'Carousels',
-          url: '/base/carousels',
           icon: 'icon-puzzle',
         },
         {
@@ -83,38 +82,23 @@ export default {
           icon: 'icon-puzzle',
         },
         {
-          name: 'Forms',
-          url: '/base/forms',
-          icon: 'icon-puzzle',
-        },
-        {
-          name: 'Jumbotrons',
-          url: '/base/jumbotrons',
-          icon: 'icon-puzzle',
-        },
-        {
           name: 'List groups',
           url: '/base/list-groups',
           icon: 'icon-puzzle',
         },
         {
-          name: 'Navs',
+          name: 'Navegação',
           url: '/base/navs',
           icon: 'icon-puzzle',
         },
         {
-          name: 'Paginations',
+          name: 'Paginação',
           url: '/base/paginations',
           icon: 'icon-puzzle',
         },
         {
           name: 'Popovers',
           url: '/base/popovers',
-          icon: 'icon-puzzle',
-        },
-        {
-          name: 'Progress Bar',
-          url: '/base/progress-bar',
           icon: 'icon-puzzle',
         },
         {
@@ -128,7 +112,7 @@ export default {
           icon: 'icon-puzzle',
         },
         {
-          name: 'Tabs',
+          name: 'Tabelas',
           url: '/base/tabs',
           icon: 'icon-puzzle',
         },
