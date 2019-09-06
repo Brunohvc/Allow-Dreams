@@ -381,7 +381,7 @@ const mainChart = {
   labels: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'],
   datasets: [
     {
-      label: 'My First dataset',
+      label: 'Pessoas online',
       backgroundColor: hexToRgba(brandInfo, 10),
       borderColor: brandInfo,
       pointHoverBackgroundColor: '#fff',
@@ -389,15 +389,7 @@ const mainChart = {
       data: data1,
     },
     {
-      label: 'My Second dataset',
-      backgroundColor: 'transparent',
-      borderColor: brandSuccess,
-      pointHoverBackgroundColor: '#fff',
-      borderWidth: 2,
-      data: data2,
-    },
-    {
-      label: 'My Third dataset',
+      label: 'Pessoas offline',
       backgroundColor: 'transparent',
       borderColor: brandDanger,
       pointHoverBackgroundColor: '#fff',
@@ -501,58 +493,10 @@ class Dashboard extends Component {
                   </ButtonDropdown>
                 </ButtonGroup>
                 <div className="text-value">9.823</div>
-                <div>Members online</div>
+                <div>Pessoas online</div>
               </CardBody>
               <div className="chart-wrapper mx-3" style={{ height: '70px' }}>
                 <Line data={cardChartData2} options={cardChartOpts2} height={70} />
-              </div>
-            </Card>
-          </Col>
-
-          <Col xs="12" sm="6" lg="3">
-            <Card className="text-white bg-primary">
-              <CardBody className="pb-0">
-                <ButtonGroup className="float-right">
-                  <Dropdown id='card2' isOpen={this.state.card2} toggle={() => { this.setState({ card2: !this.state.card2 }); }}>
-                    <DropdownToggle className="p-0" color="transparent">
-                      <i className="icon-location-pin"></i>
-                    </DropdownToggle>
-                    <DropdownMenu right>
-                      <DropdownItem>Action</DropdownItem>
-                      <DropdownItem>Another action</DropdownItem>
-                      <DropdownItem>Something else here</DropdownItem>
-                    </DropdownMenu>
-                  </Dropdown>
-                </ButtonGroup>
-                <div className="text-value">9.823</div>
-                <div>Members online</div>
-              </CardBody>
-              <div className="chart-wrapper mx-3" style={{ height: '70px' }}>
-                <Line data={cardChartData1} options={cardChartOpts1} height={70} />
-              </div>
-            </Card>
-          </Col>
-
-          <Col xs="12" sm="6" lg="3">
-            <Card className="text-white bg-warning">
-              <CardBody className="pb-0">
-                <ButtonGroup className="float-right">
-                  <Dropdown id='card3' isOpen={this.state.card3} toggle={() => { this.setState({ card3: !this.state.card3 }); }}>
-                    <DropdownToggle caret className="p-0" color="transparent">
-                      <i className="icon-settings"></i>
-                    </DropdownToggle>
-                    <DropdownMenu right>
-                      <DropdownItem>Action</DropdownItem>
-                      <DropdownItem>Another action</DropdownItem>
-                      <DropdownItem>Something else here</DropdownItem>
-                    </DropdownMenu>
-                  </Dropdown>
-                </ButtonGroup>
-                <div className="text-value">9.823</div>
-                <div>Members online</div>
-              </CardBody>
-              <div className="chart-wrapper" style={{ height: '70px' }}>
-                <Line data={cardChartData3} options={cardChartOpts3} height={70} />
               </div>
             </Card>
           </Col>
@@ -572,8 +516,8 @@ class Dashboard extends Component {
                     </DropdownMenu>
                   </ButtonDropdown>
                 </ButtonGroup>
-                <div className="text-value">9.823</div>
-                <div>Members online</div>
+                <div className="text-value">1.234</div>
+                <div>Pessoas offline</div>
               </CardBody>
               <div className="chart-wrapper mx-3" style={{ height: '70px' }}>
                 <Bar data={cardChartData4} options={cardChartOpts4} height={70} />
@@ -587,16 +531,16 @@ class Dashboard extends Component {
               <CardBody>
                 <Row>
                   <Col sm="5">
-                    <CardTitle className="mb-0">Traffic</CardTitle>
-                    <div className="small text-muted">November 2015</div>
+                    <CardTitle className="mb-0">Gráfico</CardTitle>
+                    <div className="small text-muted">Setembro de 2019</div>
                   </Col>
                   <Col sm="7" className="d-none d-sm-inline-block">
                     <Button color="primary" className="float-right"><i className="icon-cloud-download"></i></Button>
                     <ButtonToolbar className="float-right" aria-label="Toolbar with button groups">
                       <ButtonGroup className="mr-3" aria-label="First group">
-                        <Button color="outline-secondary" onClick={() => this.onRadioBtnClick(1)} active={this.state.radioSelected === 1}>Day</Button>
-                        <Button color="outline-secondary" onClick={() => this.onRadioBtnClick(2)} active={this.state.radioSelected === 2}>Month</Button>
-                        <Button color="outline-secondary" onClick={() => this.onRadioBtnClick(3)} active={this.state.radioSelected === 3}>Year</Button>
+                        <Button color="outline-secondary" onClick={() => this.onRadioBtnClick(1)} active={this.state.radioSelected === 1}>Dia</Button>
+                        <Button color="outline-secondary" onClick={() => this.onRadioBtnClick(2)} active={this.state.radioSelected === 2}>Mês</Button>
+                        <Button color="outline-secondary" onClick={() => this.onRadioBtnClick(3)} active={this.state.radioSelected === 3}>Ano</Button>
                       </ButtonGroup>
                     </ButtonToolbar>
                   </Col>
@@ -605,78 +549,7 @@ class Dashboard extends Component {
                   <Line data={mainChart} options={mainChartOpts} height={300} />
                 </div>
               </CardBody>
-              <CardFooter>
-                <Row className="text-center">
-                  <Col sm={12} md className="mb-sm-2 mb-0">
-                    <div className="text-muted">Visits</div>
-                    <strong>29.703 Users (40%)</strong>
-                    <Progress className="progress-xs mt-2" color="success" value="40" />
-                  </Col>
-                  <Col sm={12} md className="mb-sm-2 mb-0 d-md-down-none">
-                    <div className="text-muted">Unique</div>
-                    <strong>24.093 Users (20%)</strong>
-                    <Progress className="progress-xs mt-2" color="info" value="20" />
-                  </Col>
-                  <Col sm={12} md className="mb-sm-2 mb-0">
-                    <div className="text-muted">Pageviews</div>
-                    <strong>78.706 Views (60%)</strong>
-                    <Progress className="progress-xs mt-2" color="warning" value="60" />
-                  </Col>
-                  <Col sm={12} md className="mb-sm-2 mb-0">
-                    <div className="text-muted">New Users</div>
-                    <strong>22.123 Users (80%)</strong>
-                    <Progress className="progress-xs mt-2" color="danger" value="80" />
-                  </Col>
-                  <Col sm={12} md className="mb-sm-2 mb-0 d-md-down-none">
-                    <div className="text-muted">Bounce Rate</div>
-                    <strong>Average Rate (40.15%)</strong>
-                    <Progress className="progress-xs mt-2" color="primary" value="40" />
-                  </Col>
-                </Row>
-              </CardFooter>
             </Card>
-          </Col>
-        </Row>
-
-        <Row>
-          <Col xs="6" sm="6" lg="3">
-            <Suspense fallback={this.loading()}>
-              <Widget03 dataBox={() => ({ variant: 'facebook', friends: '89k', feeds: '459' })} >
-                <div className="chart-wrapper">
-                  <Line data={makeSocialBoxData(0)} options={socialChartOpts} height={90} />
-                </div>
-              </Widget03>
-            </Suspense>
-          </Col>
-
-          <Col xs="6" sm="6" lg="3">
-            <Suspense fallback={this.loading()}>
-              <Widget03 dataBox={() => ({ variant: 'twitter', followers: '973k', tweets: '1.792' })} >
-                <div className="chart-wrapper">
-                  <Line data={makeSocialBoxData(1)} options={socialChartOpts} height={90} />
-                </div>
-              </Widget03>
-            </Suspense>
-          </Col>
-
-          <Col xs="6" sm="6" lg="3">
-            <Suspense fallback={this.loading()}>
-              <Widget03 dataBox={() => ({ variant: 'linkedin', contacts: '500+', feeds: '292' })} >
-                <div className="chart-wrapper">
-                  <Line data={makeSocialBoxData(2)} options={socialChartOpts} height={90} />
-                </div>
-              </Widget03>
-            </Suspense>
-          </Col>
-
-          <Col xs="6" sm="6" lg="3">
-            <Suspense fallback={this.loading()}>
-              <Widget03 dataBox={() => ({ variant: 'google-plus', followers: '894', circles: '92' })} >
-                <div className="chart-wrapper">
-                  <Line data={makeSocialBoxData(3)} options={socialChartOpts} height={90} />
-                </div>
-              </Widget03>
-            </Suspense>
           </Col>
         </Row>
 
@@ -684,7 +557,7 @@ class Dashboard extends Component {
           <Col>
             <Card>
               <CardHeader>
-                Traffic {' & '} Sales
+                Allow Dreams - Estatisticas
               </CardHeader>
               <CardBody>
                 <Row>
@@ -692,21 +565,11 @@ class Dashboard extends Component {
                     <Row>
                       <Col sm="6">
                         <div className="callout callout-info">
-                          <small className="text-muted">New Clients</small>
+                          <small className="text-muted">Novos Clientes</small>
                           <br />
-                          <strong className="h4">9,123</strong>
+                          <strong className="h4">9.123</strong>
                           <div className="chart-wrapper">
                             <Line data={makeSparkLineData(0, brandPrimary)} options={sparklineChartOpts} width={100} height={30} />
-                          </div>
-                        </div>
-                      </Col>
-                      <Col sm="6">
-                        <div className="callout callout-danger">
-                          <small className="text-muted">Recurring Clients</small>
-                          <br />
-                          <strong className="h4">22,643</strong>
-                          <div className="chart-wrapper">
-                            <Line data={makeSparkLineData(1, brandDanger)} options={sparklineChartOpts} width={100} height={30} />
                           </div>
                         </div>
                       </Col>
@@ -715,87 +578,87 @@ class Dashboard extends Component {
                     <div className="progress-group mb-4">
                       <div className="progress-group-prepend">
                         <span className="progress-group-text">
-                          Monday
+                          Segunda
                         </span>
                       </div>
                       <div className="progress-group-bars">
                         <Progress className="progress-xs" color="info" value="34" />
-                        <Progress className="progress-xs" color="danger" value="78" />
+                        <Progress className="progress-xs" color="warning" value="78" />
                       </div>
                     </div>
                     <div className="progress-group mb-4">
                       <div className="progress-group-prepend">
                         <span className="progress-group-text">
-                        Tuesday
+                        Terça
                         </span>
                       </div>
                       <div className="progress-group-bars">
                         <Progress className="progress-xs" color="info" value="56" />
-                        <Progress className="progress-xs" color="danger" value="94" />
+                        <Progress className="progress-xs" color="warning" value="94" />
                       </div>
                     </div>
                     <div className="progress-group mb-4">
                       <div className="progress-group-prepend">
                         <span className="progress-group-text">
-                        Wednesday
+                        Quarta
                         </span>
                       </div>
                       <div className="progress-group-bars">
                         <Progress className="progress-xs" color="info" value="12" />
-                        <Progress className="progress-xs" color="danger" value="67" />
+                        <Progress className="progress-xs" color="warning" value="67" />
                       </div>
                     </div>
                     <div className="progress-group mb-4">
                       <div className="progress-group-prepend">
                         <span className="progress-group-text">
-                        Thursday
+                        Quinta
                         </span>
                       </div>
                       <div className="progress-group-bars">
                         <Progress className="progress-xs" color="info" value="43" />
-                        <Progress className="progress-xs" color="danger" value="91" />
+                        <Progress className="progress-xs" color="warning" value="91" />
                       </div>
                     </div>
                     <div className="progress-group mb-4">
                       <div className="progress-group-prepend">
                         <span className="progress-group-text">
-                        Friday
+                        Sexta
                         </span>
                       </div>
                       <div className="progress-group-bars">
                         <Progress className="progress-xs" color="info" value="22" />
-                        <Progress className="progress-xs" color="danger" value="73" />
+                        <Progress className="progress-xs" color="warning" value="73" />
                       </div>
                     </div>
                     <div className="progress-group mb-4">
                       <div className="progress-group-prepend">
                         <span className="progress-group-text">
-                        Saturday
+                        Sábado
                         </span>
                       </div>
                       <div className="progress-group-bars">
                         <Progress className="progress-xs" color="info" value="53" />
-                        <Progress className="progress-xs" color="danger" value="82" />
+                        <Progress className="progress-xs" color="warning" value="82" />
                       </div>
                     </div>
                     <div className="progress-group mb-4">
                       <div className="progress-group-prepend">
                         <span className="progress-group-text">
-                        Sunday
+                        Domingo
                         </span>
                       </div>
                       <div className="progress-group-bars">
                         <Progress className="progress-xs" color="info" value="9" />
-                        <Progress className="progress-xs" color="danger" value="69" />
+                        <Progress className="progress-xs" color="warning" value="69" />
                       </div>
                     </div>
                     <div className="legend text-center">
                       <small>
                         <sup className="px-1"><Badge pill color="info">&nbsp;</Badge></sup>
-                        New clients
+                        Novos Clientes
                         &nbsp;
-                        <sup className="px-1"><Badge pill color="danger">&nbsp;</Badge></sup>
-                        Recurring clients
+                        <sup className="px-1"><Badge pill color="warning">&nbsp;</Badge></sup>
+                        Visualizações do dia
                       </small>
                     </div>
                   </Col>
@@ -803,9 +666,9 @@ class Dashboard extends Component {
                     <Row>
                       <Col sm="6">
                         <div className="callout callout-warning">
-                          <small className="text-muted">Pageviews</small>
+                          <small className="text-muted">Visualizações</small>
                           <br />
-                          <strong className="h4">78,623</strong>
+                          <strong className="h4">78.623</strong>
                           <div className="chart-wrapper">
                             <Line data={makeSparkLineData(2, brandWarning)} options={sparklineChartOpts} width={100} height={30} />
                           </div>
@@ -813,9 +676,9 @@ class Dashboard extends Component {
                       </Col>
                       <Col sm="6">
                         <div className="callout callout-success">
-                          <small className="text-muted">Organic</small>
+                          <small className="text-muted">Outros visitas</small>
                           <br />
-                          <strong className="h4">49,123</strong>
+                          <strong className="h4">49.123</strong>
                           <div className="chart-wrapper">
                             <Line data={makeSparkLineData(3, brandSuccess)} options={sparklineChartOpts} width={100} height={30} />
                           </div>
@@ -827,7 +690,7 @@ class Dashboard extends Component {
                       <div className="progress-group">
                         <div className="progress-group-header">
                           <i className="icon-user progress-group-icon"></i>
-                          <span className="title">Male</span>
+                          <span className="title">Homem</span>
                           <span className="ml-auto font-weight-bold">43%</span>
                         </div>
                         <div className="progress-group-bars">
@@ -837,7 +700,7 @@ class Dashboard extends Component {
                       <div className="progress-group mb-5">
                         <div className="progress-group-header">
                           <i className="icon-user-female progress-group-icon"></i>
-                          <span className="title">Female</span>
+                          <span className="title">Mulher</span>
                           <span className="ml-auto font-weight-bold">37%</span>
                         </div>
                         <div className="progress-group-bars">
@@ -847,7 +710,7 @@ class Dashboard extends Component {
                       <div className="progress-group">
                         <div className="progress-group-header">
                           <i className="icon-globe progress-group-icon"></i>
-                          <span className="title">Organic Search</span>
+                          <span className="title">Outros</span>
                           <span className="ml-auto font-weight-bold">191,235 <span className="text-muted small">(56%)</span></span>
                         </div>
                         <div className="progress-group-bars">
@@ -896,11 +759,11 @@ class Dashboard extends Component {
                   <thead className="thead-light">
                   <tr>
                     <th className="text-center"><i className="icon-people"></i></th>
-                    <th>User</th>
-                    <th className="text-center">Country</th>
+                    <th>Usuário</th>
+                    <th className="text-center">País</th>
                     <th>Usage</th>
-                    <th className="text-center">Payment Method</th>
-                    <th>Activity</th>
+                    <th className="text-center">Método de Pagamento</th>
+                    <th>Atividade</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -912,13 +775,13 @@ class Dashboard extends Component {
                       </div>
                     </td>
                     <td>
-                      <div>Yiorgos Avraamu</div>
+                      <div>Felipe Pedreli</div>
                       <div className="small text-muted">
                         <span>New</span> | Registered: Jan 1, 2015
                       </div>
                     </td>
                     <td className="text-center">
-                      <i className="flag-icon flag-icon-us h4 mb-0" title="us" id="us"></i>
+                      <i className="flag-icon flag-icon-br h4 mb-0" title="us" id="us"></i>
                     </td>
                     <td>
                       <div className="clearfix">
@@ -935,7 +798,7 @@ class Dashboard extends Component {
                       <i className="fa fa-cc-mastercard" style={{ fontSize: 24 + 'px' }}></i>
                     </td>
                     <td>
-                      <div className="small text-muted">Last login</div>
+                      <div className="small text-muted">Último Acesso</div>
                       <strong>10 sec ago</strong>
                     </td>
                   </tr>
@@ -947,7 +810,7 @@ class Dashboard extends Component {
                       </div>
                     </td>
                     <td>
-                      <div>Avram Tarasios</div>
+                      <div>Bruno</div>
                       <div className="small text-muted">
 
                         <span>Recurring</span> | Registered: Jan 1, 2015
@@ -971,7 +834,7 @@ class Dashboard extends Component {
                       <i className="fa fa-cc-visa" style={{ fontSize: 24 + 'px' }}></i>
                     </td>
                     <td>
-                      <div className="small text-muted">Last login</div>
+                      <div className="small text-muted">Último Acesso</div>
                       <strong>5 minutes ago</strong>
                     </td>
                   </tr>
@@ -983,13 +846,13 @@ class Dashboard extends Component {
                       </div>
                     </td>
                     <td>
-                      <div>Quintin Ed</div>
+                      <div>Gabriel</div>
                       <div className="small text-muted">
                         <span>New</span> | Registered: Jan 1, 2015
                       </div>
                     </td>
                     <td className="text-center">
-                      <i className="flag-icon flag-icon-in h4 mb-0" title="in" id="in"></i>
+                      <i className="flag-icon flag-icon-br h4 mb-0" title="in" id="in"></i>
                     </td>
                     <td>
                       <div className="clearfix">
@@ -1006,7 +869,7 @@ class Dashboard extends Component {
                       <i className="fa fa-cc-stripe" style={{ fontSize: 24 + 'px' }}></i>
                     </td>
                     <td>
-                      <div className="small text-muted">Last login</div>
+                      <div className="small text-muted">Último Acesso</div>
                       <strong>1 hour ago</strong>
                     </td>
                   </tr>
@@ -1018,13 +881,13 @@ class Dashboard extends Component {
                       </div>
                     </td>
                     <td>
-                      <div>Enéas Kwadwo</div>
+                      <div>Guilherme</div>
                       <div className="small text-muted">
                         <span>New</span> | Registered: Jan 1, 2015
                       </div>
                     </td>
                     <td className="text-center">
-                      <i className="flag-icon flag-icon-fr h4 mb-0" title="fr" id="fr"></i>
+                      <i className="flag-icon flag-icon-br h4 mb-0" title="fr" id="fr"></i>
                     </td>
                     <td>
                       <div className="clearfix">
@@ -1041,7 +904,7 @@ class Dashboard extends Component {
                       <i className="fa fa-paypal" style={{ fontSize: 24 + 'px' }}></i>
                     </td>
                     <td>
-                      <div className="small text-muted">Last login</div>
+                      <div className="small text-muted">Último Acesso</div>
                       <strong>Last month</strong>
                     </td>
                   </tr>
@@ -1053,13 +916,13 @@ class Dashboard extends Component {
                       </div>
                     </td>
                     <td>
-                      <div>Agapetus Tadeáš</div>
+                      <div>Jeferson</div>
                       <div className="small text-muted">
                         <span>New</span> | Registered: Jan 1, 2015
                       </div>
                     </td>
                     <td className="text-center">
-                      <i className="flag-icon flag-icon-es h4 mb-0" title="es" id="es"></i>
+                      <i className="flag-icon flag-icon-br h4 mb-0" title="es" id="es"></i>
                     </td>
                     <td>
                       <div className="clearfix">
@@ -1076,43 +939,8 @@ class Dashboard extends Component {
                       <i className="fa fa-google-wallet" style={{ fontSize: 24 + 'px' }}></i>
                     </td>
                     <td>
-                      <div className="small text-muted">Last login</div>
+                      <div className="small text-muted">Último Acesso</div>
                       <strong>Last week</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="text-center">
-                      <div className="avatar">
-                        <img src={'assets/img/avatars/6.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com" />
-                        <span className="avatar-status badge-danger"></span>
-                      </div>
-                    </td>
-                    <td>
-                      <div>Friderik Dávid</div>
-                      <div className="small text-muted">
-                        <span>New</span> | Registered: Jan 1, 2015
-                      </div>
-                    </td>
-                    <td className="text-center">
-                      <i className="flag-icon flag-icon-pl h4 mb-0" title="pl" id="pl"></i>
-                    </td>
-                    <td>
-                      <div className="clearfix">
-                        <div className="float-left">
-                          <strong>43%</strong>
-                        </div>
-                        <div className="float-right">
-                          <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                        </div>
-                      </div>
-                      <Progress className="progress-xs" color="success" value="43" />
-                    </td>
-                    <td className="text-center">
-                      <i className="fa fa-cc-amex" style={{ fontSize: 24 + 'px' }}></i>
-                    </td>
-                    <td>
-                      <div className="small text-muted">Last login</div>
-                      <strong>Yesterday</strong>
                     </td>
                   </tr>
                   </tbody>
