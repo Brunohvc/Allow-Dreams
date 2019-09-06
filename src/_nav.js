@@ -1,13 +1,18 @@
 export default {
   items: [
     {
-      name: 'Allow Dreams',
+      name: 'Dashboard',
       url: '/dashboard',
       icon: 'icon-globe',
       badge: {
         variant: 'info',
         text: 'NOVO',
       },
+    },
+    {
+      name: 'Home',
+      url: '/base/jumbotrons',
+      icon: 'icon-puzzle',
     },
     {
       title: true,
@@ -35,12 +40,7 @@ export default {
       name: 'Fotos',
     },
     {
-      name: 'Jumbotrons',
-      url: '/base/jumbotrons',
-      icon: 'icon-puzzle',
-    },
-    {
-      name: 'Carousels',
+      name: 'Álbuns',
       url: '/base/carousels',
       icon: 'icon-puzzle',
     },

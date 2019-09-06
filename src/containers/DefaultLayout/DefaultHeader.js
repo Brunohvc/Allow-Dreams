@@ -16,7 +16,6 @@ const defaultProps = {};
 class DefaultHeader extends Component {
   render() {
 
-    // eslint-disable-next-line
     const { children, ...attributes } = this.props;
 
     return (
@@ -30,16 +29,16 @@ class DefaultHeader extends Component {
 
         <Nav className="d-md-down-none" navbar>
           <NavItem className="px-3">
-            <NavLink to="/dashboard" className="nav-link" >Home</NavLink>
+            <NavLink to="/base/jumbotrons" className="nav-link" >Home</NavLink>
           </NavItem>
           <NavItem className="px-3">
             <Link to="/users" className="nav-link">Perfil</Link>
           </NavItem>
           <NavItem className="px-3">
-            <NavLink to="#" className="nav-link">Fotos</NavLink>
+            <NavLink to="/base/carousels" className="nav-link">Fotos</NavLink>
           </NavItem>
           <NavItem className="px-3">
-            <NavLink to="#" className="nav-link">Planos</NavLink>
+            <NavLink to="/base/forms" className="nav-link">Planos</NavLink>
           </NavItem>
         </Nav>
         <Nav className="ml-auto" navbar>
