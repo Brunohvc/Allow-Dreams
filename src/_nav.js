@@ -1,36 +1,52 @@
 export default {
   items: [
     {
-      name: 'Dashboard',
+      name: 'Allow Dreams',
       url: '/dashboard',
-      icon: 'icon-speedometer',
+      icon: 'icon-globe',
       badge: {
         variant: 'info',
-        text: 'NEW',
+        text: 'NOVO',
       },
     },
     {
       title: true,
-      name: 'Theme',
+      name: 'Usuário',
+    },
+    {
+      name: 'Páginas',
+      url: '/pages',
+      icon: 'icon-layers',
+      children: [
+        {
+          name: 'Entrar',
+          url: '/login',
+          icon: 'icon-check',
+        },
+        {
+          name: 'Registrar-se',
+          url: '/register',
+          icon: 'icon-user',
+        },
+      ],
+    },
+    {
+      title: true,
+      name: 'Temas',
       wrapper: {            // optional wrapper object
         element: '',        // required valid HTML5 element tag
         attributes: {}        // optional valid JS object with JS API naming ex: { className: "my-class", style: { fontFamily: "Verdana" }, id: "my-id"}
       },
-      class: ''             // optional class names space delimited list for title item ex: "text-center"
+      class: ''             
     },
     {
-      name: 'Colors',
+      name: 'Cores',
       url: '/theme/colors',
       icon: 'icon-drop',
     },
     {
-      name: 'Typography',
-      url: '/theme/typography',
-      icon: 'icon-pencil',
-    },
-    {
       title: true,
-      name: 'Components',
+      name: 'Outros',
       wrapper: {
         element: '',
         attributes: {},
@@ -124,7 +140,7 @@ export default {
       ],
     },
     {
-      name: 'Buttons',
+      name: 'Botões',
       url: '/buttons',
       icon: 'icon-cursor',
       children: [
@@ -151,12 +167,7 @@ export default {
       ],
     },
     {
-      name: 'Charts',
-      url: '/charts',
-      icon: 'icon-pie-chart',
-    },
-    {
-      name: 'Icons',
+      name: 'Icones',
       url: '/icons',
       icon: 'icon-star',
       children: [
@@ -191,7 +202,7 @@ export default {
       ],
     },
     {
-      name: 'Notifications',
+      name: 'Notificações',
       url: '/notifications',
       icon: 'icon-bell',
       children: [
@@ -213,68 +224,12 @@ export default {
       ],
     },
     {
-      name: 'Widgets',
+      name: 'Visões',
       url: '/widgets',
       icon: 'icon-calculator',
-      badge: {
-        variant: 'info',
-        text: 'NEW',
-      },
     },
     {
       divider: true,
-    },
-    {
-      title: true,
-      name: 'Extras',
-    },
-    {
-      name: 'Pages',
-      url: '/pages',
-      icon: 'icon-star',
-      children: [
-        {
-          name: 'Login',
-          url: '/login',
-          icon: 'icon-star',
-        },
-        {
-          name: 'Register',
-          url: '/register',
-          icon: 'icon-star',
-        },
-        {
-          name: 'Error 404',
-          url: '/404',
-          icon: 'icon-star',
-        },
-        {
-          name: 'Error 500',
-          url: '/500',
-          icon: 'icon-star',
-        },
-      ],
-    },
-    {
-      name: 'Disabled',
-      url: '/dashboard',
-      icon: 'icon-ban',
-      attributes: { disabled: true },
-    },
-    {
-      name: 'Download CoreUI',
-      url: 'https://coreui.io/react/',
-      icon: 'icon-cloud-download',
-      class: 'mt-auto',
-      variant: 'success',
-      attributes: { target: '_blank', rel: "noopener" },
-    },
-    {
-      name: 'Try CoreUI PRO',
-      url: 'https://coreui.io/pro/react/',
-      icon: 'icon-layers',
-      variant: 'danger',
-      attributes: { target: '_blank', rel: "noopener" },
     },
   ],
 };
