@@ -1,15 +1,6 @@
 export default {
   items: [
     {
-      name: 'Dashboard',
-      url: '/dashboard',
-      icon: 'icon-globe',
-      badge: {
-        variant: 'info',
-        text: 'NOVO',
-      },
-    },
-    {
       name: 'Home',
       url: '/base/jumbotrons',
       icon: 'icon-puzzle',
@@ -211,6 +202,15 @@ export default {
       name: 'Visões',
       url: '/widgets',
       icon: 'icon-calculator',
+    },
+    {
+      name: 'Dashboard',
+      url: '/dashboard',
+      icon: 'icon-globe',
+      badge: {
+        variant: 'info',
+        text: 'NOVO',
+      },
     },
     {
       divider: true,
