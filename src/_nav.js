@@ -2,7 +2,7 @@ export default {
   items: [
     {
       name: 'Home',
-      url: '/base/jumbotrons',
+      url: '/home',
       icon: 'icon-puzzle',
     },
     {
