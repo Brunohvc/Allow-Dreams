@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { AppSwitch } from '@coreui/react'
+import { Link } from 'react-router-dom';
 import {
   Card,
   CardBody,
@@ -8,6 +10,8 @@ import {
   Input,
   Label,
   Row,
+  Button,
+  Jumbotron,
 } from 'reactstrap';
 
 class Forms extends Component {
@@ -100,6 +104,19 @@ class Forms extends Component {
                       <Label htmlFor="cvv">CVV/CVC</Label>
                       <Input type="text" id="cvv" placeholder="123" required />
                     </FormGroup>
+                  </Col>
+                  <Col>
+                  <Card>
+                    <CardHeader>
+                      Você confirma a compra deste plano?
+                    </CardHeader>
+                    <CardBody>
+                      <AppSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked label dataOn={'\u2713'} dataOff={'\u2715'} />
+                    </CardBody>
+                  </Card>
+                  <Link to="/base/forms">
+                      <Button color="success" active tabIndex={-1}>Confirmar Pagamento!</Button>
+                    </Link>
                   </Col>
                 </Row>
               </CardBody>
