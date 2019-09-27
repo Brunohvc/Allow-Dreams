@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { Button, Card, CardBody, CardHeader, Col, Container, Jumbotron, Row } from 'reactstrap';
 
 class Planos extends Component {
@@ -10,17 +11,18 @@ class Planos extends Component {
           <Col>
             <Card>
               <CardHeader>
-                <i className="fa fa-align-justify"></i><strong>Planos: Felipe</strong>
+                <i className="fa fa-align-justify"></i><strong>Básico</strong>
               </CardHeader>
               <CardBody>
                 <Jumbotron>
-                  <h1 className="display-3">Post 1!</h1>
-                  <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra
-                    attention to featured content or information.</p>
+                  <h1 className="display-3">R$49</h1>
+                  <p className="lead">Definir plano 1</p>
                   <hr className="my-2" />
                   <p>It uses utility classes for typgraphy and spacing to space content out within the larger container.</p>
                   <p className="lead">
-                    <Button color="primary">Detalhes</Button>
+                    <Link to="/base/forms">
+                      <Button color="success" active tabIndex={-1}>Adquirir agora!</Button>
+                    </Link>
                   </p>
                 </Jumbotron>
               </CardBody>
@@ -30,17 +32,18 @@ class Planos extends Component {
           <Col>
             <Card>
               <CardHeader>
-                <i className="fa fa-align-justify"></i><strong>Autor: Bruno</strong>
+                <i className="fa fa-align-justify"></i><strong>Intermediário</strong>
               </CardHeader>
               <CardBody>
                 <Jumbotron>
-                  <h1 className="display-3">Post 2!</h1>
-                  <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra
-                    attention to featured content or information.</p>
+                  <h1 className="display-3">R$99</h1>
+                  <p className="lead">Definir plano 2</p>
                   <hr className="my-2" />
                   <p>It uses utility classes for typgraphy and spacing to space content out within the larger container.</p>
                   <p className="lead">
-                    <Button color="primary">Detalhes</Button>
+                    <Link to="/base/forms">
+                      <Button color="success" active tabIndex={-1}>Adquirir agora!</Button>
+                    </Link>
                   </p>
                 </Jumbotron>
               </CardBody>
@@ -50,17 +53,18 @@ class Planos extends Component {
           <Col>
             <Card>
               <CardHeader>
-                <i className="fa fa-align-justify"></i><strong>Autor: Guilherme</strong>
+                <i className="fa fa-align-justify"></i><strong>Premium</strong>
               </CardHeader>
               <CardBody>
                 <Jumbotron>
-                  <h1 className="display-3">Post 3!</h1>
-                  <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra
-                    attention to featured content or information.</p>
+                  <h1 className="display-3">R$199</h1>
+                  <p className="lead">Definir plano 3</p>
                   <hr className="my-2" />
                   <p>It uses utility classes for typgraphy and spacing to space content out within the larger container.</p>
                   <p className="lead">
-                    <Button color="primary">Detalhes</Button>
+                    <Link to="/base/forms">
+                      <Button color="success" active tabIndex={-1}>Adquirir agora!</Button>
+                    </Link>
                   </p>
                 </Jumbotron>
               </CardBody>
