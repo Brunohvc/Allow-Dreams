@@ -11,7 +11,6 @@ import {
   Label,
   Row,
   Button,
-  Jumbotron,
 } from 'reactstrap';
 
 class Forms extends Component {
