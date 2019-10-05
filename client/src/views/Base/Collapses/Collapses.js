@@ -127,6 +127,15 @@ class Collapses extends Component {
               </CardFooter>
             </Card>
           </Col>
+
+
+
+
+
+
+
+
+
           <Col xl="6">
             <Card>
               <CardHeader>
@@ -224,6 +233,9 @@ class Collapses extends Component {
               </CardBody>
             </Card>
           </Col>
+
+
+          
         </Row>
       </div>
     );
