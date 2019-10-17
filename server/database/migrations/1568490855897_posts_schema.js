@@ -7,11 +7,14 @@ class PostsSchema extends Schema {
   up () {
     this.create('posts', (table) => {
       table.increments()
+      table.string('title')
+      table.string('description')
       table.text('post_content').notNullable()
-      table.string('status').notNullable()
-      // table.morphs('photoable')
+      table.boolean('status').defaultTo(true)
       table.integer('group_id').unsigned().references('id').inTable('groups')
       table.integer('user_id').unsigned().references('id').inTable('users')
+      table.enum('type',['post,share'])
+      table.integer('references_id')
     })
   }
 

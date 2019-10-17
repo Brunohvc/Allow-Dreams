@@ -9,7 +9,7 @@ class FollowersSchema extends Schema {
       table.increments()
       table.integer('user_id_follower').unsigned().references('id').inTable('users')
       table.integer('user_id_followed_by').unsigned().references('id').inTable('users')
-      table.enum('status',['request', 'deny', 'accept'])
+      table.enum('status',['request', 'deny', 'accept','block'])
       table.timestamps()
     })
   }

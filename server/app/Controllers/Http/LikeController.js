@@ -41,6 +41,16 @@ class LikeController {
    * @param {Response} ctx.response
    */
   async store ({ request, response }) {
+      let like = new Like()
+
+      like.user_id = request.input('user_id')
+      like.group_id = request.input('group_id')
+      like.comment_id = request.input('comment_id')
+      like.post_id = request.input('post_id')
+
+      like.save()
+
+      response.json(like)
   }
 
   /**
@@ -53,6 +63,8 @@ class LikeController {
    * @param {View} ctx.view
    */
   async show ({ params, request, response, view }) {
+    let like = await Like.query('id',params.id).fetch()
+    response.json(like)
   }
 
   /**
@@ -76,6 +88,14 @@ class LikeController {
    * @param {Response} ctx.response
    */
   async update ({ params, request, response }) {
+    let like = await Like.find(params.id)
+
+    like.user_id = request.input('user_id')
+    like.group_id = request.input('group_id')
+    like.comment_id = request.input('comment_id')
+    like.post_id = request.input('post_id')
+
+    return response.json(like)
   }
 
   /**
@@ -86,7 +106,9 @@ class LikeController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async destroy ({ params, request, response }) {
+  async destroy ({ params, response }) {
+    Like.find(params.id).delete()
+    return response.json({message: 'Like deleted'})
   }
 }
 

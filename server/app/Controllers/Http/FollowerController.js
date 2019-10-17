@@ -41,6 +41,14 @@ class FollowerController {
    * @param {Response} ctx.response
    */
   async store ({ request, response }) {
+    const follower = new Follower()
+    follower.user_id_follower = request.input('user_id_follower')
+    follower.user_id_followed_id = request.input('user_id_followed_id')
+    follower.status = request.input('status')
+
+    follower.save()
+
+    return response.json(follower)
   }
 
   /**
@@ -52,7 +60,9 @@ class FollowerController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async show ({ params, request, response, view }) {
+  async show ({ params, response }) {
+    let follower = await Follower.query('id', params.id).fetch()
+    return response.json(follower)
   }
 
   /**
@@ -76,6 +86,13 @@ class FollowerController {
    * @param {Response} ctx.response
    */
   async update ({ params, request, response }) {
+    let follower = await Follower.find(params.id)
+
+    follower.user_id_follower = request.input('user_id_follower')
+    follower.user_id_followed_id = request.input('user_id_followed_id')
+    follower.status = request.input('status')
+
+    return response.json(follower)
   }
 
   /**
@@ -86,7 +103,11 @@ class FollowerController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async destroy ({ params, request, response }) {
+  async destroy ({ params, response }) {
+    let follower = await Follower.find(params.id)
+
+    follower.status = 'deny';
+    return response.json({messsage: 'Follower deleted!'})
   }
 }
 

@@ -9,6 +9,8 @@ class CommentsSchema extends Schema {
       table.increments()
       table.text('comment_content').notNullable()
       table.integer('post_id').unsigned().references('id').inTable('posts')
+      table.integer('user_id').unsigned().references('id').inTable('users')
+      table.integer('comment_id')
       table.timestamps()
     })
   }

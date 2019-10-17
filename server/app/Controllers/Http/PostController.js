@@ -29,7 +29,7 @@ class PostController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async create ({ request, response, view }) {
+  async create ({ request, response }) {
   }
 
   /**
@@ -41,6 +41,18 @@ class PostController {
    * @param {Response} ctx.response
    */
   async store ({ request, response }) {
+    const post = new Post();
+    post.title = request.input('title')
+    post.description = request.input('description')
+    post.post_content = request.input('post_content')
+    post.group_id = request.input('group_id')
+    post.user_id = request.input('user_id')
+    post.type = request.input('type')
+    post.references_id = request.input('references_id')
+
+    post.save()
+
+    return response.json(post)
   }
 
   /**
@@ -53,6 +65,8 @@ class PostController {
    * @param {View} ctx.view
    */
   async show ({ params, request, response, view }) {
+    let post = await Post.query('id', params.id).fetch()
+    return response.json(post)
   }
 
   /**
@@ -76,6 +90,17 @@ class PostController {
    * @param {Response} ctx.response
    */
   async update ({ params, request, response }) {
+    let post = await Post.find(param.id)
+
+    post.title = request.input('title')
+    post.description = request.input('description')
+    post.post_content = request.input('post_content')
+    post.group_id = request.input('group_id')
+    post.user_id = request.input('user_id')
+    post.type = request.input('type')
+    post.references_id = request.input('references_id')
+
+    return response.json(post)
   }
 
   /**
@@ -87,6 +112,11 @@ class PostController {
    * @param {Response} ctx.response
    */
   async destroy ({ params, request, response }) {
+    let post = await Post.find(params.id)
+
+    post.status = false
+
+    return response.json({message: 'Post deleted!'})
   }
 }
 
