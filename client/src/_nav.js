@@ -156,11 +156,6 @@ export default {
           },
         },
         {
-          name: 'Flags',
-          url: '/icons/flags',
-          icon: 'icon-star',
-        },
-        {
           name: 'Font Awesome',
           url: '/icons/font-awesome',
           icon: 'icon-star',
