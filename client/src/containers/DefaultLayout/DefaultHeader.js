@@ -38,7 +38,7 @@ class DefaultHeader extends Component {
             <NavLink to="/base/carousels" className="nav-link">Fotos</NavLink>
           </NavItem>
           <NavItem className="px-3">
-            <NavLink to="/base/forms" className="nav-link">Planos</NavLink>
+            <NavLink to="/base/planos" className="nav-link">Planos</NavLink>
           </NavItem>
         </Nav>
         <Nav className="ml-auto" navbar>

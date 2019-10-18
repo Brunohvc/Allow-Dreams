@@ -35,9 +35,15 @@ class AppFooter extends Component {
     delete attributes.fixed
 
     const classes = classNames(className, 'app-footer');
+    const style = {
+      position: fixed,
+      bottom: '0px',
+      width: '100%',
+      height: '2.5rem'
+    }
 
     return (
-      <Tag className={classes} {...attributes}>
+      <Tag className={classes} {...attributes} style={[style]}>
         {children}
       </Tag>
     );
