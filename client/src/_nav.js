@@ -177,33 +177,6 @@ export default {
       ],
     },
     {
-      name: 'Notificações',
-      url: '/notifications',
-      icon: 'icon-bell',
-      children: [
-        {
-          name: 'Alerts',
-          url: '/notifications/alerts',
-          icon: 'icon-bell',
-        },
-        {
-          name: 'Badges',
-          url: '/notifications/badges',
-          icon: 'icon-bell',
-        },
-        {
-          name: 'Modals',
-          url: '/notifications/modals',
-          icon: 'icon-bell',
-        },
-      ],
-    },
-    {
-      name: 'Visões',
-      url: '/widgets',
-      icon: 'icon-calculator',
-    },
-    {
       name: 'Dashboard',
       url: '/dashboard',
       icon: 'icon-globe',
