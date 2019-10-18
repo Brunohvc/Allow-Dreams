@@ -152,7 +152,6 @@ export default {
           icon: 'icon-star',
           badge: {
             variant: 'info',
-            text: 'NEW',
           },
         },
         {
@@ -170,15 +169,6 @@ export default {
           icon: 'icon-star',
         },
       ],
-    },
-    {
-      name: 'Dashboard',
-      url: '/dashboard',
-      icon: 'icon-globe',
-      badge: {
-        variant: 'info',
-        text: 'NOVO',
-      },
     },
     {
       divider: true,

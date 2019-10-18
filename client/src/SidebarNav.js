@@ -21,8 +21,8 @@ const defaultProps = {
   navConfig: {
     items: [
       {
-        name: 'Dashboard',
-        url: '/dashboard',
+        name: 'Home',
+        url: '/home',
         icon: 'icon-speedometer',
         badge: { variant: 'info', text: 'NEW' }
       }]
