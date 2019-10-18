@@ -24,8 +24,19 @@ Route.get('/', () => {
 
 Route.group(() => {
 
-  Route.resource('users', 'UserController')
+  Route.resource('additional', 'AdditionalController')
+  Route.resource('benefits', 'BenefitController')
+  Route.resource('comments', 'CommentController')
+  Route.resource('curriculums', 'CurriculumController')
+  Route.resource('followers', 'FollowerController')
+  Route.resource('galleries', 'GalleryController')
+  Route.resource('groups', 'GroupController')
+  Route.resource('images', 'ImageController')
+  Route.resource('invoices', 'InvoiceController')
+  Route.resource('likes', 'LikeController')
   Route.resource('plans', 'PlanController')
-  Route.resource('plans', 'CommentController')
+  Route.resource('post', 'postController')
+  Route.resource('settings', 'SettingController')
+  Route.resource('users', 'UserController')
   
 }).prefix('api/v1')
