@@ -1823,10 +1823,6 @@ class FontAwesome extends Component {
               </Col>
 
               <Col xs="6" sm="4" md="3" lg="2">
-                <i className="fa fa-users fa-lg mt-4"></i><br />users
-              </Col>
-
-              <Col xs="6" sm="4" md="3" lg="2">
                 <i className="fa fa-video-camera fa-lg mt-4"></i><br />video-camera
               </Col>
 
