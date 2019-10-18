@@ -10,7 +10,6 @@ class PlansSchema extends Schema {
       table.string('name').notNullable()
       table.string('value').notNullable()
       table.text('description').notNullable()
-      table.text('benefits').nullable()
       table.boolean('status').defaultTo(true)
       table.timestamps()
     })

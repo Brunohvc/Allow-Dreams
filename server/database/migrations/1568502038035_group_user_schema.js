@@ -9,7 +9,7 @@ class GroupUserSchema extends Schema {
       table.increments()
       table.integer('user_id').unsigned().references('id').inTable('users')
       table.integer('group_id').unsigned().references('id').inTable('groups')
-      table.enum('acesss_level',['admin','user'])
+      table.enum('acess_level',['admin','user'])
       table.timestamps()
     })
   }

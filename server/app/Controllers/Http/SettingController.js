@@ -41,6 +41,14 @@ class SettingController {
    * @param {Response} ctx.response
    */
   async store ({ request, response }) {
+    const setting = new Settings()
+    setting.language = request.input('language')
+    setting.theme = request.input('theme')
+    setting.user_id = request.input('user_id')
+
+    await setting.save();
+
+    return response.json(setting);
   }
 
   /**
@@ -53,6 +61,8 @@ class SettingController {
    * @param {View} ctx.view
    */
   async show ({ params, request, response, view }) {
+    let setting = await Setting.query('id',params.id).fetch()
+    return response.json(setting)
   }
 
   /**
@@ -76,6 +86,13 @@ class SettingController {
    * @param {Response} ctx.response
    */
   async update ({ params, request, response }) {
+
+    let setting = await Setting.find(param.id)
+
+    setting.language = request.input('language')
+    setting.theme = request.input('theme')
+
+    return response.json(setting)
   }
 
   /**
@@ -86,7 +103,12 @@ class SettingController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async destroy ({ params, request, response }) {
+  async destroy ({ params, response }) {
+    let setting = await Setting.find(params.id)
+
+    setting.status = false
+
+    return response.json({message: 'Contact deleted!'})
   }
 }
 
