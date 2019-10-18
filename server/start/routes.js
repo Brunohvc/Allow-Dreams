@@ -20,8 +20,12 @@ Route.get('/', () => {
   return { greeting: 'Hello world in JSON' }
 })
 
-Route.put('/api/users/:id', 'UserController.update')
-Route.delete('/api/users/id', 'UserController.destroy')
-Route.post('/api/users', 'UserController.store')
-Route.get('/api/users', 'UserController.index') 
-Route.get('/api/users/:id', 'UserController.show')
+
+
+Route.group(() => {
+
+  Route.resource('users', 'UserController')
+  Route.resource('plans', 'PlanController')
+  Route.resource('plans', 'CommentController')
+  
+}).prefix('api/v1')

@@ -4,6 +4,8 @@
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
+const Group = use('App/Models/Group')
+
 /**
  * Resourceful controller for interacting with groups
  */

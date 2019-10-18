@@ -4,6 +4,8 @@
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
+const Follower = use('App/Models/Follower')
+
 /**
  * Resourceful controller for interacting with followers
  */

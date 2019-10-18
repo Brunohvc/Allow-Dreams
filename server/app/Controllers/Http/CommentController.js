@@ -4,6 +4,8 @@
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
+const Comment = use ('App/Models/Comment')
+
 /**
  * Resourceful controller for interacting with comments
  */

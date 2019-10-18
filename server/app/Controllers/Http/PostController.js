@@ -4,6 +4,8 @@
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
+const Post = use('App/Models/Post')
+
 /**
  * Resourceful controller for interacting with posts
  */

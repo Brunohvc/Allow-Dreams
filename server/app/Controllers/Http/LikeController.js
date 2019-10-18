@@ -4,6 +4,8 @@
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
+const Like = use('App/Models/Like')
+
 /**
  * Resourceful controller for interacting with likes
  */
