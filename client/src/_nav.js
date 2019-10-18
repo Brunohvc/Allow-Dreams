@@ -6,10 +6,6 @@ export default {
       icon: 'icon-puzzle',
     },
     {
-      title: true,
-      name: 'Perfil',
-    },
-    {
       name: 'Páginas',
       url: '/pages',
       icon: 'icon-layers',
