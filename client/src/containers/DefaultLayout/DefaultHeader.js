@@ -51,8 +51,7 @@ class DefaultHeader extends Component {
             </DropdownToggle>
             <DropdownMenu right>
               <DropdownItem header tag="div" className="text-center"><strong>Perfil</strong></DropdownItem>
-              <DropdownItem><i className="fa fa-envelope-o"></i> Mensagens<Badge color="success">42</Badge></DropdownItem>
-              <DropdownItem><i className="fa fa-comments"></i> Comentários<Badge color="warning">42</Badge></DropdownItem>
+              <DropdownItem><i className="fa fa-envelope-o"></i> Mensagens<Badge color="success">2</Badge></DropdownItem>
               <DropdownItem header tag="div" className="text-center"><strong>Configurações</strong></DropdownItem>
               <DropdownItem><i className="fa fa-user"></i> Meu Perfil</DropdownItem>
               <DropdownItem><i className="fa fa-wrench"></i> Ajustes</DropdownItem>
