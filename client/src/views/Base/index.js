@@ -4,7 +4,7 @@ import Carousels from './Carousels';
 import Collapses from './Collapses';
 import Dropdowns from './Dropdowns';
 import Forms from './Forms';
-import Jumbotrons from './Jumbotrons';
+import Home from './Home';
 import ListGroups from './ListGroups';
 import Navbars from './Navbars';
 import Navs from './Navs';
@@ -17,6 +17,6 @@ import Tabs from './Tabs';
 import Tooltips from './Tooltips';
 
 export {
-  Breadcrumbs, Cards, Carousels, Collapses, Dropdowns, Forms, Jumbotrons, ListGroups, Navbars, Navs, Popovers, ProgressBar, Switches, Tables, Tabs, Tooltips, Paginations
+  Breadcrumbs, Cards, Carousels, Collapses, Dropdowns, Forms, Home, ListGroups, Navbars, Navs, Popovers, ProgressBar, Switches, Tables, Tabs, Tooltips, Paginations
 };
 
