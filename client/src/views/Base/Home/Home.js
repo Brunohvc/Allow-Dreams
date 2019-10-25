@@ -1,11 +1,27 @@
 import React, { Component } from 'react';
-import { Button, Card, CardBody, CardHeader, Col, Container, Jumbotron, Row } from 'reactstrap';
+import { Button, Card, CardBody, CardHeader, Col, Jumbotron, Row } from 'reactstrap';
+import { Editor } from 'react-draft-wysiwyg';
+import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 class Home extends Component {
 
   render() {
     return (
       <div className="animated fadeIn">
+        <Card>
+          <CardHeader>
+            <i className="fa fa-align-justify"></i><strong>Novo Post</strong>
+          </CardHeader>
+            <CardBody>
+              <Editor
+                //editorState={editorState}
+                toolbarClassName="toolbarClassName"
+                wrapperClassName="wrapperClassName"
+                editorClassName="editorClassName"
+                onEditorStateChange={this.onEditorStateChange}
+              />
+            </CardBody>
+        </Card>
         <Row>
           <Col>
             <Card>
