@@ -8,7 +8,7 @@ class CurriculumsSchema extends Schema {
     this.create('curriculums', (table) => {
       table.increments()
       table.string('path')
-      table.integer('additional_id').unsigned().references('id').inTable('additionals')
+      table.integer('user_id').unsigned().references('id').inTable('users')
       table.timestamps()
     })
   }

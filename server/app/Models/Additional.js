@@ -4,6 +4,11 @@
 const Model = use('Model')
 
 class Additional extends Model {
+
+    additional () {
+        return this.belongsTo('App/Models/User')
+    }
+
 }
 
 module.exports = Additional

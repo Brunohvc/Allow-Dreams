@@ -8,7 +8,6 @@ class LikesSchema extends Schema {
     this.create('likes', (table) => {
       table.increments()
       table.integer('user_id').unsigned().references('id').inTable('users')
-      table.integer('group_id').unsigned().references('id').inTable('groups').nullable()
       table.integer('comment_id').unsigned().references('id').inTable('comments').nullable()
       table.integer('post_id').unsigned().references('id').inTable('posts').nullable()
       table.timestamps()

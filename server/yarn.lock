@@ -170,13 +170,6 @@ acorn@^7.0.0:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-7.0.0.tgz#26b8d1cd9a9b700350b71c0905546f64d1284e7a"
   integrity sha512-PaF/MduxijYYt7unVGRuds1vBC9bFxbNf+VWqhOClfdgy7RlVkQqt610ig1/yxTgsDIfW1cWDel5EBbOy3jdtQ==
 
-adonis-lucid-polymorphic@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/adonis-lucid-polymorphic/-/adonis-lucid-polymorphic-1.0.1.tgz#fc40295dc849e48e4dd41a1e9c02bdfcd86548b9"
-  integrity sha512-nluOZooJXrjZl+msylyAo29JfP4/JrpIZgE9RX42lJHVbdPnGoHG9schRhP7+u7Aj/0BqLDWFNv6QlkF7B1lGw==
-  dependencies:
-    lodash "^4.17.11"
-
 ansi-bgblack@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/ansi-bgblack/-/ansi-bgblack-0.1.1.tgz#a68ba5007887701b6aafbe3fa0dadfdfa8ee3ca2"

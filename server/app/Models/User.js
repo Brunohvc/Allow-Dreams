@@ -38,7 +38,40 @@ class User extends Model {
   setting () {
     return this.hasOne('App/Models/Setting')
   }
+
+  plan () {
+    return this.hasOne('App/Models/Plan')
+  }
+
+  posts () {
+    return this.hasMany('App/Models/Post')
+  }
+
+  groups () {
+    return this.hasMany('App/Models/Group')
+  }
   
+  comment () {
+    return this.hasMany('App/Models/Comment')
+  }
+  
+  like () {
+    return this.hasMany('App/Models/Like')
+  }
+
+  galleries () {
+    return this.hasMany('App/Models/Gallery')
+  }
+
+  images () {
+    return this.hasMany('App/Models/Image')
+  }
+
+  additional () {
+    return this.hasOne('App/Models/Additional')
+  }
+
+
 }
 
 module.exports = User
