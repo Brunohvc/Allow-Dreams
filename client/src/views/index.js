@@ -18,7 +18,6 @@ import {
   Tooltips,
 } from './Base';
 
-import { ButtonDropdowns, ButtonGroups, Buttons, BrandButtons } from './Buttons';
 import Charts from './Charts';
 import { Alerts, Badges, Modals } from './Notifications';
 import { Login, Page404, Page500, Register } from './Pages';
@@ -34,10 +33,6 @@ export {
   Login,
   Modals,
   Alerts,
-  ButtonDropdowns,
-  ButtonGroups,
-  BrandButtons,
-  Buttons,
   Tooltips,
   Tabs,
   Tables,
