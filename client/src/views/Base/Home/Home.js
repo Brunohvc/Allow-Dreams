@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Card, CardBody, CardHeader, Col, Jumbotron, Row } from 'reactstrap';
+import { Button, Card, CardBody, CardHeader, Col, Jumbotron, Row, CardFooter, } from 'reactstrap';
 import { Editor } from 'react-draft-wysiwyg';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
@@ -21,6 +21,9 @@ class Home extends Component {
                 onEditorStateChange={this.onEditorStateChange}
               />
             </CardBody>
+            <CardFooter>
+              <Button color="primary" onClick={this.toggleFade} id="publicacao">Publicar</Button>
+            </CardFooter>
         </Card>
 
           <Row>
