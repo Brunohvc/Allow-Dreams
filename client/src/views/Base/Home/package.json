@@ -1,6 +1,6 @@
 {
-  "name": "Flags",
+  "name": "Home",
   "version": "0.0.0",
   "private": true,
-  "main": "./Flags.js"
+  "main": "./Home.js"
 }

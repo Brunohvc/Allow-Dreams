@@ -6,10 +6,6 @@ export default {
       icon: 'icon-puzzle',
     },
     {
-      title: true,
-      name: 'Perfil',
-    },
-    {
       name: 'Páginas',
       url: '/pages',
       icon: 'icon-layers',
@@ -113,104 +109,6 @@ export default {
           icon: 'icon-puzzle',
         },
       ],
-    },
-    {
-      name: 'Botões',
-      url: '/buttons',
-      icon: 'icon-cursor',
-      children: [
-        {
-          name: 'Buttons',
-          url: '/buttons/buttons',
-          icon: 'icon-cursor',
-        },
-        {
-          name: 'Button dropdowns',
-          url: '/buttons/button-dropdowns',
-          icon: 'icon-cursor',
-        },
-        {
-          name: 'Button groups',
-          url: '/buttons/button-groups',
-          icon: 'icon-cursor',
-        },
-        {
-          name: 'Brand Buttons',
-          url: '/buttons/brand-buttons',
-          icon: 'icon-cursor',
-        },
-      ],
-    },
-    {
-      name: 'Icones',
-      url: '/icons',
-      icon: 'icon-star',
-      children: [
-        {
-          name: 'CoreUI Icons',
-          url: '/icons/coreui-icons',
-          icon: 'icon-star',
-          badge: {
-            variant: 'info',
-            text: 'NEW',
-          },
-        },
-        {
-          name: 'Flags',
-          url: '/icons/flags',
-          icon: 'icon-star',
-        },
-        {
-          name: 'Font Awesome',
-          url: '/icons/font-awesome',
-          icon: 'icon-star',
-          badge: {
-            variant: 'secondary',
-            text: '4.7',
-          },
-        },
-        {
-          name: 'Simple Line Icons',
-          url: '/icons/simple-line-icons',
-          icon: 'icon-star',
-        },
-      ],
-    },
-    {
-      name: 'Notificações',
-      url: '/notifications',
-      icon: 'icon-bell',
-      children: [
-        {
-          name: 'Alerts',
-          url: '/notifications/alerts',
-          icon: 'icon-bell',
-        },
-        {
-          name: 'Badges',
-          url: '/notifications/badges',
-          icon: 'icon-bell',
-        },
-        {
-          name: 'Modals',
-          url: '/notifications/modals',
-          icon: 'icon-bell',
-        },
-      ],
-    },
-    {
-      name: 'Visões',
-      url: '/widgets',
-      icon: 'icon-calculator',
-    },
-    {
-      name: 'Dashboard',
-      url: '/dashboard',
-      icon: 'icon-globe',
-      badge: {
-        variant: 'info',
-        text: 'NOVO',
-      },
     },
     {
       divider: true,

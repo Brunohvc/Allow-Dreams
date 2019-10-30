@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Flags from './Flags';
+import Home from './Home';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Flags />, div);
+  ReactDOM.render(<Home />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
