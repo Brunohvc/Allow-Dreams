@@ -3,29 +3,6 @@
 const Curriculum = use('App/Models/Curriculum')
 
 class CurriculumController {
-  /**
-  * Show a list of all curriculums.
-  * GET curriculums
-  *
-  * @param {object} ctx
-  * @param {Request} ctx.request
-  * @param {Response} ctx.response
-  * @param {View} ctx.view
-  */
-  async index ({ request, response, view }) {
-  }
-  
-  /**
-  * Render a form to be used for creating a new curriculum.
-  * GET curriculums/create
-  *
-  * @param {object} ctx
-  * @param {Request} ctx.request
-  * @param {Response} ctx.response
-  * @param {View} ctx.view
-  */
-  async create ({ request, response, view }) {
-  }
   
   /**
   * Create/save a new curriculum.
@@ -57,18 +34,6 @@ class CurriculumController {
   async show ({ params, response }) {
     let curriculum = await Curriculum.query('id', params.id).fetch()
     return response.json(curriculum)
-  }
-  
-  /**
-  * Render a form to update an existing curriculum.
-  * GET curriculums/:id/edit
-  *
-  * @param {object} ctx
-  * @param {Request} ctx.request
-  * @param {Response} ctx.response
-  * @param {View} ctx.view
-  */
-  async edit ({ params, request, response, view }) {
   }
   
   /**

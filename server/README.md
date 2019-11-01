@@ -1,18 +1,30 @@
 # API Allow Dreams
-
   
 
 ## Setup
+
+don't forget to make a .env file using the .env.example
+
+How generate a key
+```bash
+1. $ adonis key:generate
+```
 
 You will need to have adonis command-cli
 ```bash
 1. $ npm i -g @adonisjs/cli
 
-2. $ adonis new yardstick
+```
 
-3. $ cd yardstick
+You will need has a database on mysql after configure the .env, run the migrate
 
-4. $ adonis serve --dev
+```bash
+1. $ adonis run:migrate
+```
+
+For run the server do:
+```bash
+1. $ adonis serve --dev
 ```
 
 ## AdonisJS
