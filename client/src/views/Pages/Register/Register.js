@@ -2,6 +2,19 @@ import React, { Component } from 'react';
 import { Button, Card, CardBody, CardFooter, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
 
 class Register extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {value: ''};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
   render() {
     return (
       <div className="app flex-row align-items-center">
@@ -10,7 +23,7 @@ class Register extends Component {
             <Col md="9" lg="7" xl="6">
               <Card className="mx-4">
                 <CardBody className="p-4">
-                  <Form>
+                  <Form onSubmit={this.handleSubmit}>
                     <h1>Cadastro</h1>
                     <p className="text-muted">Crie a sua conta</p>
                     <InputGroup className="mb-3">
@@ -19,7 +32,7 @@ class Register extends Component {
                           <i className="icon-user"></i>
                         </InputGroupText>
                       </InputGroupAddon>
-                      <Input type="text" placeholder="Nome" autoComplete="username" />
+                      <Input type="text" placeholder="Nome" autoComplete="username" value={this.state.value} onChange={this.handleChange} />
                     </InputGroup>
                     <InputGroup className="mb-3">
                       <InputGroupAddon addonType="prepend">

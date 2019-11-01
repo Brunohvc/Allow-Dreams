@@ -28,9 +28,11 @@ class UserController {
         const login = request.input('login')
         const password = request.input('password')
         let user = await User.query("email", login).first()
-
+        console.log(user)
         if(user.password == password){
-            return user
+            return response
+                    .status(200)
+                    .send({data:user})
         }
         else{
             return response.json({message: 'E-mail ou senha incorreta!'})
