@@ -24,17 +24,17 @@ class UserController {
         return response.json(users)
     }
 
+    async login ({request, response}) {
+        const login = request.input('login')
+        const password = request.input('password')
+        let user = await User.query("email", login).first()
 
-    /**
-    * Render a form to be used for creating a new user.
-    * GET users/create
-    *
-    * @param {object} ctx
-    * @param {Request} ctx.request
-    * @param {Response} ctx.response
-    * @param {View} ctx.view
-    */
-    async create ({ request, response, view }) {
+        if(user.password == password){
+            return user
+        }
+        else{
+            return response.json({message: 'E-mail ou senha incorreta!'})
+        }
     }
 
 
@@ -50,6 +50,7 @@ class UserController {
 
         const name = request.input('name')
         const email = request.input('email')
+        const nickname = request.input('nickname')
         const birth_date = request.input('birth_date')
         const phone = request.input('phone')
         const password = request.input('password')
@@ -60,6 +61,7 @@ class UserController {
         const user = new User()
         user.name = name
         user.email = email
+        user.nickname = nickname
         user.birth_date = birth_date
         user.phone = phone
         user.password = password
@@ -111,6 +113,7 @@ class UserController {
     async update ({ params, request, response }) {
         const name = request.input('name')
         const email = request.input('email')
+        const nickname = request.input('nickname')
         const birth_date = request.input('birth_date')
         const phone = request.input('phone')
         const password = request.input('password')
@@ -122,6 +125,7 @@ class UserController {
 
         user.name = name
         user.email = email
+        user.nickname = nickname
         user.phone = phone
         user.birth_date = birth_date
         user.password = password

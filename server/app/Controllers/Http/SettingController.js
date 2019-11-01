@@ -11,30 +11,6 @@ const Setting = use('App/Models/Setting')
  */
 class SettingController {
   /**
-   * Show a list of all settings.
-   * GET settings
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
-   */
-  async index ({ request, response, view }) {
-  }
-
-  /**
-   * Render a form to be used for creating a new setting.
-   * GET settings/create
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
-   */
-  async create ({ request, response, view }) {
-  }
-
-  /**
    * Create/save a new setting.
    * POST settings
    *
@@ -62,22 +38,11 @@ class SettingController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async show ({ params, request, response, view }) {
+  async show ({ params, response }) {
     let setting = await Setting.query('id',params.id).fetch()
     return response.json(setting)
   }
 
-  /**
-   * Render a form to update an existing setting.
-   * GET settings/:id/edit
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
-   */
-  async edit ({ params, request, response, view }) {
-  }
 
   /**
    * Update setting details.
@@ -87,7 +52,7 @@ class SettingController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async update ({ params, request, response }) {
+  async update ({ request, response }) {
 
     let setting = await Setting.find(param.id)
 

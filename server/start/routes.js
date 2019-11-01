@@ -37,6 +37,8 @@ Route.group(() => {
   Route.resource('plans', 'PlanController')
   Route.resource('post', 'postController')
   Route.resource('settings', 'SettingController')
+
   Route.resource('users', 'UserController')
-  
+  Route.post('users/login', 'UserController.login')
+
 }).prefix('api/v1')
