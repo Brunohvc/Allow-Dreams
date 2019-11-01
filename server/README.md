@@ -19,7 +19,7 @@ You will need to have adonis command-cli
 You will need has a database on mysql after configure the .env, run the migrate
 
 ```bash
-1. $ adonis run:migrate
+1. $ adonis migration:run
 ```
 
 For run the server do:
