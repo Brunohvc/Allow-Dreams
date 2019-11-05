@@ -15,6 +15,7 @@ class PostsSchema extends Schema {
       table.integer('user_id').unsigned().references('id').inTable('users')
       table.enum('type',['post,share'])
       table.integer('references_id')
+      table.timestamps()
     })
   }
 
