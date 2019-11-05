@@ -41,7 +41,7 @@ class User extends Model {
   }
 
   plan () {
-    return this.hasOne('App/Models/Plan')
+    return this.belongsTo('App/Models/Plan')
   }
 
   posts () {
