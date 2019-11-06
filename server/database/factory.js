@@ -19,7 +19,7 @@ const Factory = use("Factory");
 
 Factory.blueprint("App/Models/Plan", async faker => {
   return {
-    name: 'Gratuíto',
+    name: 'Gratuito',
     description: "Plano de teste",
     value: 0,
   };

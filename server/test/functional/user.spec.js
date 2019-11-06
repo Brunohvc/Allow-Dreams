@@ -1,11 +1,26 @@
 'use strict'
 
-const { test, trait } = use('Test/Suite')('User')
+const { test, trait, before } = use('Test/Suite')('User')
 const User = use('App/Models/User')
+
+/** @type {import('@adonisjs/lucid/src/Factory')} */
+const Factory = use('Factory')
 
 trait('Test/ApiClient')
 
-test('garantir que usuário foi cadastrado', async ({ assert, client }) => {
+test('garantir que usuário foi cadastrado com plano válido', async ({ assert, client }) => {
+  //cria plano
+  const plan = await Factory.model("App/Models/Plan").create()
+  const planId = plan['$attributes'].id
+
+  const planResponse = await client.get(`/api/v1/plans/${planId}`).end()
+  console.log(planResponse)
+
+  planResponse.assertStatus(200)
+  planResponse.assertJSONSubset([{
+    id: planId
+  }])
+
   let data = {
     name: 'Gabriel Zanghelini',
     email: 'zanghelinigab@gmail.com',
@@ -15,23 +30,16 @@ test('garantir que usuário foi cadastrado', async ({ assert, client }) => {
     password: '123',
     genre: 'male',
     private_profile: false,
-    plan_id: 1
+    plan_id: planId
   }
-
-  // const response = await client
-  //   .post('/api/v1/users')
-  //   .send(data)
-  //   .end()
-
-  //-----------------
-
+  
   await User.create(data)
-
-  const response = await client.get('/api/v1/users').end()
-
-  response.assertStatus(200)
-  response.assertJSONSubset([{
+  
+  const userResponse = await client.get('/api/v1/users').end()
+  
+  userResponse.assertStatus(200)
+  userResponse.assertJSONSubset([{
     name: 'Gabriel Zanghelini',
     email: 'zanghelinigab@gmail.com'
   }])
-}).timeout(0)
+})

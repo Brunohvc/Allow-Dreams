@@ -15,14 +15,11 @@ const Factory = use('Factory')
 
 const Database = use('Database')
 
-
 class UserSeeder {
   async run () {
     const plan = await Factory.model("App/Models/Plan").create();
     const user = await Factory.model("App/Models/User").make();
     await user.plan().associate(plan);
-
-
   }
 }
 
