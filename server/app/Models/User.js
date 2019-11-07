@@ -43,8 +43,8 @@ class User extends Model {
     return this.hasOne('App/Models/Setting')
   }
 
-  plan() {
-    return this.hasOne('App/Models/Plan')
+  plan () {
+    return this.belongsTo('App/Models/Plan')
   }
 
   posts() {

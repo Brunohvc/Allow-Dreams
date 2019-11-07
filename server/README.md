@@ -34,9 +34,9 @@ For run the server do:
 | -- | -- | -- |
 | /api/v1/users | HEAD,GET  | Retorna todos os usuários cadastrados |
 |/api/v1/users | POST | Cria um novo usuário |
-| /api/v1/users:id | GET | Retorna o usuário da ID enviada |
-| /api/v1/users:id | PUT | Edita o usuário do ID enviado |
-| /api/v1/users:id | DELETE | Delete o usuário do ID enviado |
+| /api/v1/users/{id} | GET | Retorna o usuário da ID enviada |
+| /api/v1/users/{id} | PUT | Edita o usuário do ID enviado |
+| /api/v1/users/{id} | DELETE | Delete o usuário do ID enviado |
 | /api/v1/users/login | POST | Ação de login, veja o item 1  |
 
 #### 1 - Login
