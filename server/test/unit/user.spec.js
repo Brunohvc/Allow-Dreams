@@ -1,7 +1,7 @@
 'use strict'
 
 const { test, trait, before } = use('Test/Suite')('User')
-const User = use('App/Models/User')
+const Plan = use('App/Models/User')
 
 /** @type {import('@adonisjs/lucid/src/Factory')} */
 const Factory = use('Factory')
@@ -9,17 +9,13 @@ const Factory = use('Factory')
 trait('Test/ApiClient')
 
 test('garantir que usuário foi cadastrado com plano válido', async ({ assert, client }) => {
-  //cria plano
+  //cria plano fake
   const plan = await Factory.model("App/Models/Plan").create()
   const planId = plan['$attributes'].id
 
   const planResponse = await client.get(`/api/v1/plans/${planId}`).end()
-  console.log(planResponse)
 
   planResponse.assertStatus(200)
-  planResponse.assertJSONSubset([{
-    id: planId
-  }])
 
   let data = {
     name: 'Gabriel Zanghelini',
@@ -33,7 +29,8 @@ test('garantir que usuário foi cadastrado com plano válido', async ({ assert, 
     plan_id: planId
   }
   
-  await User.create(data)
+  //Testa criação do usuário
+  await Plan.create(data)
   
   const userResponse = await client.get('/api/v1/users').end()
   
