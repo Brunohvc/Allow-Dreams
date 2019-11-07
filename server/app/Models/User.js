@@ -7,7 +7,10 @@ const Model = use('Model')
 const Hash = use('Hash')
 
 class User extends Model {
-  static boot () {
+  static get hidden() {
+    return ['password']
+  }
+  static boot() {
     super.boot()
 
     /**
@@ -32,43 +35,43 @@ class User extends Model {
    *
    * @return {Object}
    */
-  tokens () {
+  tokens() {
     return this.hasMany('App/Models/Token')
   }
 
-  setting () {
+  setting() {
     return this.hasOne('App/Models/Setting')
   }
 
-  plan () {
+  plan() {
     return this.hasOne('App/Models/Plan')
   }
 
-  posts () {
+  posts() {
     return this.hasMany('App/Models/Post')
   }
 
-  groups () {
+  groups() {
     return this.hasMany('App/Models/Group')
   }
-  
-  comment () {
+
+  comment() {
     return this.hasMany('App/Models/Comment')
   }
-  
-  like () {
+
+  like() {
     return this.hasMany('App/Models/Like')
   }
 
-  galleries () {
+  galleries() {
     return this.hasMany('App/Models/Gallery')
   }
 
-  images () {
+  images() {
     return this.hasMany('App/Models/Image')
   }
 
-  additional () {
+  additional() {
     return this.hasOne('App/Models/Additional')
   }
 

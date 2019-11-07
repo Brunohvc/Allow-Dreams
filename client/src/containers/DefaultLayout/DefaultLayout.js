@@ -25,6 +25,14 @@ const DefaultFooter = React.lazy(() => import('./DefaultFooter'));
 const DefaultHeader = React.lazy(() => import('./DefaultHeader'));
 
 class DefaultLayout extends Component {
+  constructor(props) {
+    super(props);
+
+    let dados = JSON.parse(localStorage.getItem('dadosUser'))
+    if (!dados) {
+      props.history.push("/Login");
+    }
+  }
 
   loading = () => <div className="animated fadeIn pt-1 text-center">Loading...</div>
 

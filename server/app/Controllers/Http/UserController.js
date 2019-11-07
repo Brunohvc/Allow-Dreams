@@ -8,7 +8,7 @@
 const User = use('App/Models/User');
 
 class UserController {
-    
+
 
     /**
     * Show a list of all users.
@@ -19,23 +19,24 @@ class UserController {
     * @param {Response} ctx.response
     * @param {View} ctx.view
     */
-    async index ({ response }) {
+    async index({ response }) {
         let users = await User.query().fetch()
         return response.json(users)
     }
 
-    async login ({request, response}) {
+    async login({ request, response }) {
         const login = request.input('login')
         const password = request.input('password')
-        let user = await User.query("email", login).first()
-        console.log(user)
-        if(user.password == password){
-            return response
-                    .status(200)
-                    .send({data:user})
+        console.log("Aqui")
+        let user = await User.query("login", login).first()
+        console.log(user.password)
+        if (user.password == password) {
+            console.log("certo")
+            return user
         }
-        else{
-            return response.json({message: 'E-mail ou senha incorreta!'})
+        else {
+            console.log("errado")
+            return response.json({ message: 'Login ou senha incorreta!' })
         }
     }
 
@@ -48,7 +49,7 @@ class UserController {
     * @param {Request} ctx.request
     * @param {Response} ctx.response
     */
-    async store ({ request, response }) {
+    async store({ request, response }) {
 
         const name = request.input('name')
         const email = request.input('email')
@@ -85,8 +86,8 @@ class UserController {
     * @param {Response} ctx.response
     * @param {View} ctx.view
     */
-    async show ({ params, response }) {
-        let user = await User.query('id',params.id).fetch()
+    async show({ params, response }) {
+        let user = await User.query('id', params.id).fetch()
         return response.json(user)
     }
 
@@ -100,7 +101,7 @@ class UserController {
     * @param {Response} ctx.response
     * @param {View} ctx.view
     */
-    async edit ({ params, request, response, view }) {
+    async edit({ params, request, response, view }) {
     }
 
 
@@ -112,7 +113,7 @@ class UserController {
     * @param {Request} ctx.request
     * @param {Response} ctx.response
     */
-    async update ({ params, request, response }) {
+    async update({ params, request, response }) {
         const name = request.input('name')
         const email = request.input('email')
         const nickname = request.input('nickname')
@@ -146,13 +147,13 @@ class UserController {
     * @param {Request} ctx.request
     * @param {Response} ctx.response
     */
-    async destroy ({ params, request, response }) {
-        
+    async destroy({ params, request, response }) {
+
         let user = await User.find(params.id)
 
         user.status = false
 
-        return response.json({message: 'Contact deleted!'})
+        return response.json({ message: 'Contact deleted!' })
     }
 }
 

@@ -14,6 +14,15 @@ const propTypes = {
 const defaultProps = {};
 
 class DefaultHeader extends Component {
+  constructor(props) {
+    super(props);
+    this.logOut = this.logOut.bind(this);
+  }
+
+  logOut() {
+    localStorage.removeItem('dadosUser');
+    window.location.hash = "#/login";
+  }
   render() {
 
     const { children, ...attributes } = this.props;
@@ -56,7 +65,7 @@ class DefaultHeader extends Component {
               <DropdownItem><i className="fa fa-user"></i> Meu Perfil</DropdownItem>
               <DropdownItem><i className="fa fa-wrench"></i> Ajustes</DropdownItem>
               <DropdownItem><i className="fa fa-shield"></i>Segurança</DropdownItem>
-              <DropdownItem onClick={e => this.props.onLogout(e)}><i className="fa fa-lock"></i> Sair</DropdownItem>
+              <DropdownItem onClick={this.logOut}><i className="fa fa-lock"></i> Sair</DropdownItem>
             </DropdownMenu>
           </UncontrolledDropdown>
         </Nav>

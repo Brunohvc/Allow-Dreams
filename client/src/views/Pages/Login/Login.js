@@ -2,34 +2,58 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Card, CardBody, CardGroup, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
 import axios from 'axios';
+import swal from 'sweetalert';
+
+
 
 class Login extends Component {
   constructor(props) {
     super(props);
+
+    let dados = JSON.parse(localStorage.getItem('dadosUser'))
+    if (dados) {
+      this.props.history.push("/home");
+    }
+
     this.state = {
-      nome: ''
+      nome: '',
+      senha: ''
     };
 
-    this.handleChange = this.handleChange.bind(this);
+    this.handleChangeNome = this.handleChangeNome.bind(this);
+    this.handleChangeSenha = this.handleChangeSenha.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.login = this.login.bind(this);
   }
 
-  handleChange(event) {
-    this.setState({nome: event.target.value});
+  handleChangeNome(event) {
+    this.setState({ nome: event.target.value });
   }
 
-  login(){
+  handleChangeSenha(event) {
+    this.setState({ senha: event.target.value });
+  }
+
+  login() {
+
+    console.log(this.state.nome, this.state.senha)
+
     axios.post(`http://127.0.0.1:3333/api/v1/users/login`, {
-        "login": "jereba",
-        "password": "senha123"
+      "login": this.state.nome,
+      "password": this.state.senha
     })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+      .then(function (response) {
+        if (response.data.message) {
+          swal("Erro!", response.data.message, "error");
+        } else {
+          localStorage.setItem('dadosUser', JSON.stringify(response.data))
+          window.location.hash = "#/home";
+        }
+      })
+      .catch(function (error) {
+        console.log("Erro:", error)
+        swal("Erro!", "Um erro inesperado ocorreu, tente novamente!", "error");
+      });
   }
 
   handleSubmit(event) {
@@ -38,6 +62,7 @@ class Login extends Component {
   }
 
   render() {
+    const { navigate } = this.props;
     return (
       <div className="app flex-row align-items-center">
         <Container>
@@ -55,7 +80,8 @@ class Login extends Component {
                             <i className="icon-user"></i>
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input type="text" placeholder="Nome" autoComplete="username" value={this.state.nome} onChange={this.handleChange}  />
+                        <Input type="text" placeholder="Nome" autoComplete="username" value={this.state.nome} onChange={this.handleChangeNome}
+                        />
                       </InputGroup>
                       <InputGroup className="mb-4">
                         <InputGroupAddon addonType="prepend">
@@ -63,7 +89,8 @@ class Login extends Component {
                             <i className="icon-lock"></i>
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input type="password" placeholder="Senha" autoComplete="current-password" />
+                        <Input type="password" placeholder="Senha" autoComplete="current-password" value={this.state.senha} onChange={this.handleChangeSenha}
+                        />
                       </InputGroup>
                       <Row>
                         <Col xs="6">
