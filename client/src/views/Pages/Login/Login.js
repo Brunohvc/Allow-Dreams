@@ -35,9 +35,6 @@ class Login extends Component {
   }
 
   login() {
-
-    console.log(this.state.nome, this.state.senha)
-
     axios.post(`http://127.0.0.1:3333/api/v1/users/login`, {
       "login": this.state.nome,
       "password": this.state.senha
@@ -51,7 +48,6 @@ class Login extends Component {
         }
       })
       .catch(function (error) {
-        console.log("Erro:", error)
         swal("Erro!", "Um erro inesperado ocorreu, tente novamente!", "error");
       });
   }
@@ -109,7 +105,7 @@ class Login extends Component {
                       <h2>Cadastre-se</h2>
                       <p>Allow Dreams, a melhor rede social. Desenvolvida para fazer a diferença.</p>
                       <Link to="/register">
-                        <Button color="primary" className="mt-3" active tabIndex={-1}>Cadastrar agora!</Button>
+                        <Button color="primary" className="mt-3" type="button" active tabIndex={-1}>Cadastrar agora!</Button>
                       </Link>
                     </div>
                   </CardBody>
