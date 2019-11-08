@@ -11,11 +11,29 @@
 |
 */
 
-/** @type {import('@adonisjs/lucid/src/Factory')} */
-// const Factory = use('Factory')
+/** @type {import('@adonisjs/framework/src/Hash')} */
+const Hash = use("Hash");
 
-// Factory.blueprint('App/Models/User', (faker) => {
-//   return {
-//     username: faker.username()
-//   }
-// })
+/** @type {import('@adonisjs/lucid/src/Factory')} */
+const Factory = use("Factory");
+
+Factory.blueprint("App/Models/Plan", async faker => {
+  return {
+    name: 'Gratuito',
+    description: "Plano de teste",
+    value: 0,
+  };
+});
+
+Factory.blueprint("App/Models/User", async faker => {
+  return {
+    plan_id: 1,
+    name: faker.name(),
+    nickname: faker.name() ,
+    email: faker.name() + "@gmail.com",
+    birth_date: '1999-09-09',
+    phone: '9409239203902',
+    genre: 'male',
+    password: await Hash.make(faker.password())
+  };
+});
