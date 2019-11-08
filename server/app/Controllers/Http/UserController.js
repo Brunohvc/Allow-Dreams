@@ -29,11 +29,9 @@ class UserController {
         const password = request.input('password')
         let user = await User.findBy('nickname', `${login}`)
         if (user.password == password) {
-            console.log("certo")
             return user
         }
         else {
-            console.log("errado")
             return response.json({ message: 'Login ou senha incorreta!' })
         }
     }
