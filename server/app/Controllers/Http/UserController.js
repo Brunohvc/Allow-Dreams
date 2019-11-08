@@ -27,9 +27,7 @@ class UserController {
     async login({ request, response }) {
         const login = request.input('login')
         const password = request.input('password')
-        console.log("Aqui")
-        let user = await User.query("login", login).first()
-        console.log(user.password)
+        let user = await User.findBy('nickname', `${login}`)
         if (user.password == password) {
             console.log("certo")
             return user

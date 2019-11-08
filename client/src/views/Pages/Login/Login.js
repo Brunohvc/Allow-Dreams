@@ -43,6 +43,7 @@ class Login extends Component {
       "password": this.state.senha
     })
       .then(function (response) {
+        console.log(response.data)
         if (response.data.message) {
           swal("Erro!", response.data.message, "error");
         } else {
