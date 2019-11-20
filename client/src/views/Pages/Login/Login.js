@@ -40,7 +40,6 @@ class Login extends Component {
       "password": this.state.senha
     })
       .then(function (response) {
-        console.log(response.data)
         if (response.data.message) {
           swal("Erro!", response.data.message, "error");
         } else {
@@ -77,7 +76,7 @@ class Login extends Component {
                             <i className="icon-user"></i>
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input type="text" placeholder="Nome" autoComplete="username" value={this.state.nome} onChange={this.handleChangeNome}
+                        <Input type="text" placeholder="Login" autoComplete="username" value={this.state.nome} onChange={this.handleChangeNome}
                         />
                       </InputGroup>
                       <InputGroup className="mb-4">

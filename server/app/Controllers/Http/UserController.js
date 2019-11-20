@@ -48,28 +48,35 @@ class UserController {
     async store({ request, response }) {
 
         const name = request.input('name')
-        const email = request.input('email')
-        const nickname = request.input('nickname')
-        const birth_date = request.input('birth_date')
         const phone = request.input('phone')
+        const nickname = request.input('nickname')
         const password = request.input('password')
-        const genre = request.input('genre')
-        const private_profile = request.input('private_profile')
-        const plan_id = request.input('plan_id')
+        const birth_date = null
+        const email = null
+        const genre = null;
+        const private_profile = false;
+        const plan_id = null
 
-        const user = new User()
-        user.name = name
-        user.email = email
-        user.nickname = nickname
-        user.birth_date = birth_date
-        user.phone = phone
-        user.password = password
-        user.genre = genre
-        user.private_profile = private_profile
-        user.plan_id = plan_id
+        let otherUser = await User.findBy('nickname', `${nickname}`)
+        if (!otherUser) {
 
-        await user.save()
-        return response.json(user)
+            const user = new User()
+            user.name = name
+            user.email = email
+            user.nickname = nickname
+            user.birth_date = birth_date
+            user.phone = phone
+            user.password = password
+            user.genre = genre
+            user.private_profile = private_profile
+            user.plan_id = plan_id
+
+            await user.save()
+            return response.json(user)
+
+        } else {
+            return response.json({ message: 'O login escolhido já está em uso!' })
+        }
     }
 
 
