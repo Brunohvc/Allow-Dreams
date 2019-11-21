@@ -7,6 +7,7 @@ const Planos = React.lazy(() => import('./views/Base/Planos'));
 const Home = React.lazy(() => import('./views/Base/Home'));
 const Colors = React.lazy(() => import('./views/Theme/Colors'));
 const Perfil = React.lazy(() => import('./views/Perfil/Perfil'));
+const EditPerfil = React.lazy(() => import('./views/EditPerfil/EditPerfil'));
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
@@ -18,6 +19,7 @@ const routes = [
   { path: '/base/carousels', name: 'Carousel', component: Carousels },
   { path: '/home', name: 'Home', component: Home },
   { path: '/perfil', exact: true,  name: 'Perfil', component: Perfil },
+  { path: '/editPerfil', exact: true,  name: 'EditPerfil', component: EditPerfil },
 ];
 
 export default routes;
