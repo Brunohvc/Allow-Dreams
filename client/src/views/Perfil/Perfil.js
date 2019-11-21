@@ -1,17 +1,13 @@
 import React from "react";
-
 import {
-  Button,
   Card,
-  CardHeader,
   CardBody,
   CardFooter,
-  CardTitle,
-  FormGroup,
-  Form,
-  Input,
   Row,
-  Col
+  Col,
+  Button,
+  CardHeader,
+  Jumbotron,
 } from "reactstrap";
 
 class Perfil extends React.Component {
@@ -20,7 +16,7 @@ class Perfil extends React.Component {
       <>
         <div className="content">
           <Row>
-            <Col md="4">
+            <Col md="6">
               <Card className="card-user">
                 <div className="image">
                   <img
@@ -41,8 +37,8 @@ class Perfil extends React.Component {
                     <p className="description">@felipepedreli</p>
                   </div>
                   <p className="description text-center">
-                    Eu gosto de futebol <br />
-                    Sou das festinhas <br />Sou programador!
+                    Eu gosto de futebol
+                    <br />Sou programador!
                   </p>
                 </CardBody>
                 <CardFooter>
@@ -51,14 +47,20 @@ class Perfil extends React.Component {
                     <Row>
                       <Col className="ml-auto" lg="3" md="6" xs="6">
                         <h5>
-                          12 <br />
-                          <small>Fotos</small>
+                          2 <br />
+                          <small>Albúns</small>
                         </h5>
                       </Col>
-                      <Col className="mr-auto" lg="3">
+                      <Col className="ml-auto" lg="3" md="6" xs="6">
+                        <h5>
+                          12<br />
+                          <small>Postagens</small>
+                        </h5>
+                      </Col>
+                      <Col className="ml-auto" lg="3" md="6" xs="6">
                         <h5>
                           9.570<br />
-                          <small>Seguidor</small>
+                          <small>Seguidores</small>
                         </h5>
                       </Col>
                     </Row>
@@ -66,88 +68,65 @@ class Perfil extends React.Component {
                 </CardFooter>
               </Card>
             </Col>
-            <Col md="8">
-              <Card className="card-user">
+          </Row>
+
+          <Row>
+            <Col>
+              <Card>
                 <CardHeader>
-                  <CardTitle tag="h5">Editar Perfil</CardTitle>
+                  <strong>Autor: Felipe</strong>
                 </CardHeader>
                 <CardBody>
-                  <Form>
-                    <Row>
-                      <Col className="pr-1" md="4">
-                        <FormGroup>
-                          <label>Nickname</label>
-                          <Input
-                            defaultValue="Nickname"
-                            placeholder="Nickname"
-                            type="text"
-                          />
-                        </FormGroup>
-                      </Col>
-                      <Col className="px-1" md="4">
-                        <FormGroup>
-                          <label>Nome Perfil</label>
-                          <Input
-                            defaultValue="Nome do Perfil"
-                            placeholder="Usuário"
-                            type="text"
-                          />
-                        </FormGroup>
-                      </Col>
-                      <Col className="pl-1" md="4">
-                        <FormGroup>
-                          <label htmlFor="ExemploEmail">
-                            Email
-                          </label>
-                          <Input placeholder="Email" type="email" />
-                        </FormGroup>
-                      </Col>
-                    </Row>
+                  <Jumbotron>
+                    <h1 className="display-3">Post 1!</h1>
+                    <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra
+                      attention to featured content or information.</p>
+                    <hr className="my-2" />
+                    <p>It uses utility classes for typgraphy and spacing to space content out within the larger container.</p>
+                    <p className="lead">
+                      <Button color="primary">Detalhes</Button>
+                    </p>
+                  </Jumbotron>
+                </CardBody>
+              </Card>
+            </Col>
 
-                    <Row>
-                      <Col className="pr-1" md="4">
-                        <FormGroup>
-                          <label>Telefone</label>
-                          <Input
-                            defaultValue="Telefone."
-                            placeholder="Seu telefone"
-                            type="number"
-                          />
-                        </FormGroup>
-                      </Col>
-                      <Col className="px-1" md="4">
-                        <FormGroup>
-                          <label>Data de aniversário</label>
-                          <Input
-                            defaultValue="Data"
-                            placeholder="Data de aniversário"
-                            type="number"
-                          />
-                        </FormGroup>
-                      </Col>
-                      <Col className="px-1" md="4">
-                        <FormGroup>
-                          <label>Gênero</label>
-                          <Input
-                            defaultValue="Gênero"
-                            placeholder="Gênero"
-                            type="text"
-                          />
-                        </FormGroup>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <div className="update ml-auto mr-auto">
-                        <Button
-                          className="btn-round"
-                          color="primary"
-                          type="submit"
-                        >
-                          Atualizar Perfil
-                        </Button>
-                      </div>
-                    </Row>
-                  </Form>
+            <Col>
+              <Card>
+                <CardHeader>
+                  <i className="fa fa-align-justify"></i><strong>Autor: Bruno</strong>
+                </CardHeader>
+                <CardBody>
+                  <Jumbotron>
+                    <h1 className="display-3">Post 2!</h1>
+                    <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra
+                      attention to featured content or information.</p>
+                    <hr className="my-2" />
+                    <p>It uses utility classes for typgraphy and spacing to space content out within the larger container.</p>
+                    <p className="lead">
+                      <Button color="primary">Detalhes</Button>
+                    </p>
+                  </Jumbotron>
+                </CardBody>
+              </Card>
+            </Col>
+
+            <Col>
+              <Card>
+                <CardHeader>
+                  <i className="fa fa-align-justify"></i><strong>Autor: Guilherme</strong>
+                </CardHeader>
+                <CardBody>
+                  <Jumbotron>
+                    <h1 className="display-3">Post 3!</h1>
+                    <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra
+                      attention to featured content or information.</p>
+                    <hr className="my-2" />
+                    <p>It uses utility classes for typgraphy and spacing to space content out within the larger container.</p>
+                    <p className="lead">
+                      <Button color="primary">Detalhes</Button>
+                    </p>
+                  </Jumbotron>
                 </CardBody>
               </Card>
             </Col>
