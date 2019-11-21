@@ -74,21 +74,21 @@ class Perfil extends React.Component {
                 <CardBody>
                   <Form>
                     <Row>
-                      <Col className="pr-1" md="5">
+                      <Col className="pr-1" md="4">
                         <FormGroup>
-                          <label>Empresa</label>
+                          <label>Nickname</label>
                           <Input
-                            defaultValue="Empresa onde trabalha."
-                            placeholder="Company"
+                            defaultValue="Nickname"
+                            placeholder="Nickname"
                             type="text"
                           />
                         </FormGroup>
                       </Col>
-                      <Col className="px-1" md="3">
+                      <Col className="px-1" md="4">
                         <FormGroup>
                           <label>Nome Perfil</label>
                           <Input
-                            defaultValue="User"
+                            defaultValue="Nome do Perfil"
                             placeholder="Usuário"
                             type="text"
                           />
@@ -103,75 +103,35 @@ class Perfil extends React.Component {
                         </FormGroup>
                       </Col>
                     </Row>
-                    <Row>
-                      <Col className="pr-1" md="6">
-                        <FormGroup>
-                          <label>Primeiro Nome</label>
-                          <Input
-                            defaultValue="Nome"
-                            placeholder="Primeiro Nome"
-                            type="text"
-                          />
-                        </FormGroup>
-                      </Col>
-                      <Col className="pl-1" md="6">
-                        <FormGroup>
-                          <label>Ultimo Nome</label>
-                          <Input
-                            defaultValue="Nome"
-                            placeholder="Ultimo Nome"
-                            type="text"
-                          />
-                        </FormGroup>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col md="12">
-                        <FormGroup>
-                          <label>Endereço</label>
-                          <Input
-                            defaultValue="Jaraguá do Sul, Brasil"
-                            placeholder="Endereço"
-                            type="text"
-                          />
-                        </FormGroup>
-                      </Col>
-                    </Row>
+
                     <Row>
                       <Col className="pr-1" md="4">
                         <FormGroup>
-                          <label>Cidade</label>
+                          <label>Telefone</label>
                           <Input
-                            defaultValue="Jaraguá do Sul"
-                            placeholder="Cidade"
-                            type="text"
+                            defaultValue="Telefone."
+                            placeholder="Seu telefone"
+                            type="number"
                           />
                         </FormGroup>
                       </Col>
                       <Col className="px-1" md="4">
                         <FormGroup>
-                          <label>Pais</label>
+                          <label>Data de aniversário</label>
                           <Input
-                            defaultValue="Brasil"
-                            placeholder="Pais"
-                            type="text"
+                            defaultValue="Data"
+                            placeholder="Data de aniversário"
+                            type="number"
                           />
                         </FormGroup>
                       </Col>
-                      <Col className="pl-1" md="4">
+                      <Col className="px-1" md="4">
                         <FormGroup>
-                          <label>Codigo Postal</label>
-                          <Input placeholder="Código Postal" type="number" />
-                        </FormGroup>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col md="12">
-                        <FormGroup>
-                          <label>Sobre Mim</label>
+                          <label>Gênero</label>
                           <Input
-                            type="textarea"
-                            defaultValue="Opa, gosto de praticar esportes e estar com os amigos..."
+                            defaultValue="Gênero"
+                            placeholder="Gênero"
+                            type="text"
                           />
                         </FormGroup>
                       </Col>
