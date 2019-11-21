@@ -38,11 +38,10 @@ class Forms extends Component {
     return (
       <div className="animated fadeIn">
         <Row>
-          <Col sm="6">
+          <Col sm="12">
             <Card>
               <CardHeader>
                 <strong>Cartão de Crédito</strong>
-                <small> Forma</small>
               </CardHeader>
               <CardBody>
                 <Row>
