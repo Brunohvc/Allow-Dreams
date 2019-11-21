@@ -79,10 +79,9 @@ class Perfil extends React.Component {
                 <CardBody>
                   <Jumbotron>
                     <h1 className="display-3">Post 1!</h1>
-                    <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra
-                      attention to featured content or information.</p>
+                    <p className="lead">Aula de hoje na fábrica de software está cheia de coisas para fazer.</p>
                     <hr className="my-2" />
-                    <p>It uses utility classes for typgraphy and spacing to space content out within the larger container.</p>
+                    <p>Meus Post.</p>
                     <p className="lead">
                       <Button color="primary">Detalhes</Button>
                     </p>
@@ -99,10 +98,9 @@ class Perfil extends React.Component {
                 <CardBody>
                   <Jumbotron>
                     <h1 className="display-3">Post 2!</h1>
-                    <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra
-                      attention to featured content or information.</p>
+                    <p className="lead">Estava aqui pensando aonde irei jantar hoje!!</p>
                     <hr className="my-2" />
-                    <p>It uses utility classes for typgraphy and spacing to space content out within the larger container.</p>
+                    <p>Meu Post.</p>
                     <p className="lead">
                       <Button color="primary">Detalhes</Button>
                     </p>
@@ -119,10 +117,9 @@ class Perfil extends React.Component {
                 <CardBody>
                   <Jumbotron>
                     <h1 className="display-3">Post 3!</h1>
-                    <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra
-                      attention to featured content or information.</p>
+                    <p className="lead">Hoje vou assistir vingadores no cinema.</p>
                     <hr className="my-2" />
-                    <p>It uses utility classes for typgraphy and spacing to space content out within the larger container.</p>
+                    <p>Meu Post.</p>
                     <p className="lead">
                       <Button color="primary">Detalhes</Button>
                     </p>
