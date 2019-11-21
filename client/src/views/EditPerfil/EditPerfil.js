@@ -136,7 +136,7 @@ class EditPerfil extends React.Component {
                       color="success"
                       type="submit"
                     >
-                      Atualizar Senha
+                      Mudar Senha
                     </Button>
                   </Row>
                 </Form>
