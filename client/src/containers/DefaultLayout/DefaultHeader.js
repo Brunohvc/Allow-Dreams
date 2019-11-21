@@ -62,9 +62,9 @@ class DefaultHeader extends Component {
               <DropdownItem header tag="div" className="text-center"><strong>Perfil</strong></DropdownItem>
               <DropdownItem><i className="fa fa-envelope-o"></i> Mensagens<Badge color="success">2</Badge></DropdownItem>
               <DropdownItem header tag="div" className="text-center"><strong>Configurações</strong></DropdownItem>
-              <DropdownItem><i className="fa fa-user"></i> Meu Perfil</DropdownItem>
-              <DropdownItem><i className="fa fa-wrench"></i> Ajustes</DropdownItem>
-              <DropdownItem><i className="fa fa-shield"></i>Segurança</DropdownItem>
+              <Link to="/perfil">
+              <DropdownItem><i className="fa fa-user"></i> Editar Perfil</DropdownItem>
+              </Link>
               <DropdownItem onClick={this.logOut}><i className="fa fa-lock"></i> Sair</DropdownItem>
             </DropdownMenu>
           </UncontrolledDropdown>
