@@ -74,7 +74,7 @@ class Perfil extends React.Component {
             <Col>
               <Card>
                 <CardHeader>
-                  <strong>Autor: Felipe</strong>
+                  <strong>Autor: </strong>
                 </CardHeader>
                 <CardBody>
                   <Jumbotron>
@@ -93,7 +93,7 @@ class Perfil extends React.Component {
             <Col>
               <Card>
                 <CardHeader>
-                  <i className="fa fa-align-justify"></i><strong>Autor: Bruno</strong>
+                  <i className="fa fa-align-justify"></i><strong>Autor: </strong>
                 </CardHeader>
                 <CardBody>
                   <Jumbotron>
@@ -112,7 +112,7 @@ class Perfil extends React.Component {
             <Col>
               <Card>
                 <CardHeader>
-                  <i className="fa fa-align-justify"></i><strong>Autor: Guilherme</strong>
+                  <i className="fa fa-align-justify"></i><strong>Autor: </strong>
                 </CardHeader>
                 <CardBody>
                   <Jumbotron>
