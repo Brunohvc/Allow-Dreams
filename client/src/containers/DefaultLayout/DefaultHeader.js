@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Badge, UncontrolledDropdown, DropdownItem, DropdownMenu, DropdownToggle, Nav, NavItem } from 'reactstrap';
 import PropTypes from 'prop-types';
-
 import { AppAsideToggler, AppNavbarBrand, AppSidebarToggler } from '@coreui/react';
 import logo from '../../assets/img/brand/logo.png'
 import sygnet from '../../assets/img/brand/sygnet.svg'
@@ -62,7 +61,7 @@ class DefaultHeader extends Component {
               <DropdownItem header tag="div" className="text-center"><strong>Perfil</strong></DropdownItem>
               <DropdownItem><i className="fa fa-envelope-o"></i> Mensagens<Badge color="success">2</Badge></DropdownItem>
               <DropdownItem header tag="div" className="text-center"><strong>Configurações</strong></DropdownItem>
-              <Link to="/perfil">
+              <Link to="/editPerfil">
               <DropdownItem><i className="fa fa-user"></i> Editar Perfil</DropdownItem>
               </Link>
               <DropdownItem onClick={this.logOut}><i className="fa fa-lock"></i> Sair</DropdownItem>
