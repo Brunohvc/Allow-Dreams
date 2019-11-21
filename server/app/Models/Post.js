@@ -20,6 +20,10 @@ class Post extends Model {
     likes () {
         return this.hasMany('App/Models/Like') 
     }
+
+    style() {
+        return this.hasOne('App/Models/Style')
+    }
 }
 
 module.exports = Post

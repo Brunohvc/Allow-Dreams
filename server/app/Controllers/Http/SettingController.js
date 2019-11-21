@@ -19,7 +19,7 @@ class SettingController {
    * @param {Response} ctx.response
    */
   async store ({ request, response }) {
-    const setting = new Settings()
+    const setting = new Setting()
     setting.language = request.input('language')
     setting.theme = request.input('theme')
     setting.user_id = request.input('user_id')
