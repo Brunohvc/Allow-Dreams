@@ -5,7 +5,6 @@ import { Container } from 'reactstrap';
 
 import {
   AppAside,
-  AppFooter,
   AppHeader,
   AppSidebar,
   AppSidebarFooter,
@@ -20,8 +19,6 @@ import navigation from '../../_nav';
 // routes config
 import routes from '../../routes';
 
-const DefaultAside = React.lazy(() => import('./DefaultAside'));
-const DefaultFooter = React.lazy(() => import('./DefaultFooter'));
 const DefaultHeader = React.lazy(() => import('./DefaultHeader'));
 
 class DefaultLayout extends Component {
@@ -50,7 +47,7 @@ class DefaultLayout extends Component {
           </Suspense>
         </AppHeader>
         <div className="app-body">
-          <AppSidebar fixed display="lg">
+          <AppSidebar fixed display="none">
             <AppSidebarHeader />
             <AppSidebarForm />
             <Suspense>
@@ -82,7 +79,6 @@ class DefaultLayout extends Component {
           </main>
           <AppAside fixed>
             <Suspense fallback={this.loading()}>
-              <DefaultAside />
             </Suspense>
           </AppAside>
         </div>
