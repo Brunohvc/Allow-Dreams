@@ -50,17 +50,16 @@ class DefaultHeader extends Component {
           </NavItem>
         </Nav>
         <Nav className="ml-auto" navbar>
-          <NavItem className="d-md-down-none">
+          {/* <NavItem className="d-md-down-none">
             <NavLink to="#" className="nav-link"><i className="icon-bell"></i><Badge pill color="danger">5</Badge></NavLink>
-          </NavItem>
-          <UncontrolledDropdown nav direction="down">
+          </NavItem> */}
+          <UncontrolledDropdown nav direction="down" style={{ marginRight: '25px' }}>
             <DropdownToggle nav>
               <img src={'../../assets/img/avatars/1.jpg'} className="img-avatar" />
             </DropdownToggle>
             <DropdownMenu right>
               <DropdownItem header tag="div" className="text-center"><strong>Perfil</strong></DropdownItem>
               <DropdownItem><i className="fa fa-envelope-o"></i> Mensagens<Badge color="success">2</Badge></DropdownItem>
-              <DropdownItem header tag="div" className="text-center"><strong>Configurações</strong></DropdownItem>
               <Link to="/editPerfil">
               <DropdownItem><i className="fa fa-user"></i> Editar Perfil</DropdownItem>
               </Link>
@@ -68,7 +67,7 @@ class DefaultHeader extends Component {
             </DropdownMenu>
           </UncontrolledDropdown>
         </Nav>
-        <AppAsideToggler className="d-md-down-none" />
+        {/* <AppAsideToggler className="d-md-down-none" /> */}
         {/*<AppAsideToggler className="d-lg-none" mobile />*/}
       </React.Fragment>
     );
