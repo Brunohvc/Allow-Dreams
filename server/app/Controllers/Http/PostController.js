@@ -6,14 +6,15 @@
  * Resourceful controller for interacting with users
  */
 const Post = use('App/Models/Post')
+const Follower = use('App/Models/Follower')
 
 /**
- * Resourceful controller for interacting with posts
+ * Resourceful controller for interacting with post
  */
 class PostController {
   /**
-   * Show a list of all posts.
-   * GET posts
+   * Show a list of all post.
+   * GET post
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -21,13 +22,14 @@ class PostController {
    * @param {View} ctx.view
    */
   async index({ response }) {
-    let posts = await Post.query().fetch()
-    return response.json(posts)
+    console.log("index")
+    let post = await Post.query().fetch()
+    return response.json(post)
   }
 
   /**
    * Create/save a new post.
-   * POST posts
+   * POST post
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -53,21 +55,22 @@ class PostController {
 
   /**
    * Display a single post.
-   * GET posts/:id
+   * GET post/:id
    *
    * @param {object} ctx
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async show({ params, request, response, view }) {
+  async show({ request, response }) {
+    console.log("byid")
     let post = await Post.query('id', params.id).fetch()
     return response.json(post)
   }
 
   /**
    * Display a single post.
-   * GET posts/feed/:id
+   * GET post/feed/
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -75,13 +78,25 @@ class PostController {
    * @param {View} ctx.view
    */
   async feed({ params, request, response, view }) {
-    let posts = await Post.query().whereIn('user_id', [params.id]).fetch()
-    return response.json(posts)
+
+    let user_id = request.input('user_id')
+    let page = request.input('page')
+
+    let following = await Follower.query().select('user_id_follower').where('user_id_followed_by', user_id).fetch()
+
+    let followingIds = following.rows.map(function (element) {
+      return element.user_id_follower;
+    })
+
+    followingIds.push(user_id)
+
+    let post = await Post.query().whereIn('user_id', followingIds).forPage(page, 15).fetch()
+    return response.json(post)
   }
 
   /**
    * Render a form to update an existing post.
-   * GET posts/:id/edit
+   * GET post/:id/edit
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -93,7 +108,7 @@ class PostController {
 
   /**
    * Update post details.
-   * PUT or PATCH posts/:id
+   * PUT or PATCH post/:id
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -115,7 +130,7 @@ class PostController {
 
   /**
    * Delete a post with id.
-   * DELETE posts/:id
+   * DELETE post/:id
    *
    * @param {object} ctx
    * @param {Request} ctx.request
