@@ -43,7 +43,7 @@ class DefaultHeader extends Component {
             <Link to="/perfil" className="nav-link">Perfil</Link>
           </NavItem>
           <NavItem className="px-3">
-            <NavLink to="/base/carousels" className="nav-link">Fotos</NavLink>
+            <NavLink to="/album" className="nav-link">Fotos</NavLink>
           </NavItem>
           <NavItem className="px-3">
             <NavLink to="/base/planos" className="nav-link">Planos</NavLink>

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Carousels from './Carousels';
+import Carousels from './Album';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');

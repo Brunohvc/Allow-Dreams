@@ -28,7 +28,7 @@ export default {
     },
     {
       name: 'Álbuns',
-      url: '/base/carousels',
+      url: '/album',
       icon: 'icon-puzzle',
     },
     {
