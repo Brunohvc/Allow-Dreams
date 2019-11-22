@@ -37,7 +37,7 @@ export default {
     },
     {
       name: 'Pagamento',
-      url: '/base/forms',
+      url: '/pagamento',
       icon: 'icon-puzzle',
     },
     {

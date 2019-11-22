@@ -20,7 +20,7 @@ class Planos extends Component {
                   <hr className="my-2" />
                   <p>It uses utility classes for typgraphy and spacing to space content out within the larger container.</p>
                   <p className="lead">
-                    <Link to="/base/forms">
+                    <Link to="/pagamento">
                       <Button color="success" active tabIndex={-1}>Adquirir agora!</Button>
                     </Link>
                   </p>
@@ -41,7 +41,7 @@ class Planos extends Component {
                   <hr className="my-2" />
                   <p>It uses utility classes for typgraphy and spacing to space content out within the larger container.</p>
                   <p className="lead">
-                    <Link to="/base/forms">
+                    <Link to="/pagamento">
                       <Button color="success" active tabIndex={-1}>Adquirir agora!</Button>
                     </Link>
                   </p>
@@ -62,7 +62,7 @@ class Planos extends Component {
                   <hr className="my-2" />
                   <p>It uses utility classes for typgraphy and spacing to space content out within the larger container.</p>
                   <p className="lead">
-                    <Link to="/base/forms">
+                    <Link to="/pagamento">
                       <Button color="success" active tabIndex={-1}>Adquirir agora!</Button>
                     </Link>
                   </p>

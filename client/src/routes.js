@@ -2,7 +2,7 @@ import React from 'react';
 
 const Breadcrumbs = React.lazy(() => import('./views/Base/Breadcrumbs'));
 const Album = React.lazy(() => import('./views/Base/Album/Album'));
-const Forms = React.lazy(() => import('./views/Base/Forms'));
+const Forms = React.lazy(() => import('./views/Base/Pagamento/Pagamento'));
 const Planos = React.lazy(() => import('./views/Base/Planos'));
 const Home = React.lazy(() => import('./views/Base/Home'));
 const Colors = React.lazy(() => import('./views/Theme/Colors'));
@@ -13,7 +13,7 @@ const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/theme', exact: true, name: 'Theme', component: Colors },
   { path: '/theme/colors', name: 'Colors', component: Colors },
-  { path: '/base/forms', name: 'Forms', component: Forms },
+  { path: '/pagamento', name: 'Forms', component: Forms },
   { path: '/base/planos', name: 'Planos', component: Planos },
   { path: '/base/breadcrumbs', name: 'Breadcrumbs', component: Breadcrumbs },
   { path: '/album', name: 'Album', component: Album },
