@@ -63,7 +63,7 @@ class Home extends Component {
     return (
       <div className="animated fadeIn">
         <Row className="justify-content-center">
-          <Col md="2" lg="2" xl="9">
+          <Col md="9" lg="7" xl="9">
             <Card>
               <CardHeader>
                 <strong>Novo Post</strong>
@@ -80,7 +80,7 @@ class Home extends Component {
         </Row>
 
         <Row className="justify-content-center">
-          <Col md="2" lg="2" xl="3">
+          <Col md="9" lg="7" xl="3">
             <Card>
               <CardHeader>
                 <strong>Autor: Felipe</strong>
@@ -100,7 +100,7 @@ class Home extends Component {
             </Card>
           </Col>
 
-          <Col md="2" lg="2" xl="3">
+          <Col md="9" lg="7" xl="3">
             <Card>
               <CardHeader>
                 <i className="fa fa-align-justify"></i><strong>Autor: Bruno</strong>
@@ -120,7 +120,7 @@ class Home extends Component {
             </Card>
           </Col>
 
-          <Col md="2" lg="2" xl="3">
+          <Col md="9" lg="7" xl="3">
             <Card>
               <CardHeader>
                 <i className="fa fa-align-justify"></i><strong>Autor: Guilherme</strong>
