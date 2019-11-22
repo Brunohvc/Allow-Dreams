@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { Badge, UncontrolledDropdown, DropdownItem, DropdownMenu, DropdownToggle, Nav, NavItem } from 'reactstrap';
+import { Badge, UncontrolledDropdown, DropdownItem, DropdownMenu, DropdownToggle, Nav, NavItem, InputGroup, Input} from 'reactstrap';
 import PropTypes from 'prop-types';
 import { AppAsideToggler, AppNavbarBrand, AppSidebarToggler } from '@coreui/react';
 import logo from '../../assets/img/brand/logo.png'
@@ -48,6 +48,9 @@ class DefaultHeader extends Component {
           <NavItem className="px-3">
             <NavLink to="/planos" className="nav-link">Planos</NavLink>
           </NavItem>
+          <InputGroup className="mb-6" style={{ marginLeft: '20px' }}>
+            <Input type="text" placeholder="Procurar" key="procurar" required />
+          </InputGroup>
         </Nav>
         <Nav className="ml-auto" navbar>
           {/* <NavItem className="d-md-down-none">
