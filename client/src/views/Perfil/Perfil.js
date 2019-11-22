@@ -17,26 +17,21 @@ class Perfil extends React.Component {
         <Row className="justify-content-center">
         <Col md="9" lg="7" xl="6">
             <Card className="card-user">
-              <div className="image">
+              <div className="image" style={{ textAlign: 'center', marginTop: '30px', width: 'auto', height: 'auto' }}>
                 <img
                   alt="..."
-                  src={require("../../assets/img/felipe2.jpeg")}
+                  src={require("../../assets/img/user.jpeg")}
+                  style={{ textAlign: 'center', width: '200px', height: '200px', borderRadius: '360px'}}
                 />
               </div>
               <CardBody>
                 <div className="author">
                   <a href="#pablo" onClick={e => e.preventDefault()}>
-                    <img
-                      alt="..."
-                      className="avatar border-gray"
-                      src={require("../../assets/img/felipe2.jpeg")}
-                    />
-                    <h5 className="title">Felipe Pedreli</h5>
+                    <h5 className="title" style={{ textAlign: 'center' }}>Felipe Pedreli Pereira</h5>
                   </a>
-                  <p className="description">@felipepedreli</p>
                 </div>
                 <p className="description text-center">
-                  Eu gosto de futebol
+                  Aqui é Flamengo!!
                   <br />Sou programador!
                 </p>
               </CardBody>
