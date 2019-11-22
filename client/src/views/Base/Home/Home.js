@@ -62,21 +62,25 @@ class Home extends Component {
   render() {
     return (
       <div className="animated fadeIn">
-        <Card>
-          <CardHeader>
-            <strong>Novo Post</strong>
-          </CardHeader>
-          <CardBody>
-            <ReactQuill value={this.state.post}
-              onChange={this.handleChangePost} />
-          </CardBody>
-          <CardFooter>
-            <Button color="primary" onClick={this.sendPost} id="publicacao">Publicar</Button>
-          </CardFooter>
-        </Card>
+        <Row className="justify-content-center">
+          <Col md="2" lg="2" xl="9">
+            <Card>
+              <CardHeader>
+                <strong>Novo Post</strong>
+              </CardHeader>
+              <CardBody>
+                <ReactQuill value={this.state.post}
+                  onChange={this.handleChangePost} />
+              </CardBody>
+              <CardFooter>
+                <Button color="primary" onClick={this.sendPost} id="publicacao">Publicar</Button>
+              </CardFooter>
+            </Card>
+          </Col>
+        </Row>
 
-        <Row>
-          <Col>
+        <Row className="justify-content-center">
+          <Col md="2" lg="2" xl="3">
             <Card>
               <CardHeader>
                 <strong>Autor: Felipe</strong>
@@ -96,7 +100,7 @@ class Home extends Component {
             </Card>
           </Col>
 
-          <Col>
+          <Col md="2" lg="2" xl="3">
             <Card>
               <CardHeader>
                 <i className="fa fa-align-justify"></i><strong>Autor: Bruno</strong>
@@ -116,7 +120,7 @@ class Home extends Component {
             </Card>
           </Col>
 
-          <Col>
+          <Col md="2" lg="2" xl="3">
             <Card>
               <CardHeader>
                 <i className="fa fa-align-justify"></i><strong>Autor: Guilherme</strong>

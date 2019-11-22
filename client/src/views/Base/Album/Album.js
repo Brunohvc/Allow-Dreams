@@ -82,11 +82,11 @@ class Carousels extends Component {
 
     return (
       <div className="animated fadeIn">
-        <Row>
-          <Col xs="12" xl="6">
+        <Row className="justify-content-center">
+          <Col md="9" lg="7" xl="4">
             <Card>
               <CardHeader>
-                <i className="fa fa-align-justify"></i><strong>Álbum</strong>
+                <i className="fa fa-align-justify"></i><strong>Álbum 1</strong>
                 <div className="card-header-actions">
                 </div>
               </CardHeader>
@@ -97,10 +97,42 @@ class Carousels extends Component {
               </CardBody>
             </Card>
           </Col>
-          <Col xs="12" xl="6">
+          <Col md="9" lg="7" xl="4">
             <Card>
               <CardHeader>
-                <i className="fa fa-align-justify"></i><strong>Álbum</strong>
+                <i className="fa fa-align-justify"></i><strong>Álbum 2</strong>
+              </CardHeader>
+              <CardBody>
+                <Carousel activeIndex={activeIndex} next={this.next} previous={this.previous}>
+                  <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+                  {slides2}
+                  <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
+                  <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
+                </Carousel>
+              </CardBody>
+            </Card>
+          </Col>
+        </Row>
+
+        <Row className="justify-content-center">
+          <Col md="9" lg="7" xl="4">
+            <Card>
+              <CardHeader>
+                <i className="fa fa-align-justify"></i><strong>Álbum 3</strong>
+                <div className="card-header-actions">
+                </div>
+              </CardHeader>
+              <CardBody>
+                <Carousel activeIndex={activeIndex} next={this.next} previous={this.previous} ride="carousel">
+                  {slides}
+                </Carousel>
+              </CardBody>
+            </Card>
+          </Col>
+          <Col md="9" lg="7" xl="4">
+            <Card>
+              <CardHeader>
+                <i className="fa fa-align-justify"></i><strong>Álbum 4</strong>
               </CardHeader>
               <CardBody>
                 <Carousel activeIndex={activeIndex} next={this.next} previous={this.previous}>

@@ -37,14 +37,14 @@ class Forms extends Component {
   render() {
     return (
       <div className="animated fadeIn">
-        <Row>
-          <Col sm="12">
+        <Row className="justify-content-center">
+          <Col md="9" lg="7" xl="6">
             <Card>
               <CardHeader>
                 <strong>Cartão de Crédito</strong>
               </CardHeader>
               <CardBody>
-                <Row>
+              <Row className="justify-content-center">
                   <Col xs="12">
                     <FormGroup>
                       <Label htmlFor="name">Nome</Label>
@@ -52,7 +52,7 @@ class Forms extends Component {
                     </FormGroup>
                   </Col>
                 </Row>
-                <Row>
+                <Row className="justify-content-center">
                   <Col xs="12">
                     <FormGroup>
                       <Label htmlFor="ccnumber">Número Cartão de Crédito</Label>
@@ -60,7 +60,7 @@ class Forms extends Component {
                     </FormGroup>
                   </Col>
                 </Row>
-                <Row>
+                <Row className="justify-content-center">
                   <Col xs="4">
                     <FormGroup>
                       <Label htmlFor="ccmonth">Mês</Label>

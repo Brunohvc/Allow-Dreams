@@ -7,8 +7,8 @@ class Planos extends Component {
   render() {
     return (
       <div className="animated fadeIn">
-        <Row>
-          <Col>
+        <Row className="justify-content-center">
+          <Col md="9" lg="7" xl="3">
             <Card>
               <CardHeader>
                 <i className="fa fa-align-justify"></i><strong>Básico</strong>
@@ -29,7 +29,7 @@ class Planos extends Component {
             </Card>
           </Col>
 
-          <Col>
+          <Col md="9" lg="7" xl="3">
             <Card>
               <CardHeader>
                 <i className="fa fa-align-justify"></i><strong>Intermediário</strong>
@@ -50,7 +50,7 @@ class Planos extends Component {
             </Card>
           </Col>
 
-          <Col>
+          <Col md="9" lg="7" xl="3">
             <Card>
               <CardHeader>
                 <i className="fa fa-align-justify"></i><strong>Premium</strong>

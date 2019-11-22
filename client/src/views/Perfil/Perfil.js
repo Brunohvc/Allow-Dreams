@@ -14,8 +14,8 @@ class Perfil extends React.Component {
   render() {
     return (
       <div className="content">
-        <Row>
-          <Col md="6">
+        <Row className="justify-content-center">
+        <Col md="9" lg="7" xl="6">
             <Card className="card-user">
               <div className="image">
                 <img
@@ -69,8 +69,8 @@ class Perfil extends React.Component {
           </Col>
         </Row>
 
-        <Row>
-          <Col>
+        <Row className="justify-content-center">
+          <Col md="2" lg="2" xl="3">
             <Card>
               <CardHeader>
                 <strong>Autor: </strong>
@@ -78,7 +78,7 @@ class Perfil extends React.Component {
               <CardBody>
                 <Jumbotron>
                   <h1 className="display-3">Post 1!</h1>
-                  <p className="lead">Aula de hoje na fábrica de software está cheia de coisas para fazer.</p>
+                  <p className="lead">Aula de hoje está cheia de coisas para fazer.</p>
                   <hr className="my-2" />
                   <p>Meus Post.</p>
                   <p className="lead">
@@ -89,7 +89,7 @@ class Perfil extends React.Component {
             </Card>
           </Col>
 
-          <Col>
+          <Col md="2" lg="2" xl="3">
             <Card>
               <CardHeader>
                 <i className="fa fa-align-justify"></i><strong>Autor: </strong>
@@ -108,7 +108,7 @@ class Perfil extends React.Component {
             </Card>
           </Col>
 
-          <Col>
+          <Col md="2" lg="2" xl="3">
             <Card>
               <CardHeader>
                 <i className="fa fa-align-justify"></i><strong>Autor: </strong>
