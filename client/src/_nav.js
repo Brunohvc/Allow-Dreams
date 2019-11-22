@@ -28,7 +28,7 @@ export default {
     },
     {
       name: 'Álbuns',
-      url: '/base/carousels',
+      url: '/album',
       icon: 'icon-puzzle',
     },
     {
@@ -37,7 +37,7 @@ export default {
     },
     {
       name: 'Pagamento',
-      url: '/base/forms',
+      url: '/pagamento',
       icon: 'icon-puzzle',
     },
     {

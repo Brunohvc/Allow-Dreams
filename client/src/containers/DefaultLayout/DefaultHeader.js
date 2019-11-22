@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Badge, UncontrolledDropdown, DropdownItem, DropdownMenu, DropdownToggle, Nav, NavItem } from 'reactstrap';
 import PropTypes from 'prop-types';
-
 import { AppAsideToggler, AppNavbarBrand, AppSidebarToggler } from '@coreui/react';
 import logo from '../../assets/img/brand/logo.png'
 import sygnet from '../../assets/img/brand/sygnet.svg'
@@ -44,32 +43,31 @@ class DefaultHeader extends Component {
             <Link to="/perfil" className="nav-link">Perfil</Link>
           </NavItem>
           <NavItem className="px-3">
-            <NavLink to="/base/carousels" className="nav-link">Fotos</NavLink>
+            <NavLink to="/album" className="nav-link">Fotos</NavLink>
           </NavItem>
           <NavItem className="px-3">
             <NavLink to="/base/planos" className="nav-link">Planos</NavLink>
           </NavItem>
         </Nav>
         <Nav className="ml-auto" navbar>
-          <NavItem className="d-md-down-none">
+          {/* <NavItem className="d-md-down-none">
             <NavLink to="#" className="nav-link"><i className="icon-bell"></i><Badge pill color="danger">5</Badge></NavLink>
-          </NavItem>
-          <UncontrolledDropdown nav direction="down">
+          </NavItem> */}
+          <UncontrolledDropdown nav direction="down" style={{ marginRight: '25px' }}>
             <DropdownToggle nav>
               <img src={'../../assets/img/avatars/1.jpg'} className="img-avatar" />
             </DropdownToggle>
             <DropdownMenu right>
               <DropdownItem header tag="div" className="text-center"><strong>Perfil</strong></DropdownItem>
               <DropdownItem><i className="fa fa-envelope-o"></i> Mensagens<Badge color="success">2</Badge></DropdownItem>
-              <DropdownItem header tag="div" className="text-center"><strong>Configurações</strong></DropdownItem>
-              <DropdownItem><i className="fa fa-user"></i> Meu Perfil</DropdownItem>
-              <DropdownItem><i className="fa fa-wrench"></i> Ajustes</DropdownItem>
-              <DropdownItem><i className="fa fa-shield"></i>Segurança</DropdownItem>
+              <Link to="/editPerfil">
+              <DropdownItem><i className="fa fa-user"></i> Editar Perfil</DropdownItem>
+              </Link>
               <DropdownItem onClick={this.logOut}><i className="fa fa-lock"></i> Sair</DropdownItem>
             </DropdownMenu>
           </UncontrolledDropdown>
         </Nav>
-        <AppAsideToggler className="d-md-down-none" />
+        {/* <AppAsideToggler className="d-md-down-none" /> */}
         {/*<AppAsideToggler className="d-lg-none" mobile />*/}
       </React.Fragment>
     );

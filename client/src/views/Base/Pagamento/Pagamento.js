@@ -38,11 +38,10 @@ class Forms extends Component {
     return (
       <div className="animated fadeIn">
         <Row>
-          <Col sm="6">
+          <Col sm="12">
             <Card>
               <CardHeader>
                 <strong>Cartão de Crédito</strong>
-                <small> Forma</small>
               </CardHeader>
               <CardBody>
                 <Row>
@@ -113,7 +112,7 @@ class Forms extends Component {
                       <AppSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked label dataOn={'\u2713'} dataOff={'\u2715'} />
                     </CardBody>
                   </Card>
-                  <Link to="/base/forms">
+                  <Link to="/pagamento">
                       <Button color="success" active tabIndex={-1}>Confirmar Pagamento!</Button>
                     </Link>
                   </Col>
