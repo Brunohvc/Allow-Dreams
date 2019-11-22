@@ -18,6 +18,7 @@ class Home extends Component {
 
     this.handleChangePost = this.handleChangePost.bind(this);
     this.sendPost = this.sendPost.bind(this)
+    this.getPosts();
   }
 
   handleChangePost(event) {
@@ -41,23 +42,22 @@ class Home extends Component {
         swal("Erro!", "Um erro inesperado ocorreu, tente novamente!", "error");
       });
   }
-  /*
-    getPosts() {
-      axios.get(`http://127.0.0.1:3333/api/v1/post`, {
-        "user_id": this.state.user.id
+
+  getPosts() {
+    axios.post(`http://127.0.0.1:3333/api/v1/post/feed/`, {
+      "user_id": this.state.user.id,
+      "page": 1
+    })
+      .then(function (response) {
+
+        console.log("Posts:", response.data)
+
       })
-        .then(function (response) {
-          if (response.data.message) {
-            swal("Erro!", response.data.message, "error");
-          } else {
-            console.log("Postou")
-          }
-        })
-        .catch(function (error) {
-          swal("Erro!", "Um erro inesperado ocorreu, tente novamente!", "error");
-        });
-    }
-    */
+      .catch(function (error) {
+        swal("Erro!", "Um erro inesperado ocorreu, tente novamente!", "error");
+      });
+  }
+
 
   render() {
     return (
