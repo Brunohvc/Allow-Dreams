@@ -15,7 +15,6 @@ const routes = [
   { path: '/theme/colors', name: 'Colors', component: Colors },
   { path: '/pagamento', name: 'Forms', component: Forms },
   { path: '/base/planos', name: 'Planos', component: Planos },
-  { path: '/base/breadcrumbs', name: 'Breadcrumbs', component: Breadcrumbs },
   { path: '/album', name: 'Album', component: Album },
   { path: '/home', name: 'Home', component: Home },
   { path: '/perfil', exact: true,  name: 'Perfil', component: Perfil },
