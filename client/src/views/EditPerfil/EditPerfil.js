@@ -72,7 +72,7 @@ class EditPerfil extends React.Component {
                         <Input
                           defaultValue="Data"
                           placeholder="Data de aniversário"
-                          type="number"
+                          type="date"
                         />
                       </FormGroup>
                     </Col>
