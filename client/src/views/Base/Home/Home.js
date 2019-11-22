@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Button, Card, CardBody, CardHeader, Col, Jumbotron, Row, CardFooter, } from 'reactstrap';
-import { Editor } from 'react-draft-wysiwyg';
-import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
+import axios from 'axios';
+import swal from 'sweetalert';
 
 class Home extends Component {
   constructor(props) {
@@ -19,13 +21,43 @@ class Home extends Component {
   }
 
   handleChangePost(event) {
-    //this.setState({ post: event.target.value });
-    console.log(event)
+    this.setState({ post: event });
   }
 
   sendPost(event) {
-    console.log("Envia Post")
+    console.log("Envia Post", this.state.post)
+    console.log("User:", this.state.user)
+
+    axios.post(`http://127.0.0.1:3333/api/v1/post`, {
+      "post_content": this.state.post,
+      "user_id": this.state.user.id
+    })
+      .then(function (response) {
+        if (response.data.message) {
+          swal("Erro!", response.data.message, "error");
+        }
+      })
+      .catch(function (error) {
+        swal("Erro!", "Um erro inesperado ocorreu, tente novamente!", "error");
+      });
   }
+  /*
+    getPosts() {
+      axios.get(`http://127.0.0.1:3333/api/v1/post`, {
+        "user_id": this.state.user.id
+      })
+        .then(function (response) {
+          if (response.data.message) {
+            swal("Erro!", response.data.message, "error");
+          } else {
+            console.log("Postou")
+          }
+        })
+        .catch(function (error) {
+          swal("Erro!", "Um erro inesperado ocorreu, tente novamente!", "error");
+        });
+    }
+    */
 
   render() {
     return (
@@ -35,13 +67,8 @@ class Home extends Component {
             <strong>Novo Post</strong>
           </CardHeader>
           <CardBody>
-            <Editor
-              value={this.state.post}
-              toolbarClassName="toolbarClassName"
-              wrapperClassName="wrapperClassName"
-              editorClassName="editorClassName"
-              onChange={this.handleChangePost}
-            />
+            <ReactQuill value={this.state.post}
+              onChange={this.handleChangePost} />
           </CardBody>
           <CardFooter>
             <Button color="primary" onClick={this.sendPost} id="publicacao">Publicar</Button>
