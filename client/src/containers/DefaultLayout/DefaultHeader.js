@@ -30,8 +30,8 @@ class DefaultHeader extends Component {
       <React.Fragment>
         <AppSidebarToggler className="d-lg-none" display="md" mobile />
         <AppNavbarBrand
-          full={{ src: logo, width: 89, height: 25, alt: 'CoreUI Logo' }}
-          minimized={{ src: sygnet, width: 30, height: 30, alt: 'CoreUI Logo' }}
+          full={{ src: logo, width: 89, height: 25, alt: 'Logo' }}
+          minimized={{ src: sygnet, width: 30, height: 30, alt: 'Logo' }}
         />
         <AppSidebarToggler className="d-md-down-none" display="lg" />
 
@@ -46,7 +46,7 @@ class DefaultHeader extends Component {
             <NavLink to="/album" className="nav-link">Fotos</NavLink>
           </NavItem>
           <NavItem className="px-3">
-            <NavLink to="/base/planos" className="nav-link">Planos</NavLink>
+            <NavLink to="/planos" className="nav-link">Planos</NavLink>
           </NavItem>
         </Nav>
         <Nav className="ml-auto" navbar>
@@ -55,7 +55,7 @@ class DefaultHeader extends Component {
           </NavItem> */}
           <UncontrolledDropdown nav direction="down" style={{ marginRight: '25px' }}>
             <DropdownToggle nav>
-              <img src={'../../assets/img/avatars/1.jpg'} className="img-avatar" />
+              <img src={'../../assets/img/avatars/felipe.jpeg'} className="img-avatar" />
             </DropdownToggle>
             <DropdownMenu right>
               <DropdownItem header tag="div" className="text-center"><strong>Perfil</strong></DropdownItem>

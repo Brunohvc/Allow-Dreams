@@ -13,7 +13,7 @@ const routes = [
   { path: '/theme', exact: true, name: 'Theme', component: Colors },
   { path: '/theme/colors', name: 'Colors', component: Colors },
   { path: '/pagamento', name: 'Forms', component: Forms },
-  { path: '/base/planos', name: 'Planos', component: Planos },
+  { path: '/planos', name: 'Planos', component: Planos },
   { path: '/album', name: 'Album', component: Album },
   { path: '/home', name: 'Home', component: Home },
   { path: '/perfil', exact: true,  name: 'Perfil', component: Perfil },
