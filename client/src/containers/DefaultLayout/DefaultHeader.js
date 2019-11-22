@@ -62,7 +62,6 @@ class DefaultHeader extends Component {
             </DropdownToggle>
             <DropdownMenu right>
               <DropdownItem header tag="div" className="text-center"><strong>Perfil</strong></DropdownItem>
-              <DropdownItem><i className="fa fa-envelope-o"></i> Mensagens<Badge color="success">2</Badge></DropdownItem>
               <Link to="/editPerfil">
               <DropdownItem><i className="fa fa-user"></i> Editar Perfil</DropdownItem>
               </Link>
