@@ -70,7 +70,7 @@ class Perfil extends React.Component {
         </Row>
 
         <Row className="justify-content-center">
-          <Col md="2" lg="2" xl="3">
+          <Col md="9" lg="7" xl="3">
             <Card>
               <CardHeader>
                 <strong>Autor: </strong>
@@ -89,7 +89,7 @@ class Perfil extends React.Component {
             </Card>
           </Col>
 
-          <Col md="2" lg="2" xl="3">
+          <Col md="9" lg="7" xl="3">
             <Card>
               <CardHeader>
                 <i className="fa fa-align-justify"></i><strong>Autor: </strong>
@@ -108,7 +108,7 @@ class Perfil extends React.Component {
             </Card>
           </Col>
 
-          <Col md="2" lg="2" xl="3">
+          <Col md="9" lg="7" xl="3">
             <Card>
               <CardHeader>
                 <i className="fa fa-align-justify"></i><strong>Autor: </strong>
