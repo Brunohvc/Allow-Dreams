@@ -1,6 +1,5 @@
 import React from 'react';
 
-const Breadcrumbs = React.lazy(() => import('./views/Base/Breadcrumbs'));
 const Album = React.lazy(() => import('./views/Base/Album/Album'));
 const Forms = React.lazy(() => import('./views/Base/Pagamento/Pagamento'));
 const Planos = React.lazy(() => import('./views/Base/Planos'));
