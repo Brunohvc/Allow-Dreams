@@ -90,7 +90,12 @@ class PostController {
 
     followingIds.push(user_id)
 
-    let post = await Post.query().whereIn('user_id', followingIds).forPage(page, 15).fetch()
+    let post = await Post.query().select('posts.id', 'posts.post_content', 'posts.updated_at', 'users.nickname')
+      .innerJoin('users', 'posts.user_id', 'users.id')
+      .whereIn('user_id', followingIds)
+      .forPage(page, 20).fetch()
+
+    console.log(post)
     return response.json(post)
   }
 

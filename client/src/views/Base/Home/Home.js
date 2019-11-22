@@ -4,6 +4,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import axios from 'axios';
 import swal from 'sweetalert';
+import $ from 'jquery';
 
 class Home extends Component {
   constructor(props) {
@@ -13,11 +14,28 @@ class Home extends Component {
 
     this.state = {
       post: '',
-      user: dadosUser
+      user: dadosUser,
+      page: 1,
+      posts: []
     };
 
     this.handleChangePost = this.handleChangePost.bind(this);
     this.sendPost = this.sendPost.bind(this)
+    this.getPosts = this.getPosts.bind(this)
+
+    $(document).scroll(function () {
+      var top = document.body.scrollTop;
+      var maxTop = document.body.scrollHeight - document.body.clientHeight;
+
+      if (parseInt(top) === maxTop) {
+        console.log('Chegou ao fim da página')
+      }
+    }.bind(this));
+
+
+  }
+
+  componentDidMount() {
     this.getPosts();
   }
 
@@ -26,9 +44,6 @@ class Home extends Component {
   }
 
   sendPost(event) {
-    console.log("Envia Post", this.state.post)
-    console.log("User:", this.state.user)
-
     axios.post(`http://127.0.0.1:3333/api/v1/post`, {
       "post_content": this.state.post,
       "user_id": this.state.user.id
@@ -36,6 +51,8 @@ class Home extends Component {
       .then(function (response) {
         if (response.data.message) {
           swal("Erro!", response.data.message, "error");
+        } else {
+          this.getPosts();
         }
       })
       .catch(function (error) {
@@ -46,13 +63,13 @@ class Home extends Component {
   getPosts() {
     axios.post(`http://127.0.0.1:3333/api/v1/post/feed/`, {
       "user_id": this.state.user.id,
-      "page": 1
+      "page": this.state.page
     })
       .then(function (response) {
+        console.log(response)
+        this.setState({ posts: response.data, page: this.state.page + 1 });
 
-        console.log("Posts:", response.data)
-
-      })
+      }.bind(this))
       .catch(function (error) {
         swal("Erro!", "Um erro inesperado ocorreu, tente novamente!", "error");
       });
@@ -79,67 +96,35 @@ class Home extends Component {
           </Col>
         </Row>
 
-        <Row className="justify-content-center">
-          <Col md="9" lg="7" xl="3">
-            <Card>
-              <CardHeader>
-                <strong>Autor: Felipe</strong>
-              </CardHeader>
-              <CardBody>
-                <Jumbotron>
-                  <h1 className="display-3">Post 1!</h1>
-                  <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra
-                      attention to featured content or information.</p>
-                  <hr className="my-2" />
-                  <p>It uses utility classes for typgraphy and spacing to space content out within the larger container.</p>
-                  <p className="lead">
-                    <Button color="primary">Detalhes</Button>
-                  </p>
-                </Jumbotron>
-              </CardBody>
-            </Card>
-          </Col>
+        {this.state.posts.length > 0 &&
+          <Row className="justify-content-center">
 
-          <Col md="9" lg="7" xl="3">
-            <Card>
-              <CardHeader>
-                <i className="fa fa-align-justify"></i><strong>Autor: Bruno</strong>
-              </CardHeader>
-              <CardBody>
-                <Jumbotron>
-                  <h1 className="display-3">Post 2!</h1>
-                  <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra
-                      attention to featured content or information.</p>
-                  <hr className="my-2" />
-                  <p>It uses utility classes for typgraphy and spacing to space content out within the larger container.</p>
-                  <p className="lead">
-                    <Button color="primary">Detalhes</Button>
-                  </p>
-                </Jumbotron>
-              </CardBody>
-            </Card>
-          </Col>
 
-          <Col md="9" lg="7" xl="3">
-            <Card>
-              <CardHeader>
-                <i className="fa fa-align-justify"></i><strong>Autor: Guilherme</strong>
-              </CardHeader>
-              <CardBody>
-                <Jumbotron>
-                  <h1 className="display-3">Post 3!</h1>
-                  <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra
-                      attention to featured content or information.</p>
-                  <hr className="my-2" />
-                  <p>It uses utility classes for typgraphy and spacing to space content out within the larger container.</p>
-                  <p className="lead">
-                    <Button color="primary">Detalhes</Button>
-                  </p>
-                </Jumbotron>
-              </CardBody>
-            </Card>
-          </Col>
-        </Row>
+            {
+              this.state.posts.map(function (post) {
+                return (
+
+                  <Col md="9" lg="7" xl="6" key={post.id}>
+                    <Card>
+                      <CardHeader>
+                        <Row className="justify-content-center">
+                          <Col md="6" lg="6" xl="6">
+                            <strong>@{post.nickname}</strong>
+                          </Col>
+                          <Col md="6" lg="6" xl="6" style={{ textAlign: 'right' }}>
+                            {post.updated_at}
+                          </Col>
+                        </Row>
+                      </CardHeader>
+                      <CardBody dangerouslySetInnerHTML={{ __html: post.post_content }}>
+                      </CardBody>
+                    </Card>
+                  </Col>
+                )
+              })
+            }
+          </Row>
+        }
       </div>
     );
   }
