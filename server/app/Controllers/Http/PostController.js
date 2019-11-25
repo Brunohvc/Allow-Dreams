@@ -22,7 +22,6 @@ class PostController {
    * @param {View} ctx.view
    */
   async index({ response }) {
-    console.log("index")
     let post = await Post.query().fetch()
     return response.json(post)
   }
@@ -36,8 +35,6 @@ class PostController {
    * @param {Response} ctx.response
    */
   async store({ request, response }) {
-
-    console.log("Entrou")
 
     const post = new Post();
     post.title = request.input('title')
@@ -63,7 +60,6 @@ class PostController {
    * @param {View} ctx.view
    */
   async show({ request, response }) {
-    console.log("byid")
     let post = await Post.query('id', params.id).fetch()
     return response.json(post)
   }
@@ -84,18 +80,23 @@ class PostController {
 
     let following = await Follower.query().select('user_id_follower').where('user_id_followed_by', user_id).fetch()
 
-    let followingIds = following.rows.map(function (element) {
-      return element.user_id_follower;
-    })
+    let followingIds = []
+
+    if (request.input('post_friends')) {
+      followingIds = following.rows.map(function (element) {
+        return element.user_id_follower;
+      })
+    }
 
     followingIds.push(user_id)
 
-    let post = await Post.query().select('posts.id', 'posts.post_content', 'posts.updated_at', 'users.nickname')
+    let post = await Post.query().select('posts.id', 'posts.post_content', 'posts.created_at', 'users.nickname')
       .innerJoin('users', 'posts.user_id', 'users.id')
       .whereIn('user_id', followingIds)
+      .orderBy('posts.created_at', 'desc')
+      .orderBy('users.nickname', 'asc')
       .forPage(page, 20).fetch()
 
-    console.log(post)
     return response.json(post)
   }
 

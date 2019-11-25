@@ -16,8 +16,9 @@ const routes = [
   { path: '/planos', name: 'Planos', component: Planos },
   { path: '/album', name: 'Album', component: Album },
   { path: '/home', name: 'Home', component: Home },
-  { path: '/perfil', exact: true,  name: 'Perfil', component: Perfil },
-  { path: '/editPerfil', exact: true,  name: 'EditPerfil', component: EditPerfil },
+  { path: '/perfil', exact: true, name: 'Perfil', component: Perfil },
+  { path: '/perfil/:id', exact: true, name: 'Perfil', component: Perfil },
+  { path: '/editPerfil', exact: true, name: 'EditPerfil', component: EditPerfil },
 ];
 
 export default routes;

@@ -16,27 +16,26 @@ class Home extends Component {
       post: '',
       user: dadosUser,
       page: 1,
-      posts: []
+      posts: [],
+      consulta: false
     };
 
     this.handleChangePost = this.handleChangePost.bind(this);
     this.sendPost = this.sendPost.bind(this)
     this.getPosts = this.getPosts.bind(this)
 
-    $(document).scroll(function () {
-      var top = document.body.scrollTop;
-      var maxTop = document.body.scrollHeight - document.body.clientHeight;
+  }
 
-      if (parseInt(top) === maxTop) {
-        console.log('Chegou ao fim da página')
-      }
-    }.bind(this));
-
-
+  handleScroll() {
+    if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+      this.getPosts();
+    }
   }
 
   componentDidMount() {
     this.getPosts();
+
+    window.onscroll = () => this.handleScroll()
   }
 
   handleChangePost(event) {
@@ -52,27 +51,32 @@ class Home extends Component {
         if (response.data.message) {
           swal("Erro!", response.data.message, "error");
         } else {
+          this.setState({ page: 1, post: '', posts: [] });
           this.getPosts();
         }
-      })
+      }.bind(this))
       .catch(function (error) {
         swal("Erro!", "Um erro inesperado ocorreu, tente novamente!", "error");
       });
   }
 
   getPosts() {
-    axios.post(`http://127.0.0.1:3333/api/v1/post/feed/`, {
-      "user_id": this.state.user.id,
-      "page": this.state.page
-    })
-      .then(function (response) {
-        console.log(response)
-        this.setState({ posts: response.data, page: this.state.page + 1 });
+    if (!this.state.consulta) {
+      this.setState({ consulta: true });
+      axios.post(`http://127.0.0.1:3333/api/v1/post/feed/`, {
+        "user_id": this.state.user.id,
+        "page": this.state.page,
+        "post_friends": true
+      })
+        .then(function (response) {
+          let newPosts = [...this.state.posts, ...response.data]
 
-      }.bind(this))
-      .catch(function (error) {
-        swal("Erro!", "Um erro inesperado ocorreu, tente novamente!", "error");
-      });
+          this.setState({ posts: newPosts, page: this.state.page + 1, consulta: false });
+        }.bind(this))
+        .catch(function (error) {
+          swal("Erro!", "Um erro inesperado ocorreu, tente novamente!", "error");
+        });
+    }
   }
 
 
@@ -98,8 +102,6 @@ class Home extends Component {
 
         {this.state.posts.length > 0 &&
           <Row className="justify-content-center">
-
-
             {
               this.state.posts.map(function (post) {
                 return (

@@ -90,7 +90,10 @@ class UserController {
     * @param {View} ctx.view
     */
     async show({ params, response }) {
-        let user = await User.query('id', params.id).fetch()
+        console.log("UserId: ", params.id)
+
+        let user = await User.findBy('id', `${params.id}`)
+        //let user = await User.query('id', params.id).fetch()
         return response.json(user)
     }
 
