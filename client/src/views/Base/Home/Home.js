@@ -123,7 +123,7 @@ class Home extends Component {
               this.state.posts.map(function (post) {
                 return (
 
-                  <Col md="9" lg="7" xl="9" key={post.id}>
+                  <Col md="9" lg="7" xl="6" key={post.id}>
                     <Card>
                       <CardHeader>
                         <Row className="justify-content-center">
