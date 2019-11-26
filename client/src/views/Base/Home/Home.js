@@ -32,6 +32,17 @@ class Home extends Component {
     }
   }
 
+  handleDark = () => {
+    const elemento = document.getElementsByClassName('app-body')[0]
+    const elemento2 = document.getElementsByClassName('app-header')[0]
+    elemento.className = elemento.className.includes('dark')
+      ? elemento.className.replace('dark', '').trim()
+      : `${elemento.className} dark`.trim();
+    elemento2.className = elemento2.className.includes('dark')
+      ? elemento2.className.replace('dark', '').trim()
+      : `${elemento2.className} dark`.trim();
+  }
+
   componentDidMount() {
     this.getPosts();
 
@@ -82,6 +93,13 @@ class Home extends Component {
   render() {
     return (
       <div className="animated fadeIn">
+        <Row className="justify-content-center">
+          <Col md="9" lg="7" xl="9">
+            <Card>
+              <button onClick={this.handleDark}>Dark Mode</button>
+            </Card>
+          </Col>
+        </Row>
         <Row className="justify-content-center">
           <Col md="9" lg="7" xl="9">
             <Card>
