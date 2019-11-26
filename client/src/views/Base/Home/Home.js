@@ -33,9 +33,12 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    this.getPosts();
-
-    window.onscroll = () => this.handleScroll()
+    if (this.state.user) {
+      this.getPosts();
+      window.onscroll = () => this.handleScroll()
+    } else {
+      console.log("Sem localstorage: ", this.state.user)
+    }
   }
 
   handleChangePost(event) {
