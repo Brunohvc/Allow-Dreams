@@ -27,7 +27,7 @@ class DefaultLayout extends Component {
 
     let dados = JSON.parse(localStorage.getItem('dadosUser'))
     if (!dados) {
-      props.history.push("/Login");
+      setTimeout(function () { window.location.hash = "#/login"; }, 1);
     }
   }
 
