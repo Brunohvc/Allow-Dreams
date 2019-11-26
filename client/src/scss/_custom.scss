@@ -1,5 +1,49 @@
-// Here you can add other styles
-.dark {
+body[dark] .card-header{
+  background: 	#1C1C1C;
+  color: white;
+}
+
+body[dark] .app-body{
+  background: #363636;
+}
+
+body[dark] .card-body{
+  background: #A9A9A9;
+  color: white;
+}
+
+body[dark] .card-footer{
   background: #1C1C1C;
-  // color: white;
+  color: white;
+}
+
+body[dark] .text-muted{
+  color: black!important;
+}
+
+body[dark] .image{
+  background: #A9A9A9;
+}
+
+body[dark] .ql-toolbar ql-snow{
+  background: #A9A9A9;
+  color: white;
+}
+
+body[dark] .jumbotron{
+  background: #696969;
+  color: white;
+}
+
+body[dark] .app-header{
+  background: #000000;
+  color: white;
+}
+
+body[dark] .nav-link:hover{
+  color: #DCDCDC!important;
+}
+
+body[dark] .nav-link{
+  color: white!important;
 }

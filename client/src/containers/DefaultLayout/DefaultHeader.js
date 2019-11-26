@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { Badge, UncontrolledDropdown, DropdownItem, DropdownMenu, DropdownToggle, Nav, NavItem, InputGroup, Input} from 'reactstrap';
+import { Button, UncontrolledDropdown, DropdownItem, DropdownMenu, DropdownToggle, Nav, NavItem, InputGroup, Input} from 'reactstrap';
 import PropTypes from 'prop-types';
-import { AppAsideToggler, AppNavbarBrand, AppSidebarToggler } from '@coreui/react';
+import { AppNavbarBrand, AppSidebarToggler } from '@coreui/react';
 import logo from '../../assets/img/brand/logo.png'
 import sygnet from '../../assets/img/brand/sygnet.svg'
 
@@ -16,6 +16,10 @@ class DefaultHeader extends Component {
   constructor(props) {
     super(props);
     this.logOut = this.logOut.bind(this);
+  }
+
+  handleDark = () => {
+    document.querySelector("body").toggleAttribute("dark");
   }
 
   logOut() {
@@ -52,6 +56,7 @@ class DefaultHeader extends Component {
             <Input type="text" placeholder="Procurar" key="procurar" required />
           </InputGroup>
         </Nav>
+
         <Nav className="ml-auto" navbar>
           {/* <NavItem className="d-md-down-none">
             <NavLink to="#" className="nav-link"><i className="icon-bell"></i><Badge pill color="danger">5</Badge></NavLink>
@@ -62,6 +67,9 @@ class DefaultHeader extends Component {
             </DropdownToggle>
             <DropdownMenu right>
               <DropdownItem header tag="div" className="text-center"><strong>Perfil</strong></DropdownItem>
+              <DropdownItem>
+                <Button onClick={this.handleDark}>Dark Mode</Button>
+              </DropdownItem>
               <Link to="/editPerfil">
               <DropdownItem><i className="fa fa-user"></i> Editar Perfil</DropdownItem>
               </Link>
