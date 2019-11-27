@@ -5,6 +5,7 @@ body[dark] .card-header{
 
 body[dark] .app-body{
   background: #363636;
+  background: -webkit-gradient(linear, left top, left bottom, from(#CCCCCC), to(#363636));
 }
 
 body[dark] .card-body{
