@@ -6,6 +6,7 @@
  * Resourceful controller for interacting with users
  */
 const User = use('App/Models/User');
+const Follower = use('App/Models/Follower');
 
 class UserController {
 
@@ -90,10 +91,32 @@ class UserController {
     * @param {View} ctx.view
     */
     async show({ params, response }) {
-        console.log("UserId: ", params.id)
-
         let user = await User.findBy('id', `${params.id}`)
-        //let user = await User.query('id', params.id).fetch()
+        return response.json(user)
+    }
+
+
+    /**
+    * Display a single user.
+    * POST users/verificaRelacionamento
+    *
+    * @param {object} ctx
+    * @param {Request} ctx.request
+    * @param {Response} ctx.response
+    * @param {View} ctx.view
+    */
+    async verificaRelacionamento({ params, response }) {
+        //Follower
+
+        let userPageId = request.input('userPageId')
+        let userId = request.input('userId')
+        let user = await User.findBy('id', `${userPageId}`)
+        let follower = null;
+
+        if (userPageId != userId)
+            follower = true;
+
+
         return response.json(user)
     }
 
