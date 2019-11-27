@@ -3,7 +3,12 @@ body .main{
 }
 
 body[dark] .card-header{
-  background: 	#1C1C1C;
+  background: 	#282828;
+  color: white;
+}
+
+body .card-header{
+  background:	#430f02;
   color: white;
 }
 
@@ -14,7 +19,13 @@ body[dark] .app-body{
 
 body[dark] .card-body{
   background: #A9A9A9;
-  color: white;
+  color: black;
+}
+
+body .card-body{
+  background: #dcdcdc;
+  color: black;
+  border: 5px solid white;
 }
 
 body[dark] .card-footer{
@@ -35,6 +46,13 @@ body .image{
   width: auto;
   height: auto;
   border: 10px solid white;
+}
+
+body[dark] .image{
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSSgCCOcns3I2zyJsc43t1XgcJbqDMz8DIISAVRuKv1GkaCqxOe");
+  width: auto;
+  height: auto;
+  border: 10px solid black;
 }
 
 body[dark] .ql-toolbar ql-snow{

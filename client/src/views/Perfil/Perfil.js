@@ -122,7 +122,7 @@ class Perfil extends Component {
                       style={{ textAlign: 'center', width: '200px', border: '5px solid white', height: '200px', borderRadius: '360px', marginTop: '10px', marginBottom: '10px' }}
                     />
                   </div>
-                  <CardBody>
+                  <CardBody style={{ border: '10px solid white' }}>
                     <div className="author">
                       <h5 className="title" style={{ textAlign: 'center' }}>{this.state.user.name}</h5>
                     </div>
