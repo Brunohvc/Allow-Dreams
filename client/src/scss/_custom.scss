@@ -26,6 +26,13 @@ body[dark] .image{
   background: #A9A9A9;
 }
 
+body .image{
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSSgCCOcns3I2zyJsc43t1XgcJbqDMz8DIISAVRuKv1GkaCqxOe");
+  width: auto;
+  height: auto;
+  border: 10px solid white;
+}
+
 body[dark] .ql-toolbar ql-snow{
   background: #A9A9A9;
   color: white;
@@ -42,7 +49,7 @@ body[dark] .app-header{
 }
 
 body .app-header{
-  background: #191970;
+  background: #800000;
   color: white;
 }
 

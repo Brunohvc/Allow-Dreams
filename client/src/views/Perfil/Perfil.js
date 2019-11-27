@@ -115,11 +115,11 @@ class Perfil extends Component {
             <Row className="justify-content-center">
               <Col md="9" lg="7" xl="6">
                 <Card className="card-user">
-                  <div className="image" style={{ textAlign: 'center', marginTop: '30px', width: 'auto', height: 'auto' }}>
+                  <div className="image" style={{ textAlign: 'center', width: 'auto', height: 'auto' }}>
                     <img
                       alt="..."
                       src={require("../../assets/img/user.jpeg")}
-                      style={{ textAlign: 'center', width: '200px', height: '200px', borderRadius: '360px' }}
+                      style={{ textAlign: 'center', width: '200px', border: '5px solid white', height: '200px', borderRadius: '360px', marginTop: '10px', marginBottom: '10px' }}
                     />
                   </div>
                   <CardBody>
