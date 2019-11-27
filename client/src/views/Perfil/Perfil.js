@@ -168,7 +168,7 @@ class Perfil extends Component {
 
             {this.state.user.id == this.state.user_logado.id &&
               <Row className="justify-content-center">
-                <Col md="9" lg="7" xl="9">
+                <Col md="9" lg="7" xl="6">
                   <Card>
                     <CardHeader>
                       <strong>Novo Post</strong>
@@ -187,29 +187,33 @@ class Perfil extends Component {
 
             {this.state && this.state.posts.length > 0 &&
               <Row className="justify-content-center">
-                {
-                  this.state.posts.map(function (post) {
-                    return (
+                <Col md="12" lg="12" xl="9">
+                  <Row className="justify-content-center">
+                    {
+                      this.state.posts.map(function (post) {
+                        return (
 
-                      <Col md="9" lg="7" xl="6" key={post.id}>
-                        <Card>
-                          <CardHeader>
-                            <Row className="justify-content-center">
-                              <Col md="6" lg="6" xl="6">
-                                <strong>@{post.nickname}</strong>
-                              </Col>
-                              <Col md="6" lg="6" xl="6" style={{ textAlign: 'right' }}>
-                                {post.updated_at}
-                              </Col>
-                            </Row>
-                          </CardHeader>
-                          <CardBody dangerouslySetInnerHTML={{ __html: post.post_content }}>
-                          </CardBody>
-                        </Card>
-                      </Col>
-                    )
-                  })
-                }
+                          <Col md="9" lg="7" xl="6" key={post.id}>
+                            <Card>
+                              <CardHeader>
+                                <Row className="justify-content-center">
+                                  <Col md="6" lg="6" xl="6">
+                                    <strong>@{post.nickname}</strong>
+                                  </Col>
+                                  <Col md="6" lg="6" xl="6" style={{ textAlign: 'right' }}>
+                                    {post.updated_at}
+                                  </Col>
+                                </Row>
+                              </CardHeader>
+                              <CardBody dangerouslySetInnerHTML={{ __html: post.post_content }}>
+                              </CardBody>
+                            </Card>
+                          </Col>
+                        )
+                      })
+                    }
+                  </Row>
+                </Col>
               </Row>
             }
           </div>
