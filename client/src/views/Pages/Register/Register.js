@@ -66,9 +66,9 @@ class Register extends Component {
       valid = false;
     }
 
+
     this.setState({ error: newerros });
     if (valid) {
-
       axios.post(`http://127.0.0.1:3333/api/v1/users`, {
         "name": this.state.name,
         "phone": this.state.phone,
@@ -97,7 +97,7 @@ class Register extends Component {
             <Col md="9" lg="7" xl="6">
               <Card className="mx-4">
                 <CardBody className="p-4">
-                  <Form onSubmit={this.handleSubmit}>
+                  <Form>
                     <h1>Cadastro</h1>
                     <p className="text-muted">Crie a sua conta</p>
                     <InputGroup className="mb-3">
@@ -138,7 +138,7 @@ class Register extends Component {
                       </InputGroupAddon>
                       <Input type="password" placeholder="Repita sua senha" key="passwordC" autoComplete="new-password" value={this.state.passwordC} onChange={this.handleChangePasswordC} required />
                     </InputGroup>
-                    <Button color="success" block>Finalizar Cadastro</Button>
+                    <Button color="success" block onClick={this.handleSubmit}>Finalizar Cadastro</Button>
                   </Form>
                 </CardBody>
                 {

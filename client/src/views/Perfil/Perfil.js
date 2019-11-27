@@ -46,10 +46,9 @@ class Perfil extends Component {
       }.bind(this))
 
     } else {
-      axios.get(`http://127.0.0.1:3333/api/v1/users/1`)
+      axios.get(`http://127.0.0.1:3333/api/v1/users/${this.state.userId}`)
         .then(function (response) {
           dadosUser = response.data;
-
           this.setState({ user: response.data });
 
           window.onscroll = () => this.handleScroll()
@@ -74,7 +73,7 @@ class Perfil extends Component {
   sendPost(event) {
     axios.post(`http://127.0.0.1:3333/api/v1/post`, {
       "post_content": this.state.post,
-      "user_id": this.state.user.id
+      "user_id": this.state.user_logado.id
     })
       .then(function (response) {
         if (response.data.message) {
@@ -133,8 +132,7 @@ class Perfil extends Component {
                       Descrição
                     </p>
                   </CardBody>
-                  <CardFooter>
-                    <hr />
+                  <CardFooter style={{ textAlign: 'center' }}>
                     <div className="button-container">
                       <Row className="justify-content-center" style={{ textAlign: 'center' }}>
                         <Col lg="3" md="6" xs="6">
@@ -155,6 +153,12 @@ class Perfil extends Component {
                             <small>Seguidores</small>
                           </h5>
                         </Col>
+
+                        {this.state.user.id != this.state.user_logado.id &&
+                          <Col lg="3" md="6" xs="6" style={{ alignSelf: 'center' }}>
+                            <Button color="primary" onClick={this.sendPost} id="publicacao">Seguir</Button>
+                          </Col>
+                        }
                       </Row>
                     </div>
                   </CardFooter>
@@ -167,7 +171,7 @@ class Perfil extends Component {
                 <Col md="9" lg="7" xl="6">
                   <Card>
                     <CardHeader>
-                      <strong>Criar publicação</strong>
+                      <strong>Novo Post</strong>
                     </CardHeader>
                     <CardBody>
                       <ReactQuill value={this.state.post}
@@ -183,29 +187,33 @@ class Perfil extends Component {
 
             {this.state && this.state.posts.length > 0 &&
               <Row className="justify-content-center">
-                {
-                  this.state.posts.map(function (post) {
-                    return (
+                <Col md="12" lg="12" xl="9">
+                  <Row className="justify-content-center">
+                    {
+                      this.state.posts.map(function (post) {
+                        return (
 
-                      <Col md="9" lg="7" xl="6" key={post.id}>
-                        <Card>
-                          <CardHeader>
-                            <Row className="justify-content-center">
-                              <Col md="6" lg="6" xl="6">
-                                <strong>@{post.nickname}</strong>
-                              </Col>
-                              <Col md="6" lg="6" xl="6" style={{ textAlign: 'right' }}>
-                                {post.updated_at}
-                              </Col>
-                            </Row>
-                          </CardHeader>
-                          <CardBody dangerouslySetInnerHTML={{ __html: post.post_content }}>
-                          </CardBody>
-                        </Card>
-                      </Col>
-                    )
-                  })
-                }
+                          <Col md="9" lg="7" xl="6" key={post.id}>
+                            <Card>
+                              <CardHeader>
+                                <Row className="justify-content-center">
+                                  <Col md="6" lg="6" xl="6">
+                                    <strong>@{post.nickname}</strong>
+                                  </Col>
+                                  <Col md="6" lg="6" xl="6" style={{ textAlign: 'right' }}>
+                                    {post.updated_at}
+                                  </Col>
+                                </Row>
+                              </CardHeader>
+                              <CardBody dangerouslySetInnerHTML={{ __html: post.post_content }}>
+                              </CardBody>
+                            </Card>
+                          </Col>
+                        )
+                      })
+                    }
+                  </Row>
+                </Col>
               </Row>
             }
           </div>
