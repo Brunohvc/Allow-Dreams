@@ -56,7 +56,7 @@ class DefaultLayout extends Component {
             <AppSidebarFooter />
             <AppSidebarMinimizer />
           </AppSidebar>
-          <main className="main" style={{ marginTop: '10px' }}>
+          <main className="main" style={{ marginTop: '30px' }}>
             <Container fluid>
               <Suspense fallback={this.loading()}>
                 <Switch>
