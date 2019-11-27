@@ -3,7 +3,7 @@ body .main{
 }
 
 body[dark] .card-header{
-  background: 	#282828;
+  background: 	black;
   color: white;
 }
 
@@ -20,6 +20,7 @@ body[dark] .app-body{
 body[dark] .card-body{
   background: #A9A9A9;
   color: black;
+  border: 5px solid #1C1C1C;
 }
 
 body .card-body{
