@@ -108,14 +108,14 @@ class Home extends Component {
               this.state.posts.map(function (post) {
                 return (
 
-                  <Col md="6" xl="6" key={post.id}>
+                  <Col md="9" lg="7" xl="6" key={post.id}>
                     <Card>
                       <CardHeader>
                         <Row>
-                          <Col md="4" xl="6">
+                          <Col md="9" lg="7" xl="6">
                             <strong>@{post.nickname}</strong>
                           </Col>
-                          <Col md="4" xl="6" style={{ textAlign: 'right' }}>
+                          <Col md="9" lg="7" xl="6" style={{ textAlign: 'right' }}>
                             {post.updated_at}
                           </Col>
                         </Row>
