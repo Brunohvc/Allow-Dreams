@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { Button, UncontrolledDropdown, DropdownItem, DropdownMenu, DropdownToggle, Nav, NavItem, InputGroup, Input} from 'reactstrap';
 import PropTypes from 'prop-types';
 import { AppNavbarBrand, AppSidebarToggler } from '@coreui/react';
-import logo from '../../assets/img/brand/logo.png'
+import logo from '../../assets/img/brand/dream.png'
 import sygnet from '../../assets/img/brand/sygnet.svg'
 
 const propTypes = {
@@ -34,7 +34,7 @@ class DefaultHeader extends Component {
       <React.Fragment>
         <AppSidebarToggler className="d-lg-none" display="md" mobile />
         <AppNavbarBrand
-          full={{ src: logo, width: 89, height: 25, alt: 'Logo' }}
+          full={{ src: logo, width: 120, height: 30, alt: 'Logo' }}
           minimized={{ src: sygnet, width: 30, height: 30, alt: 'Logo' }}
         />
         {/* <AppSidebarToggler className="d-md-down-none" display="lg" /> */}
