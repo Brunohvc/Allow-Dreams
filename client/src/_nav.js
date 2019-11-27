@@ -3,7 +3,7 @@ export default {
     {
       name: 'Home',
       url: '/home',
-      icon: 'icon-puzzle',
+      icon: 'icon-home',
     },
     {
       name: 'Páginas',
@@ -36,9 +36,18 @@ export default {
       name: 'Plano',
     },
     {
-      name: 'Pagamento',
-      url: '/pagamento',
+      name: 'Planos',
+      url: '/planos',
       icon: 'icon-puzzle',
+    },
+    {
+      title: true,
+      name: 'Perfil',
+    },
+    {
+      name: 'Meu Perfil',
+      url: '/perfil',
+      icon: 'icon-user',
     },
     {
       divider: true,

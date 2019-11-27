@@ -75,6 +75,11 @@ body .app-header{
   color: white;
 }
 
+body[dark] .nav{
+  background: #000000;
+  color: white;
+}
+
 body .nav-link{
   color: white!important;
 }
@@ -89,4 +94,9 @@ body[dark] .nav-link:hover{
 
 body[dark] .nav-link{
   color: white!important;
+}
+
+body .d-lg-none{
+  margin-left: 5px;
+  background: white;
 }
