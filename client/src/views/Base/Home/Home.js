@@ -86,10 +86,10 @@ class Home extends Component {
     return (
       <div className="animated fadeIn">
         <Row className="justify-content-center">
-          <Col md="9" lg="7" xl="9">
+          <Col md="9" lg="7" xl="6">
             <Card>
               <CardHeader>
-                <strong>Novo Post</strong>
+                <strong>Criar publicação</strong>
               </CardHeader>
               <CardBody>
                 <ReactQuill value={this.state.post}
@@ -108,14 +108,14 @@ class Home extends Component {
               this.state.posts.map(function (post) {
                 return (
 
-                  <Col md="9" lg="7" xl="6" key={post.id}>
+                  <Col md="6" xl="6" key={post.id}>
                     <Card>
                       <CardHeader>
-                        <Row className="justify-content-center">
-                          <Col md="6" lg="6" xl="6">
+                        <Row>
+                          <Col md="4" xl="6">
                             <strong>@{post.nickname}</strong>
                           </Col>
-                          <Col md="6" lg="6" xl="6" style={{ textAlign: 'right' }}>
+                          <Col md="4" xl="6" style={{ textAlign: 'right' }}>
                             {post.updated_at}
                           </Col>
                         </Row>

@@ -164,10 +164,10 @@ class Perfil extends Component {
 
             {this.state.user.id == this.state.user_logado.id &&
               <Row className="justify-content-center">
-                <Col md="9" lg="7" xl="9">
+                <Col md="9" lg="7" xl="6">
                   <Card>
                     <CardHeader>
-                      <strong>Novo Post</strong>
+                      <strong>Criar publicação</strong>
                     </CardHeader>
                     <CardBody>
                       <ReactQuill value={this.state.post}
