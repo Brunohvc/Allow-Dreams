@@ -201,6 +201,7 @@ class Perfil extends Component {
                                     <strong>@{post.nickname}</strong>
                                   </Col>
                                   <Col md="6" lg="6" xl="6" style={{ textAlign: 'right' }}>
+                                    <button class="btn"><i class="fa fa-trash" style={{ color: 'white' }}></i></button>
                                     {post.updated_at}
                                   </Col>
                                 </Row>
