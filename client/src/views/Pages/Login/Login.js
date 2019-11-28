@@ -63,7 +63,7 @@ class Login extends Component {
       <div className="app flex-row align-items-center">
         <Container>
           <Row className="justify-content-center">
-            <Col md="8">
+            <Col md="9">
               <CardGroup>
                 <Card className="p-4">
                   <CardBody>
@@ -90,7 +90,7 @@ class Login extends Component {
                       </InputGroup>
                       <Row>
                         <Col xs="6">
-                          <Button color="primary" className="px-4" onClick={this.login}>Entrar</Button>
+                          <Button color="dark" className="px-4" onClick={this.login}>Entrar</Button>
                         </Col>
                         <Col xs="6" className="text-right">
                           <Button color="link" className="px-0">Esqueceu sua senha?</Button>
@@ -99,13 +99,14 @@ class Login extends Component {
                     </Form>
                   </CardBody>
                 </Card>
-                <Card className="text-white bg-primary py-5 d-md-down-none" style={{ width: '44%' }}>
+                <Card className="text-white bg-primary py-5 d-md-down-none">
                   <CardBody className="text-center">
                     <div>
                       <h2>Cadastre-se</h2>
                       <p>Allow Dreams, a melhor rede social. Desenvolvida para fazer a diferença.</p>
+                      <p>Ta esperando o que?</p>
                       <Link to="/register">
-                        <Button color="primary" className="mt-3" type="button" active tabIndex={-1}>Cadastrar agora!</Button>
+                        <Button color="dark" className="mt-3" type="button" active tabIndex={-1}>Cadastrar agora!</Button>
                       </Link>
                     </div>
                   </CardBody>

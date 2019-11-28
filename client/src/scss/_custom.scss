@@ -20,13 +20,29 @@ body[dark] .app-body{
 body[dark] .card-body{
   background: #A9A9A9;
   color: black;
-  border: 5px solid #1C1C1C;
+}
+
+body[dark] .button-planos{
+  background: black!important;
+  color: white!important;
+  border-color: black!important;
 }
 
 body .card-body{
   background: #dcdcdc;
   color: black;
-  border: 5px solid white;
+}
+
+body .px-0{
+  color: black;
+}
+
+body .text-muted{
+  color: black!important;
+}
+
+body .bg-primary{
+  background: #800000!important;
 }
 
 body[dark] .card-footer{

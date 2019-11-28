@@ -94,7 +94,7 @@ class Home extends Component {
                   onChange={this.handleChangePost} />
               </CardBody>
               <CardFooter>
-                <Button color="primary" onClick={this.sendPost} id="publicacao">Publicar</Button>
+                <Button color="dark" onClick={this.sendPost} id="publicacao">Publicar</Button>
               </CardFooter>
             </Card>
           </Col>
