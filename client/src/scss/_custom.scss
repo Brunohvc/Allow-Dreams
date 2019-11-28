@@ -22,15 +22,19 @@ body[dark] .card-body{
   color: black;
 }
 
-body[dark] .button-planos{
-  background: black!important;
-  color: white!important;
-  border-color: black!important;
+body[dark] .card{
+  border-color: black;
 }
 
 body .card-body{
   background: #dcdcdc;
   color: black;
+}
+
+body[dark] .button-planos{
+  background: black!important;
+  color: white!important;
+  border-color: black!important;
 }
 
 body .px-0{
@@ -85,6 +89,7 @@ body[dark] .jumbotron{
 body[dark] .app-header{
   background: #000000;
   color: white;
+  border-color: black;
 }
 
 body .app-header{

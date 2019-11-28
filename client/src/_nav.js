@@ -28,7 +28,7 @@ export default {
       name: 'Perfil',
     },
     {
-      name: 'Meu Perfil',
+      name: 'Perfil',
       url: '/perfil',
       icon: 'icon-user',
     },
