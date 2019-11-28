@@ -52,8 +52,12 @@ class DefaultHeader extends Component {
           <NavItem className="px-3">
             <NavLink to="/planos" className="nav-link">Planos</NavLink>
           </NavItem>
-          <InputGroup className="mb-6" style={{ marginLeft: '20px' }}>
-            <Input type="text" placeholder="Procurar" key="procurar" required />
+          <InputGroup className="mb-6">
+            <Input style={{ marginLeft: '20px', height: '25px', borderRadius: '20px' }}
+              type="text"
+              placeholder="Procurar"
+              key="procurar"
+              required />
           </InputGroup>
         </Nav>
 
