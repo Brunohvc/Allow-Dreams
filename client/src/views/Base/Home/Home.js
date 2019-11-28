@@ -102,7 +102,7 @@ class Home extends Component {
 
         {this.state.posts.length > 0 &&
           <Row className="justify-content-center">
-            <Col md="12" lg="12" xl="9">
+            <Col md="12" lg="12" xl="6">
               <Row className="justify-content-center">
                 {
                   this.state.posts.map(function (post) {
