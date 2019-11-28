@@ -3,7 +3,7 @@ import React from 'react';
 const Album = React.lazy(() => import('./views/Album/Album'));
 const Pagamento = React.lazy(() => import('./views/Pagamento/Pagamento'));
 const Planos = React.lazy(() => import('./views/Planos/Planos'));
-const Home = React.lazy(() => import('./views/Base/Home'));
+const Home = React.lazy(() => import('./views/Home/Home'));
 const Perfil = React.lazy(() => import('./views/Perfil/Perfil'));
 const EditPerfil = React.lazy(() => import('./views/EditPerfil/EditPerfil'));
 
