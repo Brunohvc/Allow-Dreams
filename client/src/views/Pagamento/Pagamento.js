@@ -105,7 +105,7 @@ class Pagamento extends Component {
                   </Col>
                   <Col>
                   <Link to="/pagamento">
-                      <Button color="success" active tabIndex={-1}>Confirmar Pagamento!</Button>
+                      <Button className="button-planos" color="success" active tabIndex={-1}>Confirmar Pagamento!</Button>
                     </Link>
                   </Col>
                 </Row>
