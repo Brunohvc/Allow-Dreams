@@ -6,30 +6,13 @@ export default {
       icon: 'icon-home',
     },
     {
-      name: 'Páginas',
-      url: '/pages',
-      icon: 'icon-layers',
-      children: [
-        {
-          name: 'Entrar',
-          url: '/login',
-          icon: 'icon-check',
-        },
-        {
-          name: 'Registrar-se',
-          url: '/register',
-          icon: 'icon-user',
-        },
-      ],
-    },
-    {
       title: true,
       name: 'Fotos',
     },
     {
       name: 'Álbuns',
       url: '/album',
-      icon: 'icon-puzzle',
+      icon: 'icon-camera',
     },
     {
       title: true,
@@ -38,7 +21,7 @@ export default {
     {
       name: 'Planos',
       url: '/planos',
-      icon: 'icon-puzzle',
+      icon: 'icon-credit-card',
     },
     {
       title: true,
