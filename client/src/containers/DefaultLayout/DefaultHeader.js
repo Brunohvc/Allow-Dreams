@@ -67,7 +67,7 @@ class DefaultHeader extends Component {
           </NavItem> */}
           <UncontrolledDropdown nav direction="down" style={{ marginRight: '25px' }}>
             <DropdownToggle nav>
-              <img style={{ border: '2px solid white' }} src={'../../assets/img/avatars/felipe.jpeg'} className="img-avatar" />
+              <img style={{ border: '1px solid white' }} src={'../../assets/img/avatars/felipe.jpeg'} className="img-avatar" />
             </DropdownToggle>
             <DropdownMenu right>
               <DropdownItem header tag="div" className="text-center"><strong>Perfil</strong></DropdownItem>
