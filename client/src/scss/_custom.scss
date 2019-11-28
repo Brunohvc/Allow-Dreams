@@ -62,14 +62,14 @@ body .image{
   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSSgCCOcns3I2zyJsc43t1XgcJbqDMz8DIISAVRuKv1GkaCqxOe");
   width: auto;
   height: auto;
-  border: 10px solid white;
+  border: 5px solid black;
 }
 
 body[dark] .image{
   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSSgCCOcns3I2zyJsc43t1XgcJbqDMz8DIISAVRuKv1GkaCqxOe");
   width: auto;
   height: auto;
-  border: 10px solid black;
+  border: 5px solid black;
 }
 
 body[dark] .ql-toolbar ql-snow{

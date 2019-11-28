@@ -117,7 +117,7 @@ class Perfil extends Component {
                   <div className="image" style={{ textAlign: 'center', width: 'auto', height: 'auto' }}>
                     <img
                       alt="..."
-                      src={require("../../assets/img/user.jpeg")}
+                      src={require("../../assets/img/felipe.jpeg")}
                       style={{ textAlign: 'center', width: '200px', border: '5px solid white', height: '200px', borderRadius: '360px', marginTop: '10px', marginBottom: '10px' }}
                     />
                   </div>
