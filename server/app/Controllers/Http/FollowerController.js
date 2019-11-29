@@ -19,7 +19,7 @@ class FollowerController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async index ({ request, response, view }) {
+  async index({ request, response, view }) {
   }
 
   /**
@@ -31,7 +31,7 @@ class FollowerController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async create ({ request, response, view }) {
+  async create({ request, response, view }) {
   }
 
   /**
@@ -42,13 +42,15 @@ class FollowerController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async store ({ request, response }) {
+  async store({ request, response }) {
     const follower = new Follower()
+
     follower.user_id_follower = request.input('user_id_follower')
-    follower.user_id_followed_id = request.input('user_id_followed_id')
+    follower.user_id_followed_by = request.input('user_id_followed_by')
     follower.status = request.input('status')
 
     follower.save()
+
 
     return response.json(follower)
   }
@@ -62,7 +64,7 @@ class FollowerController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async show ({ params, response }) {
+  async show({ params, response }) {
     let follower = await Follower.query('id', params.id).fetch()
     return response.json(follower)
   }
@@ -76,7 +78,7 @@ class FollowerController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async edit ({ params, request, response, view }) {
+  async edit({ params, request, response, view }) {
   }
 
   /**
@@ -87,12 +89,14 @@ class FollowerController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async update ({ params, request, response }) {
+  async update({ params, request, response }) {
     let follower = await Follower.find(params.id)
 
     follower.user_id_follower = request.input('user_id_follower')
     follower.user_id_followed_id = request.input('user_id_followed_id')
     follower.status = request.input('status')
+
+    follower.save()
 
     return response.json(follower)
   }
@@ -105,11 +109,11 @@ class FollowerController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async destroy ({ params, response }) {
+  async destroy({ params, response }) {
     let follower = await Follower.find(params.id)
 
     follower.status = 'deny';
-    return response.json({messsage: 'Follower deleted!'})
+    return response.json({ messsage: 'Follower deleted!' })
   }
 }
 

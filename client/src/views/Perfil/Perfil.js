@@ -37,6 +37,10 @@ class Perfil extends Component {
 
 
   componentDidMount() {
+    this.buscaDados();
+  }
+
+  buscaDados() {
     let dadosUser
     if (!this.state.userId) {
       $(function () {
@@ -58,7 +62,7 @@ class Perfil extends Component {
           } else {
             this.setState({ user: response.data.user });
 
-            let text = 'Seguir', style = 'primary', status = null;
+            let text = 'Seguir', style = 'primary', status = null, id = null;
             if (response.data.follower) {
               if (response.data.follower.status == 'accept') {
                 text = 'Deixar de Seguir'
@@ -66,9 +70,11 @@ class Perfil extends Component {
               }
 
               status = response.data.follower.status;
+              id = response.data.follower.id;
             }
 
-            this.setState({ follow: { status, text, style } });
+            this.setState({ follow: { status, text, style, id } });
+            this.getPosts();
           }
         }.bind(this))
         .catch(function (error) {
@@ -78,35 +84,50 @@ class Perfil extends Component {
   }
 
   toogleFollow() {
-    console.log("Aqui")
-    axios.post(`http://127.0.0.1:3333/api/v1/users/relationship`, {
-      "userPageId": this.state.userId,
-      "userId": this.state.user_logado.id
-    })
-      .then(function (response) {
-        /*
-        if (response.data.message) {
-          swal("Erro!", response.data.message, "error");
-        } else {
-          this.setState({ user: response.data.user });
+    let status = 'accept';
+    if (this.state.follow.status == "accept") {
+      status = 'unfollow'
+    }
 
-          let text = 'Seguir', style = 'primary', status = null;
-          if (response.data.follower) {
-            if (response.data.follower.status == 'accept') {
-              text = 'Deixar de Seguir'
-              style = 'danger'
-            }
+    if (!this.state.follow.id) {
+      axios.post(`http://127.0.0.1:3333/api/v1/followers/`, {
+        "id": this.state.follow.id,
+        "user_id_follower": this.state.user.id,
+        "user_id_followed_by": this.state.user_logado.id,
+        "status": status,
+      })
+        .then(function (response) {
 
-            status = response.data.follower.status;
+          if (response.data.message) {
+            swal("Erro!", response.data.message, "error");
+          } else {
+            this.buscaDados();
           }
 
-          this.setState({ follow: { status, text, style } });
-        }
-        */
-      }.bind(this))
-      .catch(function (error) {
-        swal("Erro!", "Um erro inesperado ocorreu, tente novamente!", "error");
-      });
+        }.bind(this))
+        .catch(function (error) {
+          swal("Erro!", "Um erro inesperado ocorreu, tente novamente!", "error");
+        });
+    } else {
+      axios.put(`http://127.0.0.1:3333/api/v1/followers/${this.state.follow.id}`, {
+        "id": this.state.follow.id,
+        "user_id_follower": this.state.user.id,
+        "user_id_followed_by": this.state.user_logado.id,
+        "status": status,
+      })
+        .then(function (response) {
+
+          if (response.data.message) {
+            swal("Erro!", response.data.message, "error");
+          } else {
+            this.buscaDados();
+          }
+
+        }.bind(this))
+        .catch(function (error) {
+          swal("Erro!", "Um erro inesperado ocorreu, tente novamente!", "error");
+        });
+    }
   }
 
   handleScroll() {
@@ -250,7 +271,7 @@ class Perfil extends Component {
                                     <strong>@{post.nickname}</strong>
                                   </Col>
                                   <Col md="6" lg="6" xl="6" style={{ textAlign: 'right' }}>
-                                    <button class="btn"><i class="fa fa-trash" style={{ color: 'white' }}></i></button>
+                                    <button className="btn"><i className="fa fa-trash" style={{ color: 'white' }}></i></button>
                                     {post.updated_at}
                                   </Col>
                                 </Row>

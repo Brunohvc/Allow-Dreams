@@ -73,8 +73,7 @@ class PostController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async feed({ params, request, response, view }) {
-
+  async feed({ request, response }) {
     let user_id = request.input('user_id')
     let page = request.input('page')
 

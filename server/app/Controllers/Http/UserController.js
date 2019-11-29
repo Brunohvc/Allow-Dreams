@@ -106,14 +106,8 @@ class UserController {
     * @param {View} ctx.view
     */
     async relationship({ request, response }) {
-        //Follower
-
-        console.log("Chegando aqui")
-
         let userPageId = request.input('userPageId')
         let userId = request.input('userId')
-
-        console.log(userPageId, userId)
 
         let user = await User.findBy('id', `${userPageId}`)
         let follower = null;
