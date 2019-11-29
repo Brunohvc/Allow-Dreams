@@ -98,26 +98,35 @@ class UserController {
 
     /**
     * Display a single user.
-    * POST users/verificaRelacionamento
+    * POST users/relationship
     *
     * @param {object} ctx
     * @param {Request} ctx.request
     * @param {Response} ctx.response
     * @param {View} ctx.view
     */
-    async verificaRelacionamento({ params, response }) {
+    async relationship({ request, response }) {
         //Follower
+
+        console.log("Chegando aqui")
 
         let userPageId = request.input('userPageId')
         let userId = request.input('userId')
+
+        console.log(userPageId, userId)
+
         let user = await User.findBy('id', `${userPageId}`)
         let follower = null;
 
-        if (userPageId != userId)
-            follower = true;
+        if (userPageId != userId) {
+            follower = await Follower.query()
+                .where('user_id_follower', userPageId)
+                .where('user_id_followed_by', userId)
+                .first();
+        }
 
 
-        return response.json(user)
+        return response.json({ user, follower })
     }
 
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { Button, UncontrolledDropdown, DropdownItem, DropdownMenu, DropdownToggle, Nav, NavItem, InputGroup, Input} from 'reactstrap';
+import { Button, UncontrolledDropdown, DropdownItem, DropdownMenu, DropdownToggle, Nav, NavItem, InputGroup, Input } from 'reactstrap';
 import PropTypes from 'prop-types';
 import { AppNavbarBrand, AppSidebarToggler } from '@coreui/react';
 import logo from '../../assets/img/brand/dream.png'
@@ -16,6 +16,7 @@ class DefaultHeader extends Component {
   constructor(props) {
     super(props);
     this.logOut = this.logOut.bind(this);
+    this.handleDark = this.handleDark.bind(this)
   }
 
   handleDark = () => {
@@ -67,11 +68,11 @@ class DefaultHeader extends Component {
             </DropdownToggle>
             <DropdownMenu right>
               <DropdownItem header tag="div" className="text-center"><strong>Perfil</strong></DropdownItem>
-              <DropdownItem>
-                <Button onClick={this.handleDark}>Dark Mode</Button>
+              <DropdownItem onClick={this.handleDark}>
+                Dark Mode
               </DropdownItem>
-              <Link to="/editPerfil">
-              <DropdownItem><i className="fa fa-user"></i> Editar Perfil</DropdownItem>
+              <Link to="/editPerfil" style={{ textDecoration: 'none' }}>
+                <DropdownItem><i className="fa fa-user"></i> Editar Perfil</DropdownItem>
               </Link>
               <DropdownItem onClick={this.logOut}><i className="fa fa-lock"></i> Sair</DropdownItem>
             </DropdownMenu>

@@ -41,5 +41,6 @@ Route.group(() => {
   Route.resource('users', 'UserController')
   Route.post('users/login', 'UserController.login')
   Route.post('post/feed', 'PostController.feed')
+  Route.post('users/relationship', 'UserController.relationship')
 
 }).prefix('api/v1')
