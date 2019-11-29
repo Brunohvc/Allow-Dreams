@@ -89,7 +89,7 @@ class PostController {
 
     followingIds.push(user_id)
 
-    let post = await Post.query().select('posts.id', 'posts.post_content', 'posts.created_at', 'users.nickname')
+    let post = await Post.query().select('posts.id', 'posts.post_content', 'posts.created_at', 'users.nickname', 'users.id as userId')
       .innerJoin('users', 'posts.user_id', 'users.id')
       .whereIn('user_id', followingIds)
       .orderBy('posts.created_at', 'desc')

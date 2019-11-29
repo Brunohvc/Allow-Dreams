@@ -100,7 +100,7 @@ class Home extends Component {
           </Col>
         </Row>
 
-        {this.state.posts.length > 0 &&
+        {this.state && this.state.posts.length > 0 &&
           <Row className="justify-content-center">
             <Col md="12" lg="12" xl="6">
               <Row className="justify-content-center">
@@ -111,13 +111,15 @@ class Home extends Component {
                       <Col md="9" lg="7" xl="6" key={post.id}>
                         <Card>
                           <CardHeader>
-                            <Row>
-                              <Col md="9" lg="7" xl="6">
+                            <Row className="justify-content-center">
+                              <Col md="6" lg="6" xl="6">
                                 <strong>@{post.nickname}</strong>
                               </Col>
-                              <Col md="9" lg="7" xl="6" style={{ textAlign: 'right' }}>
-                                <button className="btn"><i className="fa fa-trash" style={{ color: 'white' }}></i></button>
-                                {post.updated_at}
+                              <Col md="6" lg="6" xl="6" style={{ textAlign: 'right' }}>
+                                {post.created_at}
+                                {post.userId == this.state.user.id &&
+                                  <button className="btn"><i className="fa fa-trash" style={{ color: 'white' }}></i></button>
+                                }
                               </Col>
                             </Row>
                           </CardHeader>
@@ -126,7 +128,7 @@ class Home extends Component {
                         </Card>
                       </Col>
                     )
-                  })
+                  }.bind(this))
                 }
               </Row>
             </Col>

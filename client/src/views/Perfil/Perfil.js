@@ -271,8 +271,10 @@ class Perfil extends Component {
                                     <strong>@{post.nickname}</strong>
                                   </Col>
                                   <Col md="6" lg="6" xl="6" style={{ textAlign: 'right' }}>
-                                    <button className="btn"><i className="fa fa-trash" style={{ color: 'white' }}></i></button>
-                                    {post.updated_at}
+                                    {post.created_at}
+                                    {post.userId == this.state.user_logado.id &&
+                                      <button className="btn"><i className="fa fa-trash" style={{ color: 'white' }}></i></button>
+                                    }
                                   </Col>
                                 </Row>
                               </CardHeader>
@@ -281,7 +283,7 @@ class Perfil extends Component {
                             </Card>
                           </Col>
                         )
-                      })
+                      }.bind(this))
                     }
                   </Row>
                 </Col>
