@@ -144,7 +144,7 @@ class EditPerfil extends Component {
                           <i className="icon-calendar"></i>
                         </InputGroupText>
                       </InputGroupAddon>
-                      <Input type="date" placeholder="Data de aniversário" key="aniversario" autoComplete="new-password" value={this.state.passwordC} onChange={this.handleChangePasswordC} required />
+                      <Input type="date" placeholder="Data de aniversário" key="aniversario" required />
                     </InputGroup>
                     <InputGroup className="mb-4">
                       <InputGroupAddon addonType="prepend">
@@ -152,7 +152,7 @@ class EditPerfil extends Component {
                           <i className="icon-people"></i>
                         </InputGroupText>
                       </InputGroupAddon>
-                      <Input type="select" placeholder="Gênero" key="genero" value={this.state.passwordC} onChange={this.handleChangePasswordC} required>
+                      <Input type="select" placeholder="Gênero" key="genero" required>
                         <option>Masculino</option>
                         <option>Feminino</option>
                       </Input>
