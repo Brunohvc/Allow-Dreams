@@ -7,7 +7,6 @@ import {
   Col,
   Button,
   CardHeader,
-  Jumbotron,
 } from "reactstrap";
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
@@ -25,12 +24,14 @@ class Perfil extends Component {
       user_logado: JSON.parse(localStorage.getItem('dadosUser')),
       page: 1,
       posts: [],
-      consulta: false
+      consulta: false,
+      follow: null
     };
 
     this.handleChangePost = this.handleChangePost.bind(this);
     this.sendPost = this.sendPost.bind(this)
     this.getPosts = this.getPosts.bind(this)
+    this.toogleFollow = this.toogleFollow.bind(this)
   }
 
 
@@ -46,18 +47,66 @@ class Perfil extends Component {
       }.bind(this))
 
     } else {
-      axios.get(`http://127.0.0.1:3333/api/v1/users/${this.state.userId}`)
+      axios.post(`http://127.0.0.1:3333/api/v1/users/relationship`, {
+        "userPageId": this.state.userId,
+        "userId": this.state.user_logado.id
+      })
         .then(function (response) {
-          dadosUser = response.data;
-          this.setState({ user: response.data });
 
-          window.onscroll = () => this.handleScroll()
-          this.getPosts();
+          if (response.data.message) {
+            swal("Erro!", response.data.message, "error");
+          } else {
+            this.setState({ user: response.data.user });
+
+            let text = 'Seguir', style = 'primary', status = null;
+            if (response.data.follower) {
+              if (response.data.follower.status == 'accept') {
+                text = 'Deixar de Seguir'
+                style = 'danger'
+              }
+
+              status = response.data.follower.status;
+            }
+
+            this.setState({ follow: { status, text, style } });
+          }
         }.bind(this))
         .catch(function (error) {
           swal("Erro!", "Um erro inesperado ocorreu, tente novamente!", "error");
-        })
+        });
     }
+  }
+
+  toogleFollow() {
+    console.log("Aqui")
+    axios.post(`http://127.0.0.1:3333/api/v1/users/relationship`, {
+      "userPageId": this.state.userId,
+      "userId": this.state.user_logado.id
+    })
+      .then(function (response) {
+        /*
+        if (response.data.message) {
+          swal("Erro!", response.data.message, "error");
+        } else {
+          this.setState({ user: response.data.user });
+
+          let text = 'Seguir', style = 'primary', status = null;
+          if (response.data.follower) {
+            if (response.data.follower.status == 'accept') {
+              text = 'Deixar de Seguir'
+              style = 'danger'
+            }
+
+            status = response.data.follower.status;
+          }
+
+          this.setState({ follow: { status, text, style } });
+        }
+        */
+      }.bind(this))
+      .catch(function (error) {
+        swal("Erro!", "Um erro inesperado ocorreu, tente novamente!", "error");
+      });
   }
 
   handleScroll() {
@@ -154,9 +203,9 @@ class Perfil extends Component {
                           </h5>
                         </Col>
 
-                        {this.state.user.id != this.state.user_logado.id &&
-                          <Col lg="3" md="6" xs="6" style={{ alignSelf: 'center' }}>
-                            <Button color="primary" onClick={this.sendPost} id="publicacao">Seguir</Button>
+                        {this.state.user.id != this.state.user_logado.id && this.state.follow != null &&
+                          < Col lg="3" md="6" xs="6" style={{ alignSelf: 'center' }}>
+                            <Button color={this.state.follow.style} onClick={this.toogleFollow} id="publicacao">{this.state.follow.text}</Button>
                           </Col>
                         }
                       </Row>
