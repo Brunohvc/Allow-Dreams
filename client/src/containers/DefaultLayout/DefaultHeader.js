@@ -4,7 +4,7 @@ import { Button, UncontrolledDropdown, DropdownItem, DropdownMenu, DropdownToggl
 import PropTypes from 'prop-types';
 import { AppNavbarBrand, AppSidebarToggler } from '@coreui/react';
 import logo from '../../assets/img/brand/dream.png'
-import sygnet from '../../assets/img/brand/sygnet.svg'
+import sygnet from '../../assets/img/brand/dream.png'
 
 const propTypes = {
   children: PropTypes.node,
@@ -53,8 +53,12 @@ class DefaultHeader extends Component {
           <NavItem className="px-3">
             <NavLink to="/planos" className="nav-link">Planos</NavLink>
           </NavItem>
-          <InputGroup className="mb-6" style={{ marginLeft: '20px' }}>
-            <Input type="text" placeholder="Procurar" key="procurar" required />
+          <InputGroup className="mb-6">
+            <Input style={{ marginLeft: '20px', height: '25px', borderRadius: '20px' }}
+              type="text"
+              placeholder="Procurar"
+              key="procurar"
+              required />
           </InputGroup>
         </Nav>
 
@@ -64,7 +68,7 @@ class DefaultHeader extends Component {
           </NavItem> */}
           <UncontrolledDropdown nav direction="down" style={{ marginRight: '25px' }}>
             <DropdownToggle nav>
-              <img style={{ border: '2px solid white' }} src={'../../assets/img/avatars/felipe.jpeg'} className="img-avatar" />
+              <img style={{ border: '1px solid white' }} src={'../../assets/img/avatars/felipe.jpeg'} className="img-avatar" />
             </DropdownToggle>
             <DropdownMenu right>
               <DropdownItem header tag="div" className="text-center"><strong>Perfil</strong></DropdownItem>

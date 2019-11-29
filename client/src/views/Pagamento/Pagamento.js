@@ -13,7 +13,7 @@ import {
   Button,
 } from 'reactstrap';
 
-class Forms extends Component {
+class Pagamento extends Component {
   constructor(props) {
     super(props);
 
@@ -104,16 +104,8 @@ class Forms extends Component {
                     </FormGroup>
                   </Col>
                   <Col>
-                  <Card>
-                    <CardHeader>
-                      Você confirma a compra deste plano?
-                    </CardHeader>
-                    <CardBody>
-                      <AppSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked label dataOn={'\u2713'} dataOff={'\u2715'} />
-                    </CardBody>
-                  </Card>
                   <Link to="/pagamento">
-                      <Button color="success" active tabIndex={-1}>Confirmar Pagamento!</Button>
+                      <Button className="button-planos" color="success" active tabIndex={-1}>Confirmar Pagamento!</Button>
                     </Link>
                   </Col>
                 </Row>
@@ -126,4 +118,4 @@ class Forms extends Component {
   }
 }
 
-export default Forms;
+export default Pagamento;

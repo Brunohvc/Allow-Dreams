@@ -94,7 +94,7 @@ class Home extends Component {
                   onChange={this.handleChangePost} />
               </CardBody>
               <CardFooter>
-                <Button color="primary" onClick={this.sendPost} id="publicacao">Publicar</Button>
+                <Button color="dark" onClick={this.sendPost} id="publicacao">Publicar</Button>
               </CardFooter>
             </Card>
           </Col>
@@ -102,7 +102,7 @@ class Home extends Component {
 
         {this.state.posts.length > 0 &&
           <Row className="justify-content-center">
-            <Col md="12" lg="12" xl="9">
+            <Col md="12" lg="12" xl="6">
               <Row className="justify-content-center">
                 {
                   this.state.posts.map(function (post) {
@@ -116,6 +116,7 @@ class Home extends Component {
                                 <strong>@{post.nickname}</strong>
                               </Col>
                               <Col md="9" lg="7" xl="6" style={{ textAlign: 'right' }}>
+                                <button class="btn"><i class="fa fa-trash" style={{ color: 'white' }}></i></button>
                                 {post.updated_at}
                               </Col>
                             </Row>

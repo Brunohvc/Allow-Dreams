@@ -166,14 +166,11 @@ class Perfil extends Component {
                   <div className="image" style={{ textAlign: 'center', width: 'auto', height: 'auto' }}>
                     <img
                       alt="..."
-                      src={require("../../assets/img/user.jpeg")}
-                      style={{
-                        textAlign: 'center', width: '200px', border: '5px solid white', height: '200px',
-                        borderRadius: '360px', marginTop: '10px', marginBottom: '10px'
-                      }}
+                      src={require("../../assets/img/felipe.jpeg")}
+                      style={{ textAlign: 'center', width: '200px', border: '5px solid white', height: '200px', borderRadius: '360px', marginTop: '10px', marginBottom: '10px' }}
                     />
                   </div>
-                  <CardBody style={{ border: '10px solid white' }}>
+                  <CardBody>
                     <div className="author">
                       <h5 className="title" style={{ textAlign: 'center' }}>{this.state.user.name}</h5>
                     </div>
@@ -230,7 +227,7 @@ class Perfil extends Component {
                         onChange={this.handleChangePost} />
                     </CardBody>
                     <CardFooter>
-                      <Button color="primary" onClick={this.sendPost} id="publicacao">Publicar</Button>
+                      <Button color="dark" onClick={this.sendPost} id="publicacao">Publicar</Button>
                     </CardFooter>
                   </Card>
                 </Col>
@@ -239,7 +236,7 @@ class Perfil extends Component {
 
             {this.state && this.state.posts.length > 0 &&
               <Row className="justify-content-center">
-                <Col md="12" lg="12" xl="9">
+                <Col md="12" lg="12" xl="6">
                   <Row className="justify-content-center">
                     {
                       this.state.posts.map(function (post) {
@@ -253,6 +250,7 @@ class Perfil extends Component {
                                     <strong>@{post.nickname}</strong>
                                   </Col>
                                   <Col md="6" lg="6" xl="6" style={{ textAlign: 'right' }}>
+                                    <button class="btn"><i class="fa fa-trash" style={{ color: 'white' }}></i></button>
                                     {post.updated_at}
                                   </Col>
                                 </Row>

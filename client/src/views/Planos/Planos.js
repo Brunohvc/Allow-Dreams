@@ -15,13 +15,13 @@ class Planos extends Component {
               </CardHeader>
               <CardBody>
                 <Jumbotron>
-                  <h1 className="display-3">R$49</h1>
+                  <h1 className="display-3">R$29</h1>
                   <p className="lead">Definir plano 1</p>
                   <hr className="my-2" />
                   <p>It uses utility classes for typgraphy and spacing to space content out within the larger container.</p>
                   <p className="lead">
                     <Link to="/pagamento">
-                      <Button color="success" active tabIndex={-1}>Adquirir agora!</Button>
+                      <Button className="button-planos" color="success" active tabIndex={-1}>Adquirir agora!</Button>
                     </Link>
                   </p>
                 </Jumbotron>
@@ -36,13 +36,13 @@ class Planos extends Component {
               </CardHeader>
               <CardBody>
                 <Jumbotron>
-                  <h1 className="display-3">R$99</h1>
+                  <h1 className="display-3">R$59</h1>
                   <p className="lead">Definir plano 2</p>
                   <hr className="my-2" />
                   <p>It uses utility classes for typgraphy and spacing to space content out within the larger container.</p>
                   <p className="lead">
                     <Link to="/pagamento">
-                      <Button color="success" active tabIndex={-1}>Adquirir agora!</Button>
+                      <Button className="button-planos" color="success" active tabIndex={-1}>Adquirir agora!</Button>
                     </Link>
                   </p>
                 </Jumbotron>
@@ -57,13 +57,13 @@ class Planos extends Component {
               </CardHeader>
               <CardBody>
                 <Jumbotron>
-                  <h1 className="display-3">R$199</h1>
+                  <h1 className="display-3">R$99</h1>
                   <p className="lead">Definir plano 3</p>
                   <hr className="my-2" />
                   <p>It uses utility classes for typgraphy and spacing to space content out within the larger container.</p>
                   <p className="lead">
                     <Link to="/pagamento">
-                      <Button color="success" active tabIndex={-1}>Adquirir agora!</Button>
+                      <Button className="button-planos" color="success" active tabIndex={-1}>Adquirir agora!</Button>
                     </Link>
                   </p>
                 </Jumbotron>

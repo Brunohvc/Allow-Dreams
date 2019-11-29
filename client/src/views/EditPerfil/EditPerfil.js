@@ -157,7 +157,7 @@ class EditPerfil extends Component {
                         <option>Feminino</option>
                       </Input>
                     </InputGroup>
-                    <Button color="success" block>Alterar dados</Button>
+                    <Button className="button-planos" color="success" block>Alterar dados</Button>
                   </Form>
                 </CardBody>
                 {
