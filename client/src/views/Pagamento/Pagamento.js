@@ -48,7 +48,7 @@ class Pagamento extends Component {
                   <Col xs="12">
                     <FormGroup>
                       <Label htmlFor="name">Nome</Label>
-                      <Input type="text" id="name" placeholder="Coloque seu nome" required />
+                      <Input type="text" id="name" placeholder="Nome no cartão" required />
                     </FormGroup>
                   </Col>
                 </Row>
@@ -99,7 +99,7 @@ class Pagamento extends Component {
                   </Col>
                   <Col xs="4">
                     <FormGroup>
-                      <Label htmlFor="cvv">CVV/CVC</Label>
+                      <Label htmlFor="cvv">Código de Segurança</Label>
                       <Input type="text" id="cvv" placeholder="123" required />
                     </FormGroup>
                   </Col>
