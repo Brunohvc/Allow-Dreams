@@ -34,10 +34,21 @@ class Perfil extends Component {
     this.toogleFollow = this.toogleFollow.bind(this)
   }
 
-
-
   componentDidMount() {
     this.buscaDados();
+  }
+
+  excluirPost(postId) {
+    console.log("Id: ", postId)
+    axios.delete(`http://127.0.0.1:3333/api/v1/post/${postId}`)
+      .then(function (response) {
+        if (response.data.message) {
+          swal("Excluído!", response.data.message, "success");
+        }
+      }.bind(this))
+      .catch(function (error) {
+        swal("Erro!", "Um erro inesperado ocorreu, tente novamente!", "error");
+      });
   }
 
   buscaDados() {
@@ -273,7 +284,7 @@ class Perfil extends Component {
                                   <Col md="6" lg="6" xl="6" style={{ textAlign: 'right' }}>
                                     {post.created_at}
                                     {post.userId == this.state.user_logado.id &&
-                                      <button className="btn"><i className="fa fa-trash" style={{ color: 'white' }}></i></button>
+                                      <button className="btn" onClick={() => this.excluirPost(post.id)}><i className="fa fa-trash" style={{ color: 'white' }}></i></button>
                                     }
                                   </Col>
                                 </Row>

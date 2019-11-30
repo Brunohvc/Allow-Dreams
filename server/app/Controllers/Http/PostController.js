@@ -92,6 +92,7 @@ class PostController {
     let post = await Post.query().select('posts.id', 'posts.post_content', 'posts.created_at', 'users.nickname', 'users.id as userId')
       .innerJoin('users', 'posts.user_id', 'users.id')
       .whereIn('user_id', followingIds)
+      .where('posts.status', true)
       .orderBy('posts.created_at', 'desc')
       .orderBy('users.nickname', 'asc')
       .forPage(page, 20).fetch()
@@ -146,7 +147,9 @@ class PostController {
 
     post.status = false
 
-    return response.json({ message: 'Post deleted!' })
+    post.save();
+
+    return response.json({ message: 'Post excluído!' })
   }
 }
 
