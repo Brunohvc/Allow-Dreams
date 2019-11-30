@@ -5,6 +5,12 @@ import PropTypes from 'prop-types';
 import { AppNavbarBrand, AppSidebarToggler } from '@coreui/react';
 import logo from '../../assets/img/brand/dream.png'
 import sygnet from '../../assets/img/brand/dream.png'
+import SearchExampleStandard from './SearchExampleStandard'
+
+const styleLink = document.createElement("link");
+styleLink.rel = "stylesheet";
+styleLink.href = "https://cdn.jsdelivr.net/npm/semantic-ui/dist/semantic.min.css";
+document.head.appendChild(styleLink);
 
 const propTypes = {
   children: PropTypes.node,
@@ -53,13 +59,9 @@ class DefaultHeader extends Component {
           <NavItem className="px-3">
             <NavLink to="/planos" className="nav-link">Planos</NavLink>
           </NavItem>
-          <InputGroup className="mb-6">
-            <Input style={{ marginLeft: '20px', height: '25px', borderRadius: '20px' }}
-              type="text"
-              placeholder="Procurar"
-              key="procurar"
-              required />
-          </InputGroup>
+          <NavItem className="px-3">
+            <SearchExampleStandard />
+          </NavItem>
         </Nav>
 
         <Nav className="ml-auto" navbar>

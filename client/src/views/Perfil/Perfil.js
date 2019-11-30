@@ -39,11 +39,20 @@ class Perfil extends Component {
   }
 
   excluirPost(postId) {
-    console.log("Id: ", postId)
     axios.delete(`http://127.0.0.1:3333/api/v1/post/${postId}`)
       .then(function (response) {
         if (response.data.message) {
           swal("Excluído!", response.data.message, "success");
+
+          let novaLista = [];
+
+          this.state.posts.forEach((element, index) => {
+            if (element.id != postId) {
+              novaLista.push(element)
+            }
+          });
+
+          this.setState({ posts: novaLista })
         }
       }.bind(this))
       .catch(function (error) {

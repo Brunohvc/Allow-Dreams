@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Card, CardBody, CardHeader, Col, Jumbotron, Row, CardFooter, } from 'reactstrap';
+import { Button, Card, CardBody, CardHeader, Col, Row, CardFooter, } from 'reactstrap';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import axios from 'axios';
@@ -37,6 +37,29 @@ class Home extends Component {
       this.getPosts();
       window.onscroll = () => this.handleScroll()
     }
+  }
+
+  excluirPost(postId) {
+    axios.delete(`http://127.0.0.1:3333/api/v1/post/${postId}`)
+      .then(function (response) {
+        if (response.data.message) {
+          swal("Excluído!", response.data.message, "success");
+
+          let novaLista = [];
+
+          this.state.posts.forEach((element, index) => {
+            if (element.id != postId) {
+              novaLista.push(element)
+            }
+          });
+
+          this.setState({ posts: novaLista })
+
+        }
+      }.bind(this))
+      .catch(function (error) {
+        swal("Erro!", "Um erro inesperado ocorreu, tente novamente!", "error");
+      });
   }
 
   handleChangePost(event) {
@@ -118,7 +141,7 @@ class Home extends Component {
                               <Col md="6" lg="6" xl="6" style={{ textAlign: 'right' }}>
                                 {post.created_at}
                                 {post.userId == this.state.user.id &&
-                                  <button className="btn"><i className="fa fa-trash" style={{ color: 'white' }}></i></button>
+                                  <button className="btn" onClick={() => this.excluirPost(post.id)}><i className="fa fa-trash" style={{ color: 'white' }}></i></button>
                                 }
                               </Col>
                             </Row>

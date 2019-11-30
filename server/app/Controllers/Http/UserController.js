@@ -7,6 +7,7 @@
  */
 const User = use('App/Models/User');
 const Follower = use('App/Models/Follower');
+const Database = use('Database')
 
 class UserController {
 
@@ -60,7 +61,6 @@ class UserController {
 
         let otherUser = await User.findBy('nickname', `${nickname}`)
         if (!otherUser) {
-
             const user = new User()
             user.name = name
             user.email = email
@@ -121,6 +121,26 @@ class UserController {
 
 
         return response.json({ user, follower })
+    }
+
+
+    /**
+    * Display a single user.
+    * POST users/searchFriends
+    *
+    * @param {Request} ctx.request
+    * @param {Response} ctx.response
+    */
+    async searchFriends({ request, response }) {
+        let userId = request.input('userId')
+        let value = request.input('value')
+
+        var result = await Database
+            .raw(`SELECT u.id as iduser, u.name, u.nickname, f.status, u.nickname as title FROM users u`
+                + ` LEFT JOIN followers f on f.user_id_followed_by = ${userId} AND f.user_id_follower = u.id`
+                + ` WHERE u.id <> ${userId} AND u.nickname LIKE '%${value}%'`)
+
+        return response.json(result)
     }
 
 
