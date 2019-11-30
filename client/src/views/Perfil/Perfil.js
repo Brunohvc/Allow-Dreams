@@ -227,8 +227,8 @@ class Perfil extends Component {
                       <Row className="justify-content-center" style={{ textAlign: 'center' }}>
                         <Col lg="3" md="6" xs="6">
                           <h5>
-                            2 <br />
-                            <small>Albúns</small>
+                            4 <br />
+                            <small>Álbuns</small>
                           </h5>
                         </Col>
                         <Col lg="3" md="6" xs="6">
