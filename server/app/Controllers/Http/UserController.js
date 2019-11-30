@@ -138,7 +138,7 @@ class UserController {
         var result = await Database
             .raw(`SELECT u.id as iduser, u.name, u.nickname, f.status, u.nickname as title FROM users u`
                 + ` LEFT JOIN followers f on f.user_id_followed_by = ${userId} AND f.user_id_follower = u.id`
-                + ` WHERE u.id <> ${userId} AND u.nickname LIKE '%${value}%'`)
+                + ` WHERE u.id <> ${userId} AND u.nickname LIKE '%${value}%' LIMIT 10`)
 
         return response.json(result)
     }
