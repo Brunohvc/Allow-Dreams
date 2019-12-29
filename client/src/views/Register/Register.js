@@ -98,6 +98,7 @@ class Register extends Component {
               <Card className="mx-4">
                 <CardBody className="p-4">
                   <Form>
+                    
                     <h1>Cadastro</h1>
                     <p className="text-muted">Crie a sua conta</p>
                     <InputGroup className="mb-3">
